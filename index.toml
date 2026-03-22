@@ -1,2 +1,24 @@
 hash-format = "sha256"
-files = []
+
+[[files]]
+file = "CHANGELOG.md"
+hash = "fd86db6fb7825e0b37c1dffa04c68f4e38c363dabf6719ab8d0f786b79f63793"
+
+[[files]]
+file = "README.md"
+hash = "a1ec05209a1be09de6277f5b69818bbf8c86ed55ec1433ada75317af1af9c2a5"
+
+[[files]]
+file = "mods/fabric-api.pw.toml"
+hash = "6ec22733a32cf6e59584fbf2a855e24ea2c05f46026e0799f34f34c0915c8367"
+metafile = true
+
+[[files]]
+file = "mods/lithium.pw.toml"
+hash = "23de0cbbfd28d752eb662c00a907406bac3e3ad529dd2ac250b41b4b0ef734ce"
+metafile = true
+
+[[files]]
+file = "mods/sodium.pw.toml"
+hash = "be0c8881821da897824770b2a71f0f3765a233eda69b295fa5b92ffe8a25014c"
+metafile = true
