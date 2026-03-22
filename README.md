@@ -6,7 +6,7 @@ Um modpack de Minecraft focado em **exploração profunda**, **movimentação fl
 - **Exploração:** Novos biomas, estruturas e segredos (Em breve).
 - **Combate & Desafio:** IA de mobs e mecânicas dinâmicas (Em breve).
 - **Movimentação:** Agilidade na travessia do mundo (Em breve).
-- **Performance:** Otimizado com as melhores tecnologias Fabric para a versão 1.21.1.
+- **Performance & Debugging:** Otimizado com as melhores tecnologias Fabric para a versão 1.21.1, incluindo otimizações de rede e ferramentas para diagnóstico de performance (Spark e Observable).
 
 ## 🛠️ Instalação e Configuração (Prism Launcher)
 
