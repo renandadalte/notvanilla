@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = ".github/workflows/export.yml"
-hash = "9530bbe417fe84df3dd885ef2e8f58c94379373588ccd9a3028b7d24aef767c2"
+hash = "299466a3bc22d5cda1635bce27ae5a29f8f9f72bcc012a23f839df189f1733b8"
 
 [[files]]
 file = "CHANGELOG.md"
@@ -14,7 +14,7 @@ hash = "fbde7c471af92a5ce1d086343b5ff0501c9d752f38ac93928f4ce00a72b30669"
 
 [[files]]
 file = "instance.cfg"
-hash = "70e8d5ea66c0127656924c372f2c19dbd53bde7c4e3ece13bed25d577b215fba"
+hash = "a716d563fc5e795820af965877b61e426b9c3c38da240502314c9a513d2a65f0"
 
 [[files]]
 file = "mmc-pack.json"
@@ -58,7 +58,3 @@ metafile = true
 [[files]]
 file = "packwiz-installer-bootstrap.jar"
 hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"
-
-[[files]]
-file = "packwiz-installer.jar"
-hash = "c9f646908d340d84773948a9a7d98bc1dae250d35e1016dc6e2b8459760b5598"
