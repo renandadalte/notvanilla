@@ -1,6 +1,6 @@
-name = "notvanilla"
+name = "NotVanilla"
 author = "R4TWT"
-version = "1.0.0"
+version = "0.0.1-alpha"
 pack-format = "packwiz:1.1.0"
 
 [index]

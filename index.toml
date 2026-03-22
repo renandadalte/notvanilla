@@ -6,11 +6,11 @@ hash = "9530bbe417fe84df3dd885ef2e8f58c94379373588ccd9a3028b7d24aef767c2"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "fd86db6fb7825e0b37c1dffa04c68f4e38c363dabf6719ab8d0f786b79f63793"
+hash = "285b6a696693acd29b4b08842596a1fbd408eeceed51d614a9fedc50bceae841"
 
 [[files]]
 file = "README.md"
-hash = "a1ec05209a1be09de6277f5b69818bbf8c86ed55ec1433ada75317af1af9c2a5"
+hash = "0b087597c6a7d93945d1733c5b999f3c417793abbfef4959696a9549ba6c4958"
 
 [[files]]
 file = "instance.cfg"
