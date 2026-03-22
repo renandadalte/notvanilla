@@ -21,15 +21,21 @@ Para uma melhor experiência, recomendamos o uso do **Prism Launcher**.
 2. Selecione a aba **Import from Modrinth** e escolha o arquivo `NotVanilla.mrpack` baixado deste repositório.
 3. Clique em **OK** para criar a instância.
 
-### 3. Configuração Global de Memória (Recomendado)
-Para garantir que o NotVanilla e suas futuras instâncias rodem com estabilidade, configure a alocação de RAM globalmente no launcher:
+### 3. Configuração Global de Memória (RAM)
+Para o NotVanilla rodar com estabilidade e evitar picos de lag (stuttering), configure a alocação de RAM globalmente no launcher. Escolha a opção baseada na memória total do seu PC:
 
 1. No Prism Launcher, clique em **Settings** (ícone de engrenagem no topo).
 2. No menu lateral, selecione **Java**.
-3. Na seção **Memory** (Memória), configure os campos de forma idêntica para evitar variações de performance (stuttering):
-   - **Minimum memory (Mínimo):** `8192 MiB` (8GB).
-   - **Maximum memory (Máximo):** `8192 MiB` (8GB).
-   - *Atenção: Certifique-se de que seu PC possui pelo menos 16GB de RAM total para manter a estabilidade do sistema operacional.*
+3. Na seção **Memory** (Memória), configure os campos de forma idêntica:
+
+#### Opção A: PCs com MAIS de 8GB de RAM total (Recomendado)
+- **Minimum memory (Mínimo):** `8192 MiB` (8GB).
+- **Maximum memory (Máximo):** `8192 MiB` (8GB).
+
+#### Opção B: PCs com 8GB ou MENOS de RAM total
+- **Minimum memory (Mínimo):** `4096 MiB` (4GB).
+- **Maximum memory (Máximo):** `4096 MiB` (4GB).
+- *Nota: Esta configuração garante que o jogo rode bem sem travar o seu sistema operacional.*
 
 ---
 *Base 0.0.1-alpha: Otimização e Performance.*
