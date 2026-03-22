@@ -8,25 +8,26 @@ Um modpack de Minecraft focado em **exploração profunda**, **movimentação fl
 - **Movimentação:** Agilidade na travessia do mundo (Em breve).
 - **Performance:** Otimizado com as melhores tecnologias Fabric para a versão 1.21.1.
 
-## 🛠️ Instalação e Configuração
+## 🛠️ Instalação e Configuração (Método "Um Clique")
 
-Para uma melhor experiência, recomendamos o uso do **Prism Launcher**.
+Para a melhor experiência e atualizações automáticas, use o **Prism Launcher**.
 
 ### 1. Instalação do Prism Launcher
 1. Acesse [prismlauncher.org](https://prismlauncher.org/download/) e baixe a versão para o seu sistema operacional.
 2. Siga as instruções de instalação padrão. O Prism Launcher detectará automaticamente o Java necessário.
 
-### 2. Adicionando o NotVanilla (Método Recomendado)
-O método mais rápido é importar o modpack diretamente pelo link:
+### 2. Adicionando o NotVanilla (Auto-Atualizável)
+Este método configura o modpack para se atualizar sozinho toda vez que você clicar em "Play":
 
 1. No Prism Launcher, clique em **Add Instance** (Adicionar Instância).
-2. Selecione a aba **Import from Modrinth** (Importar do Modrinth) na barra lateral.
+2. Selecione a aba **Import from zip** (Importar de zip) na barra lateral.
 3. Clique no botão **URL** e cole o seguinte endereço:
-   `https://github.com/renandadalte/notvanilla/raw/main/NotVanilla.mrpack`
+   `https://github.com/renandadalte/notvanilla/raw/main/NotVanilla-Bootstrap.zip`
 4. Clique em **OK** para criar a instância.
+5. **Pronto!** Ao iniciar o jogo, o `packwiz` baixará automaticamente todos os mods e manterá o pack sempre atualizado.
 
 ### 3. Configuração Global de Memória (RAM)
-Para garantir que o NotVanilla e suas futuras instâncias rodem com estabilidade e sem picos de lag (stuttering), configure a alocação de RAM globalmente no launcher:
+Para garantir que o NotVanilla rode com estabilidade e sem picos de lag (stuttering), configure a alocação de RAM globalmente no launcher:
 
 1. No Prism Launcher, clique em **Settings** (ícone de engrenagem no topo).
 2. No menu lateral, selecione **Java**.
