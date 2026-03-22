@@ -16,13 +16,17 @@ Para uma melhor experiência, recomendamos o uso do **Prism Launcher**.
 1. Acesse [prismlauncher.org](https://prismlauncher.org/download/) e baixe a versão para o seu sistema operacional.
 2. Siga as instruções de instalação padrão. O Prism Launcher detectará automaticamente o Java necessário.
 
-### 2. Adicionando o NotVanilla
+### 2. Adicionando o NotVanilla (Método Recomendado)
+O método mais rápido é importar o modpack diretamente pelo link:
+
 1. No Prism Launcher, clique em **Add Instance** (Adicionar Instância).
-2. Selecione a aba **Import from Modrinth** e escolha o arquivo `NotVanilla.mrpack` baixado deste repositório.
-3. Clique em **OK** para criar a instância.
+2. Selecione a aba **Import from Modrinth** (Importar do Modrinth) na barra lateral.
+3. Clique no botão **URL** e cole o seguinte endereço:
+   `https://github.com/renandadalte/notvanilla/raw/main/NotVanilla.mrpack`
+4. Clique em **OK** para criar a instância.
 
 ### 3. Configuração Global de Memória (RAM)
-Para o NotVanilla rodar com estabilidade e evitar picos de lag (stuttering), configure a alocação de RAM globalmente no launcher. Escolha a opção baseada na memória total do seu PC:
+Para garantir que o NotVanilla e suas futuras instâncias rodem com estabilidade e sem picos de lag (stuttering), configure a alocação de RAM globalmente no launcher:
 
 1. No Prism Launcher, clique em **Settings** (ícone de engrenagem no topo).
 2. No menu lateral, selecione **Java**.
@@ -35,7 +39,6 @@ Para o NotVanilla rodar com estabilidade e evitar picos de lag (stuttering), con
 #### Opção B: PCs com 8GB ou MENOS de RAM total
 - **Minimum memory (Mínimo):** `4096 MiB` (4GB).
 - **Maximum memory (Máximo):** `4096 MiB` (4GB).
-- *Nota: Esta configuração garante que o jogo rode bem sem travar o seu sistema operacional.*
 
 ---
 *Base 0.0.1-alpha: Otimização e Performance.*
