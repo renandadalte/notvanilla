@@ -12,9 +12,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: Create Prism Pack
         run: |
-          # Use zip directly without modifying index.toml in the workflow
-          # This keeps the index intact as it was in the repository
-          zip -r NotVanilla.zip . -i "instance.cfg" "mmc-pack.json" "pack.toml" "index.toml" "packwiz-installer-bootstrap.jar" "mods/*.pw.toml" "CHANGELOG.md" "README.md"
+          # Structure the zip for Prism Launcher correctly:
+          # instance.cfg and mmc-pack.json go to the root of the ZIP
+          # packwiz-installer-bootstrap.jar MUST go inside the minecraft/ folder
+          # so the Pre-Launch command can find it in the working directory.
+          mkdir minecraft
+          cp packwiz-installer-bootstrap.jar minecraft/
+          zip -r NotVanilla.zip instance.cfg mmc-pack.json minecraft/packwiz-installer-bootstrap.jar
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
