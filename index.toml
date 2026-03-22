@@ -10,15 +10,15 @@ hash = "285b6a696693acd29b4b08842596a1fbd408eeceed51d614a9fedc50bceae841"
 
 [[files]]
 file = "README.md"
-hash = "3faddab688163a289457224e55488c2cb7ba7325426ea5198d35c7ddb64961a6"
+hash = "fbde7c471af92a5ce1d086343b5ff0501c9d752f38ac93928f4ce00a72b30669"
 
 [[files]]
 file = "instance.cfg"
-hash = "668eef788514268fc91e7090918a319d034fe03897e00894a68695804680e2e0"
+hash = "6d34bc86b8000713652f6b5500fa416fdd8cbbbcedf2679a8541a001e9b07783"
 
 [[files]]
 file = "mmc-pack.json"
-hash = "6f278a95c0e9e30cba354df0f18ef9b8517adf4dc4eac81d0886362428096143"
+hash = "dd9e848f6be316ca33c4805106f5808d06790879a92a5929daad8c2dd9629b21"
 
 [[files]]
 file = "mods/entityculling.pw.toml"
