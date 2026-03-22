@@ -1,2 +1,5 @@
-mods/
+# Ignore only mods themselves, not their metadata
+mods/*.jar
+!mods/*.pw.toml
 *.jar
+!packwiz-installer-bootstrap.jar
