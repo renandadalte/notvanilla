@@ -1,0 +1,52 @@
+hash-format = "sha256"
+
+[[files]]
+file = "CHANGELOG.md"
+hash = "f4a3352338419db22906b61c9ee8be0de3efff6e5e21be9d1010b47399212504"
+
+[[files]]
+file = "README.md"
+hash = "8a414b599e76b8d6cc84f21f7d0376368edb77b0670263f35ceb543b8e7dfeac"
+
+[[files]]
+file = "instance.cfg"
+hash = "a716d563fc5e795820af965877b61e426b9c3c38da240502314c9a513d2a65f0"
+
+[[files]]
+file = "mmc-pack.json"
+hash = "c5df5603367c21c1c7fd9c3b8deedd2c783b50ffb454ff7247688cba5ebf144b"
+
+[[files]]
+file = "mods/entityculling.pw.toml"
+hash = "1fbcec6fae4237b80bf2becfc06fb52a49512821f402b5928b1e2533c73b3142"
+metafile = true
+
+[[files]]
+file = "mods/fabric-api.pw.toml"
+hash = "6ec22733a32cf6e59584fbf2a855e24ea2c05f46026e0799f34f34c0915c8367"
+metafile = true
+
+[[files]]
+file = "mods/ferrite-core.pw.toml"
+hash = "1d5799cd3b6ea714602c18546b99ba894e7511835b77803304792468fb7ee187"
+metafile = true
+
+[[files]]
+file = "mods/indium.pw.toml"
+hash = "5f694b0c16bfbf69b05cb28eef7a553ae548e623bc2cbccc98e01d950d3611db"
+metafile = true
+
+[[files]]
+file = "mods/lithium.pw.toml"
+hash = "23de0cbbfd28d752eb662c00a907406bac3e3ad529dd2ac250b41b4b0ef734ce"
+metafile = true
+
+[[files]]
+file = "mods/modernfix.pw.toml"
+hash = "b9651d06e56ad51c1cdcf4b03b6a34328b7dc941f263ff92b189ee26a47cc224"
+metafile = true
+
+[[files]]
+file = "mods/sodium.pw.toml"
+hash = "be0c8881821da897824770b2a71f0f3765a233eda69b295fa5b92ffe8a25014c"
+metafile = true

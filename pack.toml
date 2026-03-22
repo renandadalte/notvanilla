@@ -1,0 +1,13 @@
+name = "NotVanilla"
+author = "R4TWT"
+version = "0.0.1-alpha"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "5a9c26ea8965b8dcda594fd6d982f8374683a3c7fafeba63424a2bb424ddc546"
+
+[versions]
+fabric = "0.18.4"
+minecraft = "1.21.1"
