@@ -1,0 +1,19 @@
+name: Export Modpack
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Packwiz
+        run: |
+          wget -O packwiz.zip "https://nightly.link/packwiz/packwiz/workflows/go/main/Linux%2064-bit%20x86.zip"
+          unzip -o packwiz.zip
+          chmod +x packwiz
+      - name: Export pack
+        run: ./packwiz mmc export -o notvanilla.zip
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: notvanilla-pack
+          path: notvanilla.zip
