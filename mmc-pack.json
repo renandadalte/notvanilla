@@ -8,9 +8,14 @@
             "version": "1.21.1"
         },
         {
+            "cachedName": "Intermediary Mappings",
+            "uid": "net.fabricmc.intermediary",
+            "version": "1.21.1"
+        },
+        {
             "cachedName": "Fabric Loader",
             "uid": "net.fabricmc.fabric-loader",
-            "version": "0.18.4"
+            "version": "0.16.10"
         }
     ],
     "formatVersion": 1
