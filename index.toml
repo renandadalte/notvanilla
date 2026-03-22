@@ -14,7 +14,7 @@ hash = "fbde7c471af92a5ce1d086343b5ff0501c9d752f38ac93928f4ce00a72b30669"
 
 [[files]]
 file = "instance.cfg"
-hash = "6d34bc86b8000713652f6b5500fa416fdd8cbbbcedf2679a8541a001e9b07783"
+hash = "70e8d5ea66c0127656924c372f2c19dbd53bde7c4e3ece13bed25d577b215fba"
 
 [[files]]
 file = "mmc-pack.json"
@@ -58,3 +58,7 @@ metafile = true
 [[files]]
 file = "packwiz-installer-bootstrap.jar"
 hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"
+
+[[files]]
+file = "packwiz-installer.jar"
+hash = "c9f646908d340d84773948a9a7d98bc1dae250d35e1016dc6e2b8459760b5598"
