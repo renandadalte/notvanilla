@@ -10,12 +10,13 @@ Um modpack de Minecraft focado em **exploração profunda**, **movimentação fl
 
 ## Benchmark padrão (desenvolvimento)
 
-O pack inclui o datapack **`benchmark`** (`datapacks/benchmark/`): cenário fixo de **~60 s** em **spectator** (teleporte em linha a partir de `0 150 0`) para alinhar perfis **Spark** no servidor e no cliente.
+O pack inclui o datapack **`benchmark`** (`datapacks/benchmark/`): **1200 ticks** (~60 s) em **spectator** a partir de **`0 150 0`**, com **600 ticks** de deslocamento em **+Z** (~1,5 blocos/tick), **teleporte de volta** ao ponto inicial, e **mais 600 ticks** no mesmo eixo (segunda passagem com chunks já carregados).
 
-- **Servidor (consola):** `function benchmark:start` — inicia o cenário; termina sozinho com mensagem no chat.
-- **Spark no cliente (Fabric):** usar **`/sparkc`** (não `/spark`) — ex.: `/sparkc profiler start` / `/sparkc profiler stop` ([documentação](https://spark.lucko.me/docs/Command-Usage)).
-- **Spark no servidor (consola):** `spark profiler start` / `spark profiler stop` (sem `/` na consola dedicada).
-- **Servidor dedicado:** copie `datapacks/benchmark/` para **`<pasta-do-mundo>/datapacks/benchmark/`** (ex.: `world/datapacks/benchmark/`), não basta deixar só na raiz do servidor; depois execute **`reload`** na consola para o pack aparecer como `file/benchmark (world)`.
+- **Fluxo recomendado (um comando no servidor + cliques no chat):** `function benchmark:sync_start` na consola ou via RCON. Isto executa `spark profiler cancel`, `spark profiler start`, mostra no chat um link **clicável** para **`/sparkc profiler start`**, espera **~1 s** (`20t`) e inicia o percurso. Ao fim de **1200 ticks** chama `spark profiler stop` e outro clique para **`/sparkc profiler stop`**. **HWiNFO** fica à tua cargo (iniciar log antes do comando).
+- **Só cenário (sem Spark no datapack):** `function benchmark:start` — igual duração e geometria; para Spark, usa os comandos manualmente alinhados ao tempo.
+- **Spark no cliente (Fabric):** **`/sparkc`** ([documentação](https://spark.lucko.me/docs/Command-Usage)); no fluxo `sync_start` usa os **tellraws clicáveis** para coincidir com o servidor.
+- **Permissões:** as linhas `spark ...` nas functions exigem que o servidor aceite esses comandos no contexto de **function** (em `server.properties`, se falhar, experimenta `function-permission-level=4`).
+- **Servidor dedicado:** copia `datapacks/benchmark/` para **`<pasta-do-mundo>/datapacks/benchmark/`** e **`reload`** para aparecer `file/benchmark (world)`.
 
 Fluxo operacional detalhado (reset com seed `0`, HWiNFO, registo de resultados) está na skill local **`notvanilla-spark-benchmark`** em `~/.agents/skills/notvanilla-spark-benchmark/` (não versionada no repo).
 
