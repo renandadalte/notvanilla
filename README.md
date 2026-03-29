@@ -8,6 +8,16 @@ Um modpack de Minecraft focado em **exploração profunda**, **movimentação fl
 - **Movimentação:** Agilidade na travessia do mundo (Em breve).
 - **Performance & Debugging:** Otimizado com as melhores tecnologias Fabric para a versão 1.21.1, incluindo otimizações de rede e ferramentas para diagnóstico de performance (Spark e Observable).
 
+## Benchmark padrão (desenvolvimento)
+
+O pack inclui o datapack **`benchmark`** (`datapacks/benchmark/`): cenário fixo de **~60 s** em **spectator** (teleporte em linha a partir de `0 150 0`) para alinhar perfis **Spark** no servidor e no cliente.
+
+- **Servidor (consola):** `function benchmark:start` — inicia o cenário; termina sozinho com mensagem no chat.
+- **Spark no cliente (Fabric):** usar **`/sparkc`** (não `/spark`) — ex.: `/sparkc profiler start` / `/sparkc profiler stop` ([documentação](https://spark.lucko.me/docs/Command-Usage)).
+- **Spark no servidor (consola):** `spark profiler start` / `spark profiler stop` (sem `/` na consola dedicada).
+
+Fluxo operacional detalhado (reset com seed `0`, HWiNFO, registo de resultados) está na skill local **`notvanilla-spark-benchmark`** em `~/.agents/skills/notvanilla-spark-benchmark/` (não versionada no repo).
+
 ## 🛠️ Instalação e Configuração (Prism Launcher)
 
 Para a melhor experiência e para receber atualizações automáticas via `packwiz`, recomendamos o **Prism Launcher**.

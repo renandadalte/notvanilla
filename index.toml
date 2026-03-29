@@ -9,6 +9,10 @@ file = ".agent/README.md"
 hash = "d2649a6c9548a192779be71beaf912a9ee565010a4355a77e9a782d9fd3c511e"
 
 [[files]]
+file = ".agent/benchmark-runs.md"
+hash = "e9aee54a7d4ab9f6ff09f8157f7f2acdc9d54ed12c772f181e32f4ad2c273ba9"
+
+[[files]]
 file = ".agent/notion_ambiente_sync_notes.md"
 hash = "863736ffdc00964c01510c3d508b74ebcc5871087e846877a7510f1696e9d808"
 
@@ -34,19 +38,15 @@ hash = "3a4d5ab6dc1275cd3a188f044b48e139e0b53e7d56c9431bb5affc6226632447"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "dea95497726c84acb88fb41ce01c474cfef65645989927df21f9565f6bc0fb74"
+hash = "5ca48ac93b7c40363cab5d1548cc68295f39f3442c2a39290327a2d55c4ef811"
 
 [[files]]
 file = "README.md"
-hash = "07bf97f62f6713840e97306bd238a3bbd85be9b01e7ff873038474f55e47fe45"
+hash = "92029926feee277403a48d55ed9a8de98d31ae5b79207269eae348183e5dea47"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
 hash = "f11abd19ee0ab9292ebf8b1113755b8a2049fef69d664077f50e6d31de136a9b"
-
-[[files]]
-file = "datapacks/benchmark/data/benchmark/function/pack.mcmeta"
-hash = "1ac518a03c3e0874e15e278e6b92097f0b4abc46a4c0b1a8579500edbb858828"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/start.mcfunction"
