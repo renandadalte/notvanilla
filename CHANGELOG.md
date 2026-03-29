@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.3] - 2026-03-29
 ### Added
-- Datapack **`benchmark`**: voo spectator automatizado ~60s (`function benchmark:start` na consola do servidor) para runs repetíveis com **Spark** (cliente + servidor). Baseline de performance para comparar versões futuras do pack.
+- Datapack **`benchmark`**: cenário spectator **1200 ticks** (~60s), percurso ida → spawn → ida (warm chunks); **`function benchmark:start`** na consola/RCON. Baseline principal com **HWiNFO** (CSV); Spark fica só para diagnóstico de lag quando precisares.
 ### Changed
+- Removido fluxo `benchmark:sync_start` (Spark dentro do datapack); README alinhado ao benchmark **HWiNFO-first**.
 - `.gitignore`: `.cursor/` e `.agent/` permanecem só no ambiente local (repo = modpack + docs).
 
 ## [0.0.2] - 2026-03-22

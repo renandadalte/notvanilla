@@ -6,20 +6,24 @@ Um modpack de Minecraft focado em **exploração profunda**, **movimentação fl
 - **Exploração:** Novos biomas, estruturas e segredos (Em breve).
 - **Combate & Desafio:** IA de mobs e mecânicas dinâmicas (Em breve).
 - **Movimentação:** Agilidade na travessia do mundo (Em breve).
-- **Performance & Debugging:** Otimizado com as melhores tecnologias Fabric para a versão 1.21.1, incluindo otimizações de rede e ferramentas para diagnóstico de performance (Spark e Observable).
+- **Performance & Debugging:** Otimizado com as melhores tecnologias Fabric para a versão 1.21.1, incluindo otimizações de rede e ferramentas para diagnóstico (ex.: **Observable**). **Spark** continua no pack para **investigar lag** quando precisares — não faz parte do fluxo de benchmark rotineiro.
 
-## Benchmark padrão (desenvolvimento)
+## Benchmark padrão (desenvolvimento) — HWiNFO
 
-O pack inclui o datapack **`benchmark`** (`datapacks/benchmark/`): **1200 ticks** (~60 s) em **spectator** a partir de **`0 150 0`**, com **600 ticks** de deslocamento em **+Z** (~1,5 blocos/tick), **teleporte de volta** ao ponto inicial, e **mais 600 ticks** no mesmo eixo (segunda passagem com chunks já carregados).
+O datapack **`benchmark`** (`datapacks/benchmark/`) define um cenário **repetível** de **1200 ticks** (~60 s) em **spectator** a partir de **`0 150 0`**: **600 ticks** em **+Z** (~1,5 blocos/tick), **teleporte de volta** ao spawn, **mais 600 ticks** em +Z (segunda passagem com chunks já carregados).
 
-- **Fluxo recomendado (um comando no servidor + ação no cliente):** `function benchmark:sync_start` na consola ou RCON. Isto **só** corre Spark no **servidor**; o **cliente nunca é controlado pelo servidor**. No chat aparecem linhas **clicáveis** (`run_command` e `suggest_command`) para **`/sparkc profiler start`** — **tens de estar no jogo** e **clicar** (ou confirmar o comando sugerido) nos **~3 s** antes do voo (`60t`). Sem isso, só haverá perfil do servidor. Ao fim dos **1200 ticks** o servidor faz `spark profiler stop` e o chat pede o mesmo para **`/sparkc profiler stop`** no cliente. **HWiNFO** é manual.
-- **Não precisas de “atualizar o cliente” por causa do datapack** (o pack é só no mundo/servidor). Precisas do mod **Spark** no cliente com **`/sparkc`** e de **instância do modpack** alinhada ao servidor (versões de mods).
-- **Só cenário (sem Spark no datapack):** `function benchmark:start` — igual duração e geometria; para Spark, usa os comandos manualmente alinhados ao tempo.
-- **Spark no cliente (Fabric):** **`/sparkc`** ([documentação](https://spark.lucko.me/docs/Command-Usage)); no fluxo `sync_start` usa os **tellraws clicáveis** para coincidir com o servidor.
-- **Permissões:** as linhas `spark ...` nas functions exigem que o servidor aceite esses comandos no contexto de **function** (em `server.properties`, se falhar, experimenta `function-permission-level=4`).
-- **Servidor dedicado:** copia `datapacks/benchmark/` para **`<pasta-do-mundo>/datapacks/benchmark/`** e **`reload`** para aparecer `file/benchmark (world)`.
+**Fluxo sugerido (simples):**
 
-Fluxo operacional detalhado (reset com seed `0`, HWiNFO, registo de resultados) está na skill local **`notvanilla-spark-benchmark`** em `~/.agents/skills/notvanilla-spark-benchmark/` (não versionada no repo).
+1. **HWiNFO:** inicia o **log** (CSV) com as colunas que te interessam (CPU, GPU, RAM, FPS, etc.).
+2. **Servidor (consola ou RCON):** `function benchmark:start` — entra no mundo antes, se fores tu a voar em spectator.
+3. Espera **~60 s**; ao terminar ouves um som e uma mensagem no chat.
+4. **Para o log HWiNFO** e guarda o ficheiro com **data + versão do pack** (e notas no teu registo local, ex. `.agent/benchmark-runs.md`).
+
+**Spark (opcional, diagnóstico):** quando houver **lag** ou quiseres **flame graph**, usa **`spark` / `/sparkc`** à parte — [documentação](https://spark.lucko.me/docs/Command-Usage). Não é necessário para comparar runs só com HWiNFO.
+
+**Servidor dedicado:** copia `datapacks/benchmark/` para **`<pasta-do-mundo>/datapacks/benchmark/`** e **`reload`** para aparecer `file/benchmark (world)`.
+
+Notas de operação mais longas (seed fixa, backups de mundo) podem ficar numa skill ou checklist local; o repo mantém só o datapack e este README.
 
 ## 🛠️ Instalação e Configuração (Prism Launcher)
 

@@ -1,1 +1,0 @@
-function benchmark:start
