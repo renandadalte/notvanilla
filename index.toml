@@ -1,12 +1,76 @@
 hash-format = "sha256"
 
 [[files]]
+file = ".agent/MODPACK_CONTEXT.local.md"
+hash = "94bd34f2ca4024a3c14ea24d7c9f5211d37bcf111fef3c9d004811abd9028e74"
+
+[[files]]
+file = ".agent/README.md"
+hash = "d2649a6c9548a192779be71beaf912a9ee565010a4355a77e9a782d9fd3c511e"
+
+[[files]]
+file = ".agent/notion_ambiente_sync_notes.md"
+hash = "863736ffdc00964c01510c3d508b74ebcc5871087e846877a7510f1696e9d808"
+
+[[files]]
+file = ".agent/notvanilla_slug_side.json"
+hash = "8ca9721fe3f9818f4c1cc1f0999c2a4aebcb5bd17e68bfe26bc485e90c08fecf"
+
+[[files]]
+file = ".agent/scripts/__pycache__/generate_notvanilla_slug_side_json.cpython-313.pyc"
+hash = "7f6bbd936caa09d1847e0cbf93da482df27475cc64cdb5a3b7f017948a80041d"
+
+[[files]]
+file = ".agent/scripts/__pycache__/sync_notion_ambiente.cpython-313.pyc"
+hash = "536d3c6bbeff80c430d6326dbc2a5f11b112bd0aa5ac89513983a5cec96f17d7"
+
+[[files]]
+file = ".agent/scripts/generate_notvanilla_slug_side_json.py"
+hash = "a60047516721a263fbc9bf3b1293b321a10502f60f4cec4bfdfc01e3b90454bc"
+
+[[files]]
+file = ".agent/scripts/sync_notion_ambiente.py"
+hash = "3a4d5ab6dc1275cd3a188f044b48e139e0b53e7d56c9431bb5affc6226632447"
+
+[[files]]
 file = "CHANGELOG.md"
 hash = "dea95497726c84acb88fb41ce01c474cfef65645989927df21f9565f6bc0fb74"
 
 [[files]]
 file = "README.md"
 hash = "07bf97f62f6713840e97306bd238a3bbd85be9b01e7ff873038474f55e47fe45"
+
+[[files]]
+file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
+hash = "f11abd19ee0ab9292ebf8b1113755b8a2049fef69d664077f50e6d31de136a9b"
+
+[[files]]
+file = "datapacks/benchmark/data/benchmark/function/pack.mcmeta"
+hash = "1ac518a03c3e0874e15e278e6b92097f0b4abc46a4c0b1a8579500edbb858828"
+
+[[files]]
+file = "datapacks/benchmark/data/benchmark/function/start.mcfunction"
+hash = "be33e6470fb944f7237ffd25cc87ebfe04520ba22c382fd0518ccf2efacd5b1b"
+
+[[files]]
+file = "datapacks/benchmark/data/benchmark/function/stop.mcfunction"
+hash = "d0356c322722b1e80710de01128be83da521cdadb7e653893b0bc2ab0507af56"
+
+[[files]]
+file = "datapacks/benchmark/data/benchmark/function/tick.mcfunction"
+hash = "5be72abe659197aa550949496c3a7c91ff0a8d6e1868da2140e1ee92cd9e9c7f"
+
+[[files]]
+file = "datapacks/benchmark/data/minecraft/tags/function/load.json"
+hash = "56137d7119aca53dda53b905546ed589177b09c36fedb792f2697888adfbf1c3"
+
+[[files]]
+file = "datapacks/benchmark/data/minecraft/tags/function/tick.json"
+hash = "a0ba148645ca5bb156105e15871639bcf9209a27e6b8765e34c2721006c5ca87"
+
+[[files]]
+file = "datapacks/benchmark/pack.mcmeta"
+hash = "1ac518a03c3e0874e15e278e6b92097f0b4abc46a4c0b1a8579500edbb858828"
 
 [[files]]
 file = "instance.cfg"
