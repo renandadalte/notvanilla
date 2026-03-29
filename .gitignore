@@ -1,3 +1,7 @@
+# IDE / agent — local only; repo must stay modpack + docs (README, CHANGELOG, etc.)
+.cursor/
+.agent/
+
 # Ignore only mods themselves, not their metadata
 mods/*.jar
 !mods/*.pw.toml
