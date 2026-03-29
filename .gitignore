@@ -2,6 +2,9 @@
 .cursor/
 .agent/
 
+# Local benchmark exports (HWiNFO, Spark .sparkprofile) — machine-specific
+logs/
+
 # Ignore only mods themselves, not their metadata
 mods/*.jar
 !mods/*.pw.toml
