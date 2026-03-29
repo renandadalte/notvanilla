@@ -15,6 +15,7 @@ O pack inclui o datapack **`benchmark`** (`datapacks/benchmark/`): cenário fixo
 - **Servidor (consola):** `function benchmark:start` — inicia o cenário; termina sozinho com mensagem no chat.
 - **Spark no cliente (Fabric):** usar **`/sparkc`** (não `/spark`) — ex.: `/sparkc profiler start` / `/sparkc profiler stop` ([documentação](https://spark.lucko.me/docs/Command-Usage)).
 - **Spark no servidor (consola):** `spark profiler start` / `spark profiler stop` (sem `/` na consola dedicada).
+- **Servidor dedicado:** copie `datapacks/benchmark/` para **`<pasta-do-mundo>/datapacks/benchmark/`** (ex.: `world/datapacks/benchmark/`), não basta deixar só na raiz do servidor; depois execute **`reload`** na consola para o pack aparecer como `file/benchmark (world)`.
 
 Fluxo operacional detalhado (reset com seed `0`, HWiNFO, registo de resultados) está na skill local **`notvanilla-spark-benchmark`** em `~/.agents/skills/notvanilla-spark-benchmark/` (não versionada no repo).
 
