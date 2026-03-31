@@ -4,7 +4,7 @@
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.9-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 29 (26 + 1 + 2) | 1 | 1 |
+| `0.0.10-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 29 (26 + 1 + 2) | 1 | 1 |
 
 ## Three tables
 
@@ -98,5 +98,5 @@ Text Placeholder API ──► Mod Menu
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (26) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.9-alpha`; **Listed** 1 (ParCool!); **Discarded** 1 (**First Person Model**). Default mod configs under `config/` are shipped for client/server sync (see `docs/DEVELOPMENT.md`).
+- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (26) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.10-alpha`; **Listed** 1 (ParCool!); **Discarded** 1 (**First Person Model**). Default mod configs under `config/` are shipped for client/server sync (see `docs/DEVELOPMENT.md`). Branches **`main`** and **`dev`** match unless a change is **`dev`**-only by policy.
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`.
