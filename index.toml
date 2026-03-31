@@ -165,6 +165,11 @@ hash = "9bdd041fb29ab003ef5bb1f0ba53516847e32e3010a3fce247f743fc98e08a6b"
 metafile = true
 
 [[files]]
+file = "mods/wall-jump-txf.pw.toml"
+hash = "a7f686dc9624710ff0d3cce336e5aa6944762bc1482d4d3f0dd90e823cc69c82"
+metafile = true
+
+[[files]]
 file = "mods/yacl.pw.toml"
 hash = "6965cb5548c69e8176ed497db1306112ec54446868e154f7604cb741cbc75537"
 metafile = true
