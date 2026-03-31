@@ -1,32 +1,8 @@
 hash-format = "sha256"
 
 [[files]]
-file = ".agent/MODPACK_CONTEXT.local.md"
-hash = "d7d0d4210fc7b0ff84a711fbbb47b9029699c68d104a7d43b1a088694860550c"
-
-[[files]]
-file = ".agent/README.md"
-hash = "0fff7fdc6459ccaf3edf27fd1939744aa64c34b577f20fa29c0a1278db14ca3b"
-
-[[files]]
-file = ".agent/benchmark-runs.md"
-hash = "12e5a3d595554e2dfa8e2c914cfa25a47356aafaadc91473471f6baca68b1fa7"
-
-[[files]]
-file = ".agent/notvanilla_slug_side.json"
-hash = "8ca9721fe3f9818f4c1cc1f0999c2a4aebcb5bd17e68bfe26bc485e90c08fecf"
-
-[[files]]
-file = ".agent/scripts/generate_notvanilla_slug_side_json.py"
-hash = "9bd45f97684c0eb5b66259c97e62fc3473fb7f80909b309b3681ee1f186344a9"
-
-[[files]]
 file = "CHANGELOG.md"
-hash = "dfb3056bce3f614ec80a9983b9a893ed8c728c4808f0b3f5a6c870922b7c6207"
-
-[[files]]
-file = "README.md"
-hash = "50c4c3f555eee83c68b2d19ca9a8c0cb3479437858d16caba420e3c093e437f7"
+hash = "a3ace758565c0a069546afa19d654a81993fb41d7c2fdf69d8ae48f57432f686"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
@@ -57,32 +33,8 @@ file = "datapacks/benchmark/pack.mcmeta"
 hash = "1ac518a03c3e0874e15e278e6b92097f0b4abc46a4c0b1a8579500edbb858828"
 
 [[files]]
-file = "docs/DEVELOPMENT.md"
-hash = "9577c00e81a267ecb87e3ffee701f7bcc5537d9ae69bbe5d8b0bef57a9ef9a70"
-
-[[files]]
-file = "docs/MODS_INVENTORY.md"
-hash = "832dab55ce24bc4ddcf14cbe487c25c56045483ccd830e2b5382fbd34bae72a7"
-
-[[files]]
-file = "docs/README.md"
-hash = "2f4403791503ae69db0320b9a7b6a34d8a8f1cf1943b95c50e7a1676b50aa21a"
-
-[[files]]
 file = "instance.cfg"
 hash = "a716d563fc5e795820af965877b61e426b9c3c38da240502314c9a513d2a65f0"
-
-[[files]]
-file = "logs/202603290342/202603290342-client.sparkprofile"
-hash = "94f9489b2a52d616028a34c38378f4649c99a5881c41b04be23996c1387e2c72"
-
-[[files]]
-file = "logs/202603290342/202603290342-hwinfo.CSV"
-hash = "feeb59c0f07d144769f5b495af2c8fd823fc22f593ce9963f0db7e53030971b0"
-
-[[files]]
-file = "logs/202603290342/202603290342-server.sparkprofile"
-hash = "b5d52b87bb78c5c715e7ba5b8691ca4b6d973e86c3a1a645b41cf5cb5774bbbd"
 
 [[files]]
 file = "mmc-pack.json"
@@ -124,6 +76,11 @@ hash = "5f694b0c16bfbf69b05cb28eef7a553ae548e623bc2cbccc98e01d950d3611db"
 metafile = true
 
 [[files]]
+file = "mods/iris.pw.toml"
+hash = "5284f6d141a990f4ea021c12b851e07102f5cb22743cf7b33be6ad2eb4c8d3f5"
+metafile = true
+
+[[files]]
 file = "mods/krypton.pw.toml"
 hash = "c4e45594c8d1ab3dacc3b49142f16fb253178dd31d97cc917bf4a4d54f21e081"
 metafile = true
@@ -156,3 +113,8 @@ metafile = true
 [[files]]
 file = "packwiz-installer-bootstrap.jar"
 hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"
+
+[[files]]
+file = "shaderpacks/makeup-ultra-fast-shaders.pw.toml"
+hash = "461e40107c6b2b38ad33c7820b07b06f8dc8016611ed910ae49ecf7b073bf019"
+metafile = true

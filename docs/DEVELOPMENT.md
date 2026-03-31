@@ -5,11 +5,19 @@
 - [packwiz](https://packwiz.infra.link/) installed (`packwiz refresh`, `packwiz update`, etc.)
 - Minecraft version and Fabric loader pinned in `pack.toml` (see `[versions]`)
 
+## `.packwizignore` vs `.gitignore`
+
+**`packwiz refresh`** adds every file under the pack root to **`index.toml`**, except paths matched by **`.packwizignore`**. The packwiz installer then downloads **each indexed file** from your hosted pack URL (e.g. GitHub Pages).
+
+- **`.gitignore`** only affects git — it does **not** stop packwiz from indexing those paths.
+- Local folders like **`.agent/`** and **`logs/`** must appear in **`.packwizignore`** too, or clients will get **404** (those files are never pushed to GitHub).
+- Dev-only trees such as **`docs/`** can be ignored in the pack index if you do not want them copied into every player instance; they remain in the repo for GitHub.
+
 ## Changing the mod set
 
-1. Add, remove, or edit files under `mods/*.pw.toml` (and optional `optional/` / disabled layouts if you adopt them later).
+1. Add, remove, or edit files under `mods/*.pw.toml` and `shaderpacks/*.pw.toml` (and optional `optional/` / disabled layouts if you adopt them later).
 2. Run **`packwiz refresh`** from the repository root so `index.toml` hashes match the tree.
-3. Update **`docs/MODS_INVENTORY.md`** in the same change set: **Active** rows ↔ `mods/*.pw.toml`; adjust **Listed** / **Discarded** if the conversation moves mods between backlog and shipped.
+3. Update **`docs/MODS_INVENTORY.md`** in the same change set: **Active** rows ↔ `mods/*.pw.toml` and `shaderpacks/*.pw.toml`; adjust **Listed** / **Discarded** if the conversation moves entries between backlog and shipped.
 4. Update **`CHANGELOG.md`** when the change is user-visible (new mod, removal, fix).
 5. Follow deploy rules in `~/.agents/context/NOTVANILLA_MODPACK.md` for dedicated server alignment (never push without explicit confirmation in chat).
 
@@ -22,5 +30,5 @@
 ## Quality checks before merge
 
 - [ ] `packwiz refresh` run; `index.toml` committed if it changed.
-- [ ] `docs/MODS_INVENTORY.md` — **Active** row count matches `mods/*.pw.toml`.
+- [ ] `docs/MODS_INVENTORY.md` — **Active** row count matches `mods/*.pw.toml` plus `shaderpacks/*.pw.toml`.
 - [ ] `CHANGELOG.md` updated if players care about the change.

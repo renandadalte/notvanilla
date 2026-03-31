@@ -1,16 +1,16 @@
 # Mod inventory (reference)
 
-**Canonical technical list** for the NotVanilla pack. **Truth for binaries and versions** lives in `pack.toml`, `index.toml`, and `mods/*.pw.toml`. The **Active mods** table is **reconciled** with those files whenever the mod set changes.
+**Canonical technical list** for the NotVanilla pack. **Truth for binaries and versions** lives in `pack.toml`, `index.toml`, `mods/*.pw.toml`, and `shaderpacks/*.pw.toml`. The **Active mods** table is **reconciled** with those manifests whenever the mod or shader set changes.
 
-| Pack version | Minecraft | Fabric loader | Active (`.pw.toml`) | Listed | Discarded |
+| Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.3-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 13 | 0 | 0 |
+| `0.0.4-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 15 (14 + 1) | 0 | 0 |
 
 ## Three tables
 
 | Table | Meaning |
 | --- | --- |
-| **Active mods** | Shipped in the repo: one row per `mods/*.pw.toml`. |
+| **Active mods** | Shipped in the repo: one row per `mods/*.pw.toml` **and** `shaderpacks/*.pw.toml`. |
 | **Listed mods** | Under evaluation or planned; **not** in packwiz yet (watchlist / backlog). |
 | **Discarded mods** | Explicitly rejected or removed from the pack; kept for audit (include date and reason in **Notes**). |
 
@@ -21,7 +21,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Column | Meaning |
 | --- | --- |
 | **Mod** | Display name (matches `name` in `.pw.toml` for active rows when possible). |
-| **Page** | Primary project page (e.g. Modrinth `https://modrinth.com/mod/<slug>`). |
+| **Page** | Primary project page (Modrinth `https://modrinth.com/mod/<slug>` or `https://modrinth.com/shader/<slug>`). |
 | **Categories** | Functional tags: Optimization, Rendering, Library, Networking, Diagnostics, QoL, World Gen, Content, etc. |
 | **Environment** | For **active**: from packwiz `side` (`client`, `server`, `both`). For **listed**/**discarded**: intended or last-known side. |
 | **Priority** | Pack policy: `very high` → `very low`. |
@@ -43,16 +43,18 @@ Same columns in all three tables (no **Status** column — the section implies s
 | FerriteCore | [modrinth.com/mod/ferrite-core](https://modrinth.com/mod/ferrite-core) | Optimization | both | high | — | — | — | Memory footprint reductions for models/collections. |
 | ImmediatelyFast | [modrinth.com/mod/immediatelyfast](https://modrinth.com/mod/immediatelyfast) | Optimization, Rendering | client | high | — | — | — | Client-side immediate-mode rendering optimizations. |
 | Indium | [modrinth.com/mod/indium](https://modrinth.com/mod/indium) | Library, Rendering | client | high | Sodium | — | — | Compatibility layer when using Sodium with Fabric Rendering API consumers. |
+| Iris Shaders | [modrinth.com/mod/iris](https://modrinth.com/mod/iris) | Rendering, Shaders | client | high | Sodium | — | — | Shader loader paired with Sodium; enable packs under **Video Settings → Shader Packs**. |
 | Krypton | [modrinth.com/mod/krypton](https://modrinth.com/mod/krypton) | Optimization, Networking | both | medium | — | — | Rare proxy/pipeline interactions | Micro-optimizes Minecraft networking; validate on your host if using unusual proxies. |
 | Lithium | [modrinth.com/mod/lithium](https://modrinth.com/mod/lithium) | Optimization | both | very high | — | — | — | Server/game logic optimizations without changing vanilla mechanics. |
+| MakeUp - Ultra Fast | [modrinth.com/shader/makeup-ultra-fast-shaders](https://modrinth.com/shader/makeup-ultra-fast-shaders) | Shaders | client | high | Iris Shaders | — | — | Baseline **lightweight** shader (v9.4c); strong quality/perf ratio—lower settings inside the shader if FPS dips. Ships as `shaderpacks/*.pw.toml`. |
 | ModernFix | [modrinth.com/mod/modernfix](https://modrinth.com/mod/modernfix) | Optimization | both | very high | — | — | — | Broad startup/memory/perf improvements. |
 | Observable | [modrinth.com/mod/observable](https://modrinth.com/mod/observable) | Diagnostics | both | medium | Architectury API, Fabric Language Kotlin | — | — | Profiling/inspection tooling; align with pack debugging goals. |
-| Sodium | [modrinth.com/mod/sodium](https://modrinth.com/mod/sodium) | Optimization, Rendering | client | very high | — | Indium | — | Client rendering engine; pair with Indium when mods need FRAPI. |
+| Sodium | [modrinth.com/mod/sodium](https://modrinth.com/mod/sodium) | Optimization, Rendering | client | very high | — | Indium, Iris Shaders | — | Client rendering engine; pair with Indium when mods need FRAPI; required by Iris. |
 | spark | [modrinth.com/mod/spark](https://modrinth.com/mod/spark) | Diagnostics | both | medium | — | — | — | Profiling (`/spark`, `/sparkc`); diagnostic, not part of routine benchmark flow per README. |
 
 ## Listed mods
 
-Candidates or planned additions **without** a `mods/*.pw.toml` yet. When one ships, move the row to **Active mods** and remove it from here.
+Candidates or planned additions **without** a `mods/*.pw.toml` or `shaderpacks/*.pw.toml` yet. When one ships, move the row to **Active mods** and remove it from here.
 
 | Mod | Page | Categories | Environment | Priority | Dependencies | Dependents | Incompatibilities | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -71,11 +73,12 @@ Removed from the pack or rejected after evaluation. Do not delete rows casually;
 ```text
 Fabric API ─────────────────────────► (all Fabric mods)
 Sodium ──► Indium
+Sodium ──► Iris Shaders ──► shader packs (e.g. MakeUp - Ultra Fast)
 Architectury API ──┐
 Fabric Language Kotlin ──┴──► Observable
 ```
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (13 files), `pack.toml` `0.0.3-alpha`; **Listed** / **Discarded** counts updated manually.
-- After every mod manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`.
+- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (14) + `shaderpacks/*.pw.toml` (1), `pack.toml` `0.0.4-alpha`; **Listed** / **Discarded** counts updated manually.
+- After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml` and `shaderpacks/*.pw.toml`.

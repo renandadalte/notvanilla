@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.4] - 2026-03-31
+### Added
+- **Iris Shaders** (cliente): carregador de shaders sobre **Sodium** para Minecraft 1.21.1.
+- **MakeUp - Ultra Fast** v9.4c como shader **base** do pack (leve, boa qualidade visual, perfis ajustáveis para poupar FPS). Entregue via `shaderpacks/` no packwiz.
+### Fixed
+- **`.packwizignore`:** `.agent/`, `logs/`, `docs/` e `README.md` deixam de entrar no `index.toml`. O instalador packwiz já não tenta baixar ficheiros que não existem no GitHub Pages (evita **404** em `.agent/*`, logs de benchmark, etc.). *`.gitignore` não afeta o índice — só o `.packwizignore`.*
+
 ## [0.0.3] - 2026-03-29
 ### Added
 - Datapack **`benchmark`**: cenário spectator **1200 ticks** (~60s), percurso ida → spawn → ida (warm chunks); **`function benchmark:start`** na consola/RCON. Baseline principal com **HWiNFO** (CSV); Spark fica só para diagnóstico de lag quando precisares.

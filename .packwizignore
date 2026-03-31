@@ -3,3 +3,13 @@
 packwiz
 *.zip
 *.mrpack
+
+# Local / dev-only — same idea as .gitignore: never ship these to clients via the packwiz index
+.agent/
+logs/
+
+# Dev documentation in repo; not required to run the game (avoids extra downloads on install)
+docs/
+
+# Repo readme; GitHub Pages often does not mirror this path like raw git — excluding avoids installer 404s
+README.md

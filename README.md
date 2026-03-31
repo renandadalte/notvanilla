@@ -7,6 +7,7 @@ Um modpack de Minecraft focado em **exploração profunda**, **movimentação fl
 - **Combate & Desafio:** IA de mobs e mecânicas dinâmicas (Em breve).
 - **Movimentação:** Agilidade na travessia do mundo (Em breve).
 - **Performance & Debugging:** Otimizado com as melhores tecnologias Fabric para a versão 1.21.1, incluindo otimizações de rede e ferramentas para diagnóstico (ex.: **Observable**). **Spark** continua no pack para **investigar lag** quando precisares — não faz parte do fluxo de benchmark rotineiro.
+- **Gráficos (cliente):** **Iris** + **Sodium** e o shader base **MakeUp - Ultra Fast** (pacote leve com boa relação qualidade/desempenho). No jogo: **Opções de vídeo → Pacotes de shader** — ativa o pack e, se o FPS cair, reduz perfis/opções *dentro* das definições do shader (o pack é pensado para ser ajustável em máquinas modestas).
 
 ## Benchmark padrão (desenvolvimento) — HWiNFO
 
