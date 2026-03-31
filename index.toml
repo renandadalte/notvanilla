@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "27a2a14ffd543a43d502d3dfbcbbd3644ecb9b0f12f4fd040a8f0241f947239d"
+hash = "72d0ba29be59f316b36e4b76ac059fbae1c1991f1d938d967bb062059c15c9eb"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
@@ -82,11 +82,6 @@ metafile = true
 [[files]]
 file = "mods/ferrite-core.pw.toml"
 hash = "1d5799cd3b6ea714602c18546b99ba894e7511835b77803304792468fb7ee187"
-metafile = true
-
-[[files]]
-file = "mods/first-person-model.pw.toml"
-hash = "965c332cacfa6d3f55d5e7eb1734623ac7c67d021a3798917e0dae44841ffbda"
 metafile = true
 
 [[files]]

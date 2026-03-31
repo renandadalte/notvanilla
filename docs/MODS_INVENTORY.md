@@ -4,7 +4,7 @@
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.7-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 30 (27 + 1 + 2) | 1 | 0 |
+| `0.0.8-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 29 (26 + 1 + 2) | 1 | 1 |
 
 ## Three tables
 
@@ -44,7 +44,6 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Fabric API | [modrinth.com/mod/fabric-api](https://modrinth.com/mod/fabric-api) | Library, Core | both | very high | — | (Fabric ecosystem) | — | Required baseline for almost all Fabric mods. |
 | Fabric Language Kotlin | [modrinth.com/mod/fabric-language-kotlin](https://modrinth.com/mod/fabric-language-kotlin) | Library | both | high | — | Observable | — | Kotlin language adapter; needed by Kotlin mods. |
 | FerriteCore | [modrinth.com/mod/ferrite-core](https://modrinth.com/mod/ferrite-core) | Optimization | both | high | — | — | — | Memory footprint reductions for models/collections. |
-| First Person Model | [modrinth.com/mod/first-person-model](https://modrinth.com/mod/first-person-model) | Animation, Rendering | client | medium | Fabric API, Not Enough Animations | — | — | Shows player body in first person; pair order with NEA on client. |
 | Fresh Animations | [modrinth.com/resourcepack/fresh-animations](https://modrinth.com/resourcepack/fresh-animations) | Resource pack, Animation | client | medium | — | Fresh Animations: Player Extension | — | Base FA pack (v1.10.4 in manifest); ships as `resourcepacks/*.pw.toml`. In **Resource Packs**, place **Fresh Animations: Player Extension** **above** this entry (higher = wins overrides). |
 | Fresh Animations: Player Extension | [modrinth.com/resourcepack/fa-player-extension](https://modrinth.com/resourcepack/fa-player-extension) | Resource pack, Animation | client | medium | Fresh Animations (in-pack) | — | — | Player animations in FA style; depends on **Fresh Animations** base in this pack. Ships as `resourcepacks/*.pw.toml`. |
 | ImmediatelyFast | [modrinth.com/mod/immediatelyfast](https://modrinth.com/mod/immediatelyfast) | Optimization, Rendering | client | high | — | — | — | Client-side immediate-mode rendering optimizations. |
@@ -56,11 +55,11 @@ Same columns in all three tables (no **Status** column — the section implies s
 | MakeUp - Ultra Fast | [modrinth.com/shader/makeup-ultra-fast-shaders](https://modrinth.com/shader/makeup-ultra-fast-shaders) | Shaders | client | high | Iris Shaders | — | — | Baseline **lightweight** shader (v9.4c); strong quality/perf ratio—lower settings inside the shader if FPS dips. Ships as `shaderpacks/*.pw.toml`. |
 | Mod Menu | [modrinth.com/mod/modmenu](https://modrinth.com/mod/modmenu) | QoL, UI | client | high | Fabric API, Text Placeholder API | — | — | In-game mod list; entry points to config screens where mods register them. |
 | ModernFix | [modrinth.com/mod/modernfix](https://modrinth.com/mod/modernfix) | Optimization | both | very high | — | — | — | Broad startup/memory/perf improvements. |
-| Not Enough Animations | [modrinth.com/mod/not-enough-animations](https://modrinth.com/mod/not-enough-animations) | Animation | client | medium | — | First Person Model | — | Extra player/item animations; **required** by First Person Model. |
+| Not Enough Animations | [modrinth.com/mod/not-enough-animations](https://modrinth.com/mod/not-enough-animations) | Animation | client | medium | — | — | — | Extra player/item animations; complements **Real Camera** first-person body and FA packs. |
 | Observable | [modrinth.com/mod/observable](https://modrinth.com/mod/observable) | Diagnostics | both | medium | Architectury API, Fabric Language Kotlin | — | — | Profiling/inspection tooling; align with pack debugging goals. |
 | Omnidirectional Movement | [modrinth.com/mod/omnidirectional-movement](https://modrinth.com/mod/omnidirectional-movement) | Movement | both | medium | — | — | — | Strafe-style movement; **server + client** for multiplayer. |
 | Player Animator | [modrinth.com/mod/playeranimator](https://modrinth.com/mod/playeranimator) | Library, Animation | both | high | — | Better Combat | — | Animation library for Better Combat and similar mods. |
-| Real Camera | [modrinth.com/mod/real-camera](https://modrinth.com/mod/real-camera) | Camera | client | medium | Fabric API | — | Overlaps Leawind / Smooth F5 | Inertia-style camera; **dev** pairing with Leawind—reduce duplicate effects in config if needed. |
+| Real Camera | [modrinth.com/mod/real-camera](https://modrinth.com/mod/real-camera) | Camera | client | medium | Fabric API | — | Overlaps Leawind / Smooth F5 | First-person body + camera rig; preferred over **First Person Model** for **Better Combat** stability—tune leg/camera overlap in mod config if needed. |
 | Text Placeholder API | [modrinth.com/mod/placeholder-api](https://modrinth.com/mod/placeholder-api) | Library | both | high | — | Mod Menu | — | Required by **Mod Menu**; useful for mods that expose placeholder-driven text. |
 | Sodium | [modrinth.com/mod/sodium](https://modrinth.com/mod/sodium) | Optimization, Rendering | client | very high | — | Indium, Iris Shaders | — | Client rendering engine; pair with Indium when mods need FRAPI; required by Iris. |
 | spark | [modrinth.com/mod/spark](https://modrinth.com/mod/spark) | Diagnostics | both | medium | — | — | — | Profiling (`/spark`, `/sparkc`); diagnostic, not part of routine benchmark flow per README. |
@@ -81,7 +80,7 @@ Removed from the pack or rejected after evaluation. Do not delete rows casually;
 
 | Mod | Page | Categories | Environment | Priority | Dependencies | Dependents | Incompatibilities | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| — | — | — | — | — | — | — | — | *No entries yet. Remove this row when recording the first discarded mod.* |
+| First Person Model | [modrinth.com/mod/first-person-model](https://modrinth.com/mod/first-person-model) | Animation, Rendering | client | medium | Fabric API, Not Enough Animations | — | — | Removed **2026-03-31**: redundant with **Real Camera** (better FP stack); fewer glitches with **Better Combat**. **NEA** kept for other animations. |
 
 ## Dependency sketch (in-pack)
 
@@ -91,7 +90,6 @@ Sodium ──► Indium
 Sodium ──► Iris Shaders ──► shader packs (e.g. MakeUp - Ultra Fast)
 Architectury API ──┬──► Leawind's Third Person
 Fabric Language Kotlin ──┴──► Observable
-Not Enough Animations ──► First Person Model
 Cloth Config API ──┐
 Player Animator ───┴──► Better Combat
 Fresh Animations ──► Fresh Animations: Player Extension
@@ -100,5 +98,5 @@ Text Placeholder API ──► Mod Menu
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (27) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.7-alpha`; **Listed** 1 (ParCool!); **Discarded** 0.
+- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (26) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.8-alpha`; **Listed** 1 (ParCool!); **Discarded** 1 (**First Person Model**).
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`.

@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.8-alpha] - 2026-03-31
+### Removed
+- **First Person Model**: **Real Camera** cobre o corpo em primeira pessoa com menos conflitos com **Better Combat**; **Not Enough Animations** mantém-se para outras poses. Configs de servidor/cliente a incorporar no repo ficam pendentes (envio separado).
+
 ## [0.0.7-alpha] - 2026-03-31
 ### Removed
 - **Wall-Jump TXF** do branch **`main`** (produção leve); no **`dev`** o mod **mantém-se** para testes de parkour e o servidor de testes segue alinhado ao `dev`.
@@ -18,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Mod Menu** + **Text Placeholder API** (dependência): lista de mods no jogo e atalhos para ecrãs de configuração quando os mods os expõem.
 - **Yet Another Config Lib (YACL)**: biblioteca de UIs de configuração para mods que usam YACL (complementa **Cloth Config** no pack).
 - **Wall-Jump TXF** (**só `dev`**): salto em parede / double jump / salto em fences; **cliente e servidor**.
-- **Branch `dev` — movimento/câmera/combate:** Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, First Person Model, Player Animator, Cloth Config API, Better Combat (mods `both` no servidor).
+- **Branch `dev` — movimento/câmera/combate:** Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, Player Animator, Cloth Config API, Better Combat (mods `both` no servidor). *First Person Model foi removido em `0.0.8-alpha`.*
 - **Resource packs** em `resourcepacks/`: [Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) (base v1.10.4) e [Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) — na lista do jogo, ativar **ambos** com a **extensão acima** da base (maior prioridade).
 ### Notes
 - **ParCool!** não entrou: no Modrinth não há release **Fabric** para `1.21.1` (apenas NeoForge/Forge nas versões recentes). Permanece em **Listed** em `docs/MODS_INVENTORY.md` para reavaliação futura.
