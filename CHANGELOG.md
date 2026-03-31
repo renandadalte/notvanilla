@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.5-alpha] - 2026-03-31
+### Added
+- **Mod Menu** + **Text Placeholder API** (dependência): lista de mods no jogo e atalhos para ecrãs de configuração quando os mods os expõem.
+- **Yet Another Config Lib (YACL)**: biblioteca de UIs de configuração para mods que usam YACL (complementa **Cloth Config** em mods que já o usam).
+- **Wall-Jump TXF**: salto em parede / double jump / salto em fences; **cliente e servidor**.
+
 ## [0.0.4] - 2026-03-31
 ### Added
 - **Iris Shaders** (cliente): carregador de shaders sobre **Sodium** para Minecraft 1.21.1.
