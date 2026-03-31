@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "72d0ba29be59f316b36e4b76ac059fbae1c1991f1d938d967bb062059c15c9eb"
+hash = "219daa94838adc0e27b1d3c55ddbafe9710816f2df21662f6d3e83214f1f6523"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
@@ -162,11 +162,6 @@ metafile = true
 [[files]]
 file = "mods/spark.pw.toml"
 hash = "9bdd041fb29ab003ef5bb1f0ba53516847e32e3010a3fce247f743fc98e08a6b"
-metafile = true
-
-[[files]]
-file = "mods/wall-jump-txf.pw.toml"
-hash = "a7f686dc9624710ff0d3cce336e5aa6944762bc1482d4d3f0dd90e823cc69c82"
 metafile = true
 
 [[files]]

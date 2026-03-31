@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.0.8-alpha] - 2026-03-31
+### Added
+- **`main` alinhado ao stack movimento/câmera/combate do `dev`** (exceto parkour): Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, Player Animator, Cloth Config API, Better Combat; resource packs **Fresh Animations** + **FA Player Extension** em `resourcepacks/`.
 ### Removed
 - **First Person Model**: **Real Camera** cobre o corpo em primeira pessoa com menos conflitos com **Better Combat**; **Not Enough Animations** mantém-se para outras poses. Configs de servidor/cliente a incorporar no repo ficam pendentes (envio separado).
+- **Wall-Jump TXF** em **`main`**: continua **só no branch `dev`** e no servidor de testes; produção leve sem parkour.
 
 ## [0.0.7-alpha] - 2026-03-31
 ### Removed
