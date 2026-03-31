@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "f6e7b58f808ca8a1931776c7a4ddbc8f7a2f9959218e65a9396c6713e39fbbd0"
+hash = "27a2a14ffd543a43d502d3dfbcbbd3644ecb9b0f12f4fd040a8f0241f947239d"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
