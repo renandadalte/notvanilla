@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.10-alpha] - 2026-03-31
+### Changed
+- **`config/`:** atualização dos defaults (ex.: **Iris**, **Fabric** indigo, **Wall-Jump**); nova limpeza para **só** ficheiros dos mods listados em `mods/*.pw.toml` (remove lixo de outras instâncias).
+### Notes
+- Fim da sprint do stack movimento/câmera/combate; **`dev`** alinhado com **`main`** após este release.
+
 ## [0.0.9-alpha] - 2026-03-31
 ### Added
 - **Wall-Jump TXF** de volta ao **`main`**: faz parte do stack de **movimento + combate** com o resto do pack (o único mod removido do stack continua a ser **First Person Model**).

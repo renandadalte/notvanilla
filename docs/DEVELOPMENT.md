@@ -72,7 +72,7 @@ No PC onde está o Prism (pode ser diferente do servidor de git): para a instân
 
 ## Default mod configs (`config/`)
 
-From **`0.0.9-alpha`**, the repo ships a **`config/`** tree so packwiz can **sync the same defaults** to Prism instances and to the dedicated server (only files for **mods that are actually in the pack**).
+From **`0.0.9-alpha`** onward, the repo ships a **`config/`** tree so packwiz can **sync the same defaults** to Prism instances and to the dedicated server (only files for **mods that are actually in the pack**).
 
 - When you paste configs from another modpack or instance, **prune** anything that does not belong to a mod listed in `mods/*.pw.toml` before committing (avoids noise and wrong assumptions).
 - **`config/sodium-fingerprint.json`** is **per machine** — it is **gitignored** and listed in **`.packwizignore`** so it is not indexed for clients.
