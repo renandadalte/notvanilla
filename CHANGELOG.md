@@ -5,12 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.9-alpha] - 2026-03-31
+### Added
+- **Wall-Jump TXF** de volta ao **`main`**: faz parte do stack de **movimento + combate** com o resto do pack (o único mod removido do stack continua a ser **First Person Model**).
+- Pasta **`config/`** no repositório: defaults dos **mods ativos** apenas (limpeza de configs de outros modpacks); packwiz passa a sincronizar estes ficheiros com clientes/servidor. Ver `docs/DEVELOPMENT.md`.
+### Changed
+- **`.packwizignore` / `.gitignore`:** ignorar `config/sodium-fingerprint.json` e pastas temporárias do Spark sob `config/spark/`.
+
 ## [0.0.8-alpha] - 2026-03-31
 ### Added
 - **`main` alinhado ao stack movimento/câmera/combate do `dev`** (exceto parkour): Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, Player Animator, Cloth Config API, Better Combat; resource packs **Fresh Animations** + **FA Player Extension** em `resourcepacks/`.
 ### Removed
 - **First Person Model**: **Real Camera** cobre o corpo em primeira pessoa com menos conflitos com **Better Combat**; **Not Enough Animations** mantém-se para outras poses. Configs de servidor/cliente a incorporar no repo ficam pendentes (envio separado).
-- **Wall-Jump TXF** em **`main`**: continua **só no branch `dev`** e no servidor de testes; produção leve sem parkour.
+- **Wall-Jump TXF** em **`main`**: nesta versão foi omitido em **`main`** em favor de produção mais leve; **revertido em `0.0.9-alpha`** (Wall-Jump volta ao stack completo em **`main`**).
 
 ## [0.0.7-alpha] - 2026-03-31
 ### Removed

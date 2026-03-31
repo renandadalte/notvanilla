@@ -4,7 +4,7 @@
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.8-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 28 (25 + 1 + 2) | 1 | 1 |
+| `0.0.9-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 29 (26 + 1 + 2) | 1 | 1 |
 
 ## Three tables
 
@@ -37,7 +37,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Mod | Page | Categories | Environment | Priority | Dependencies | Dependents | Incompatibilities | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Architectury API | [modrinth.com/mod/architectury-api](https://modrinth.com/mod/architectury-api) | Library | both | high | — | Leawind's Third Person, Observable | — | Cross-loader abstraction; required by Leawind's Third Person. |
-| Better Combat | [modrinth.com/mod/better-combat](https://modrinth.com/mod/better-combat) | Combat, Animation | both | medium | Fabric API, Cloth Config API, Player Animator | — | — | Animated melee; **dev** test stack; server needs same JAR for multiplayer. |
+| Better Combat | [modrinth.com/mod/better-combat](https://modrinth.com/mod/better-combat) | Combat, Animation | both | medium | Fabric API, Cloth Config API, Player Animator | — | — | Animated melee; **server + client** need the same JAR for multiplayer. |
 | Cloth Config API | [modrinth.com/mod/cloth-config](https://modrinth.com/mod/cloth-config) | Library, UI | both | high | — | Better Combat | — | Cloth config screens; **Better Combat** depends on it; baseline with **Mod Menu** + **YACL**. |
 | Countered's Smooth F5 | [modrinth.com/mod/countereds-smooth-f5](https://modrinth.com/mod/countereds-smooth-f5) | Camera, QoL | client | medium | — | — | — | Smooth camera transition when toggling third person. |
 | Entity Culling | [modrinth.com/mod/entityculling](https://modrinth.com/mod/entityculling) | Optimization, Rendering | client | high | — | — | — | Reduces entity render work client-side. |
@@ -50,7 +50,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Indium | [modrinth.com/mod/indium](https://modrinth.com/mod/indium) | Library, Rendering | client | high | Sodium | — | — | Compatibility layer when using Sodium with Fabric Rendering API consumers. |
 | Iris Shaders | [modrinth.com/mod/iris](https://modrinth.com/mod/iris) | Rendering, Shaders | client | high | Sodium | — | — | Shader loader paired with Sodium; enable packs under **Video Settings → Shader Packs**. |
 | Krypton | [modrinth.com/mod/krypton](https://modrinth.com/mod/krypton) | Optimization, Networking | both | medium | — | — | Rare proxy/pipeline interactions | Micro-optimizes Minecraft networking; validate on your host if using unusual proxies. |
-| Leawind's Third Person | [modrinth.com/mod/leawind-third-person](https://modrinth.com/mod/leawind-third-person) | Camera, Utility | client | medium | Fabric API, Architectury API | — | Overlaps other camera mods | Chosen **third-person** stack for **dev**; tune crosshair offset vs Real Camera. |
+| Leawind's Third Person | [modrinth.com/mod/leawind-third-person](https://modrinth.com/mod/leawind-third-person) | Camera, Utility | client | medium | Fabric API, Architectury API | — | Overlaps other camera mods | Pack **third-person** stack; tune crosshair offset vs **Real Camera**. |
 | Lithium | [modrinth.com/mod/lithium](https://modrinth.com/mod/lithium) | Optimization | both | very high | — | — | — | Server/game logic optimizations without changing vanilla mechanics. |
 | MakeUp - Ultra Fast | [modrinth.com/shader/makeup-ultra-fast-shaders](https://modrinth.com/shader/makeup-ultra-fast-shaders) | Shaders | client | high | Iris Shaders | — | — | Baseline **lightweight** shader (v9.4c); strong quality/perf ratio—lower settings inside the shader if FPS dips. Ships as `shaderpacks/*.pw.toml`. |
 | Mod Menu | [modrinth.com/mod/modmenu](https://modrinth.com/mod/modmenu) | QoL, UI | client | high | Fabric API, Text Placeholder API | — | — | In-game mod list; entry points to config screens where mods register them. |
@@ -59,10 +59,11 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Observable | [modrinth.com/mod/observable](https://modrinth.com/mod/observable) | Diagnostics | both | medium | Architectury API, Fabric Language Kotlin | — | — | Profiling/inspection tooling; align with pack debugging goals. |
 | Omnidirectional Movement | [modrinth.com/mod/omnidirectional-movement](https://modrinth.com/mod/omnidirectional-movement) | Movement | both | medium | — | — | — | Strafe-style movement; **server + client** for multiplayer. |
 | Player Animator | [modrinth.com/mod/playeranimator](https://modrinth.com/mod/playeranimator) | Library, Animation | both | high | — | Better Combat | — | Animation library for Better Combat and similar mods. |
-| Real Camera | [modrinth.com/mod/real-camera](https://modrinth.com/mod/real-camera) | Camera | client | medium | Fabric API | — | Overlaps Leawind / Smooth F5 | First-person body + camera rig; preferred over **First Person Model** for **Better Combat** stability—tune leg/camera overlap in mod config if needed. |
+| Real Camera | [modrinth.com/mod/real-camera](https://modrinth.com/mod/real-camera) | Camera | client | medium | Fabric API | — | Overlaps Leawind / Smooth F5 | First-person body + camera rig; preferred over **First Person Model** for **Better Combat** stability—tune leg/camera overlap in mod config if needed. Default `config/realcamera.json` ships with the pack. |
 | Text Placeholder API | [modrinth.com/mod/placeholder-api](https://modrinth.com/mod/placeholder-api) | Library | both | high | — | Mod Menu | — | Required by **Mod Menu**; useful for mods that expose placeholder-driven text. |
 | Sodium | [modrinth.com/mod/sodium](https://modrinth.com/mod/sodium) | Optimization, Rendering | client | very high | — | Indium, Iris Shaders | — | Client rendering engine; pair with Indium when mods need FRAPI; required by Iris. |
 | spark | [modrinth.com/mod/spark](https://modrinth.com/mod/spark) | Diagnostics | both | medium | — | — | — | Profiling (`/spark`, `/sparkc`); diagnostic, not part of routine benchmark flow per README. |
+| Wall-Jump TXF | [modrinth.com/mod/wall-jump-txf](https://modrinth.com/mod/wall-jump-txf) | Movement, Gameplay | both | medium | — | — | — | Wall jump, double jump, fence jump; **client + server** for multiplayer. Default `config/walljump.json` ships with the pack. |
 | Yet Another Config Lib | [modrinth.com/mod/yacl](https://modrinth.com/mod/yacl) | Library, UI | both | high | Fabric API | — | — | Config GUI for mods that use YACL; complements **Cloth Config API** in this pack. |
 
 ## Listed mods
@@ -97,5 +98,5 @@ Text Placeholder API ──► Mod Menu
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (25) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.8-alpha`; **Listed** 1 (ParCool!); **Discarded** 1 (**First Person Model**). **Wall-Jump TXF** ships only on branch **`dev`** (see `CHANGELOG`).
+- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (26) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.9-alpha`; **Listed** 1 (ParCool!); **Discarded** 1 (**First Person Model**). Default mod configs under `config/` are shipped for client/server sync (see `docs/DEVELOPMENT.md`).
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`.

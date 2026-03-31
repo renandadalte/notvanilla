@@ -70,13 +70,22 @@ No PC onde está o Prism (pode ser diferente do servidor de git): para a instân
 - Local folders like **`.agent/`** and **`logs/`** must appear in **`.packwizignore`** too, or clients will get **404** (those files are never pushed to GitHub).
 - Dev-only trees such as **`docs/`** can be ignored in the pack index if you do not want them copied into every player instance; they remain in the repo for GitHub.
 
+## Default mod configs (`config/`)
+
+From **`0.0.9-alpha`**, the repo ships a **`config/`** tree so packwiz can **sync the same defaults** to Prism instances and to the dedicated server (only files for **mods that are actually in the pack**).
+
+- When you paste configs from another modpack or instance, **prune** anything that does not belong to a mod listed in `mods/*.pw.toml` before committing (avoids noise and wrong assumptions).
+- **`config/sodium-fingerprint.json`** is **per machine** — it is **gitignored** and listed in **`.packwizignore`** so it is not indexed for clients.
+- **`config/spark/tmp/`** and **`config/spark/tmp-client/`** are runtime profiler noise — keep them out of git (`.packwizignore` covers them if they appear locally).
+
 ## Changing the mod set
 
 1. Add, remove, or edit files under `mods/*.pw.toml` and `shaderpacks/*.pw.toml` (and optional `optional/` / disabled layouts if you adopt them later).
 2. Run **`packwiz refresh`** from the repository root so `index.toml` hashes match the tree.
 3. Update **`docs/MODS_INVENTORY.md`** in the same change set: **Active** rows ↔ `mods/*.pw.toml` and `shaderpacks/*.pw.toml`; adjust **Listed** / **Discarded** if the conversation moves entries between backlog and shipped.
 4. Update **`CHANGELOG.md`** when the change is user-visible (new mod, removal, fix).
-5. Follow deploy rules in `~/.agents/context/NOTVANILLA_MODPACK.md` for dedicated server alignment (never push without explicit confirmation in chat).
+5. If a shipped mod writes defaults you want everyone to share, add or update the matching paths under **`config/`** and re-run **`packwiz refresh`**.
+6. Follow deploy rules in `~/.agents/context/NOTVANILLA_MODPACK.md` for dedicated server alignment (never push without explicit confirmation in chat).
 
 ## Conventions
 
@@ -89,3 +98,4 @@ No PC onde está o Prism (pode ser diferente do servidor de git): para a instân
 - [ ] `packwiz refresh` run; `index.toml` committed if it changed.
 - [ ] `docs/MODS_INVENTORY.md` — **Active** row count matches `mods/*.pw.toml` plus `shaderpacks/*.pw.toml`.
 - [ ] `CHANGELOG.md` updated if players care about the change.
+- [ ] If **`config/`** changed: only mods **in the pack**; no `sodium-fingerprint.json` or Spark `tmp*` trees in git; **`grep`** `index.toml` for stray paths (e.g. old mod names) after refresh.
