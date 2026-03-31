@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "de006cc9f043a9130a10421be96d05b1ce7591ccfa614f99cc0dd6ac34cbb6af"
+hash = "c62ad0366259019b7d6c3616aa8a6e54d5c529083f246d925cf1baab583f9d49"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
@@ -125,6 +125,11 @@ hash = "b9651d06e56ad51c1cdcf4b03b6a34328b7dc941f263ff92b189ee26a47cc224"
 metafile = true
 
 [[files]]
+file = "mods/modmenu.pw.toml"
+hash = "4a33f888af603e0859359f44b068854e4148d4fba35ee0818bb977171236a805"
+metafile = true
+
+[[files]]
 file = "mods/not-enough-animations.pw.toml"
 hash = "734d064d94f184b42c5c9fe8c9a4dc01a5a54ce9c9a7865d974aa0ac809d04b8"
 metafile = true
@@ -137,6 +142,11 @@ metafile = true
 [[files]]
 file = "mods/omnidirectional-movement.pw.toml"
 hash = "16375f409bea3e0a1a5fdfa1283b8b6fc0d9522daa336bc39a726e4969e67f74"
+metafile = true
+
+[[files]]
+file = "mods/placeholder-api.pw.toml"
+hash = "2e2c1b47b513663871e71c89a699c66ac9fcc97633f007ed064ce4410f220f5a"
 metafile = true
 
 [[files]]
@@ -157,6 +167,16 @@ metafile = true
 [[files]]
 file = "mods/spark.pw.toml"
 hash = "9bdd041fb29ab003ef5bb1f0ba53516847e32e3010a3fce247f743fc98e08a6b"
+metafile = true
+
+[[files]]
+file = "mods/wall-jump-txf.pw.toml"
+hash = "a7f686dc9624710ff0d3cce336e5aa6944762bc1482d4d3f0dd90e823cc69c82"
+metafile = true
+
+[[files]]
+file = "mods/yacl.pw.toml"
+hash = "6965cb5548c69e8176ed497db1306112ec54446868e154f7604cb741cbc75537"
 metafile = true
 
 [[files]]

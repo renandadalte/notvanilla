@@ -4,7 +4,7 @@
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.5-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 26 (23 + 1 + 2) | 1 | 0 |
+| `0.0.5-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 30 (27 + 1 + 2) | 1 | 0 |
 
 ## Three tables
 
@@ -54,14 +54,18 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Leawind's Third Person | [modrinth.com/mod/leawind-third-person](https://modrinth.com/mod/leawind-third-person) | Camera, Utility | client | medium | Fabric API, Architectury API | — | Overlaps other camera mods | Chosen **third-person** stack for **dev**; tune crosshair offset vs Real Camera. |
 | Lithium | [modrinth.com/mod/lithium](https://modrinth.com/mod/lithium) | Optimization | both | very high | — | — | — | Server/game logic optimizations without changing vanilla mechanics. |
 | MakeUp - Ultra Fast | [modrinth.com/shader/makeup-ultra-fast-shaders](https://modrinth.com/shader/makeup-ultra-fast-shaders) | Shaders | client | high | Iris Shaders | — | — | Baseline **lightweight** shader (v9.4c); strong quality/perf ratio—lower settings inside the shader if FPS dips. Ships as `shaderpacks/*.pw.toml`. |
+| Mod Menu | [modrinth.com/mod/modmenu](https://modrinth.com/mod/modmenu) | QoL, UI | client | high | Fabric API, Text Placeholder API | — | — | In-game mod list; entry points to config screens where mods register them. |
 | ModernFix | [modrinth.com/mod/modernfix](https://modrinth.com/mod/modernfix) | Optimization | both | very high | — | — | — | Broad startup/memory/perf improvements. |
 | Not Enough Animations | [modrinth.com/mod/not-enough-animations](https://modrinth.com/mod/not-enough-animations) | Animation | client | medium | — | First Person Model | — | Extra player/item animations; **required** by First Person Model. |
 | Observable | [modrinth.com/mod/observable](https://modrinth.com/mod/observable) | Diagnostics | both | medium | Architectury API, Fabric Language Kotlin | — | — | Profiling/inspection tooling; align with pack debugging goals. |
 | Omnidirectional Movement | [modrinth.com/mod/omnidirectional-movement](https://modrinth.com/mod/omnidirectional-movement) | Movement | both | medium | — | — | — | Strafe-style movement; **server + client** for multiplayer. |
 | Player Animator | [modrinth.com/mod/playeranimator](https://modrinth.com/mod/playeranimator) | Library, Animation | both | high | — | Better Combat | — | Animation library for Better Combat and similar mods. |
 | Real Camera | [modrinth.com/mod/real-camera](https://modrinth.com/mod/real-camera) | Camera | client | medium | Fabric API | — | Overlaps Leawind / Smooth F5 | Inertia-style camera; **dev** pairing with Leawind—reduce duplicate effects in config if needed. |
+| Text Placeholder API | [modrinth.com/mod/placeholder-api](https://modrinth.com/mod/placeholder-api) | Library | both | high | — | Mod Menu | — | Required by **Mod Menu**; useful for mods that expose placeholder-driven text. |
 | Sodium | [modrinth.com/mod/sodium](https://modrinth.com/mod/sodium) | Optimization, Rendering | client | very high | — | Indium, Iris Shaders | — | Client rendering engine; pair with Indium when mods need FRAPI; required by Iris. |
 | spark | [modrinth.com/mod/spark](https://modrinth.com/mod/spark) | Diagnostics | both | medium | — | — | — | Profiling (`/spark`, `/sparkc`); diagnostic, not part of routine benchmark flow per README. |
+| Wall-Jump TXF | [modrinth.com/mod/wall-jump-txf](https://modrinth.com/mod/wall-jump-txf) | Movement, Gameplay | both | medium | — | — | — | Wall jump, double jump, fence jump; **client + server** for multiplayer. |
+| Yet Another Config Lib | [modrinth.com/mod/yacl](https://modrinth.com/mod/yacl) | Library, UI | both | high | Fabric API | — | — | Config GUI library for mods that use YACL; complements **Cloth Config API** in this pack. |
 
 ## Listed mods
 
@@ -91,9 +95,10 @@ Not Enough Animations ──► First Person Model
 Cloth Config API ──┐
 Player Animator ───┴──► Better Combat
 Fresh Animations ──► Fresh Animations: Player Extension
+Text Placeholder API ──► Mod Menu
 ```
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (23) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.5-alpha`; **Listed** 1 (ParCool!); **Discarded** 0.
+- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (27) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.5-alpha`; **Listed** 1 (ParCool!); **Discarded** 0.
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`.

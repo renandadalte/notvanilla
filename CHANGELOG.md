@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.5-alpha] - 2026-03-31
 ### Added
-- **Branch `dev` — experiência movimento/câmera/combate (Fabric 1.21.1):** Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, First Person Model, Player Animator, Cloth Config API, Better Combat (cliente + servidor para mods `both`).
+- **Mod Menu** + **Text Placeholder API** (dependência): lista de mods no jogo e atalhos para ecrãs de configuração quando os mods os expõem.
+- **Yet Another Config Lib (YACL)**: biblioteca de UIs de configuração para mods que usam YACL (complementa **Cloth Config** no pack).
+- **Wall-Jump TXF**: salto em parede / double jump / salto em fences; **cliente e servidor**.
+- **Branch `dev` — movimento/câmera/combate:** Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, First Person Model, Player Animator, Cloth Config API, Better Combat (mods `both` no servidor).
 - **Resource packs** em `resourcepacks/`: [Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) (base v1.10.4) e [Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) — na lista do jogo, ativar **ambos** com a **extensão acima** da base (maior prioridade).
 ### Notes
 - **ParCool!** não entrou: no Modrinth não há release **Fabric** para `1.21.1` (apenas NeoForge/Forge nas versões recentes). Permanece em **Listed** em `docs/MODS_INVENTORY.md` para reavaliação futura.
