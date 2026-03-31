@@ -4,7 +4,7 @@
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.5-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 19 (18 + 1) | 0 | 0 |
+| `0.0.6-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 20 (19 + 1) | 0 | 0 |
 
 ## Three tables
 
@@ -37,6 +37,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Mod | Page | Categories | Environment | Priority | Dependencies | Dependents | Incompatibilities | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Architectury API | [modrinth.com/mod/architectury-api](https://modrinth.com/mod/architectury-api) | Library | both | high | — | Observable | — | Cross-loader abstraction; keep if any dependent mod remains. |
+| Cloth Config API | [modrinth.com/mod/cloth-config](https://modrinth.com/mod/cloth-config) | Library, UI | both | high | — | — | — | Config GUI for mods using **Cloth**; baseline with **Mod Menu** + **YACL** for in-game settings. |
 | Entity Culling | [modrinth.com/mod/entityculling](https://modrinth.com/mod/entityculling) | Optimization, Rendering | client | high | — | — | — | Reduces entity render work client-side. |
 | Fabric API | [modrinth.com/mod/fabric-api](https://modrinth.com/mod/fabric-api) | Library, Core | both | very high | — | (Fabric ecosystem) | — | Required baseline for almost all Fabric mods. |
 | Fabric Language Kotlin | [modrinth.com/mod/fabric-language-kotlin](https://modrinth.com/mod/fabric-language-kotlin) | Library | both | high | — | Observable | — | Kotlin language adapter; needed by Kotlin mods. |
@@ -54,7 +55,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Sodium | [modrinth.com/mod/sodium](https://modrinth.com/mod/sodium) | Optimization, Rendering | client | very high | — | Indium, Iris Shaders | — | Client rendering engine; pair with Indium when mods need FRAPI; required by Iris. |
 | spark | [modrinth.com/mod/spark](https://modrinth.com/mod/spark) | Diagnostics | both | medium | — | — | — | Profiling (`/spark`, `/sparkc`); diagnostic, not part of routine benchmark flow per README. |
 | Wall-Jump TXF | [modrinth.com/mod/wall-jump-txf](https://modrinth.com/mod/wall-jump-txf) | Movement, Gameplay | both | medium | — | — | — | Wall jump, double jump, fence jump; **client + server** for multiplayer. |
-| Yet Another Config Lib | [modrinth.com/mod/yacl](https://modrinth.com/mod/yacl) | Library, UI | both | high | Fabric API | — | — | Config GUI library for mods that use YACL (complements **Cloth Config** when present on other branches). |
+| Yet Another Config Lib | [modrinth.com/mod/yacl](https://modrinth.com/mod/yacl) | Library, UI | both | high | Fabric API | — | — | Config GUI for mods that use YACL; complements **Cloth Config API** in this pack. |
 
 ## Listed mods
 
@@ -81,9 +82,10 @@ Sodium ──► Iris Shaders ──► shader packs (e.g. MakeUp - Ultra Fast)
 Architectury API ──┐
 Fabric Language Kotlin ──┴──► Observable
 Text Placeholder API ──► Mod Menu
+Cloth Config API ──► (mods using Cloth config screens)
 ```
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (18) + `shaderpacks/*.pw.toml` (1), `pack.toml` `0.0.5-alpha`; **Listed** / **Discarded** counts updated manually.
+- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (19) + `shaderpacks/*.pw.toml` (1), `pack.toml` `0.0.6-alpha`; **Listed** / **Discarded** counts updated manually.
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml` and `shaderpacks/*.pw.toml`.

@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "fb130c5b76b8b2a388c879bbf8fecdd9fb72d3e5775a0003f8ca11090bf9bf01"
+hash = "f56116fd8991006f2164e8848ba588d032ba8f5875efbdc5aa24b9a80751b62c"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
@@ -47,6 +47,11 @@ hash = "c5df5603367c21c1c7fd9c3b8deedd2c783b50ffb454ff7247688cba5ebf144b"
 [[files]]
 file = "mods/architectury-api.pw.toml"
 hash = "1102440dd2533ba3a154419bb95ff1f81b858201eb0c44d2a2eea486c74e565a"
+metafile = true
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "446c173c87b7908daee86b0dee89c6b628c77beb7a0bc091ff5252b7c0062080"
 metafile = true
 
 [[files]]
