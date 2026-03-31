@@ -2,7 +2,99 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "219daa94838adc0e27b1d3c55ddbafe9710816f2df21662f6d3e83214f1f6523"
+hash = "d62af084a17be571958c06d56b555688f6818766b9bd6caac5e4eb0f56f3404e"
+
+[[files]]
+file = "config/bettercombat/client.json5"
+hash = "5be8014bed59c60a7f1b47c0570895008976c2005f8f5c54753f964aa83d21b1"
+
+[[files]]
+file = "config/bettercombat/fallback_compatibility.json"
+hash = "754feb4474a3f4d9fe6bd08f38c248fd5a796ed51f38d7d5704680250f3a34ca"
+
+[[files]]
+file = "config/bettercombat/server.json5"
+hash = "b4d8fd935d23f528a177e95c8a45be52fa5f3e4cd2671802be1f44c80aef724a"
+
+[[files]]
+file = "config/bettercombat/weapon_trails.json"
+hash = "fd14cc025b6d6c54bc2ddff136f0298c0ba132dbe98c2c9c845b47b8286fc45c"
+
+[[files]]
+file = "config/entityculling.json"
+hash = "ceb5b3624c3269bef037b2914da8ab0d1c368abdd466156292a5d82db8803b0e"
+
+[[files]]
+file = "config/fabric/indigo-renderer.properties"
+hash = "7c2312d06ec2d796807426ac978a3e2d465f281c4a477d5586c32dbc96942ec1"
+
+[[files]]
+file = "config/ferritecore.mixin.properties"
+hash = "bdd54ad580fc678a117e4f559daaed5ebbe0dde176127ddb95dd2d5e5b4e4818"
+
+[[files]]
+file = "config/immediatelyfast.json"
+hash = "a6c9d147a51c9e432c5c74c00285cfc5ba8b6fa4a0c6686051a7168b158d0d7a"
+
+[[files]]
+file = "config/iris-excluded.json"
+hash = "4d3264b58c502afaeca3f44e8d2db0843c54b8ba957afd21a2d450fe10dafefb"
+
+[[files]]
+file = "config/iris.properties"
+hash = "d23243c8f52fedccb257bd3561a6b225c077c6848ce720ffcd9180b67a169ec1"
+
+[[files]]
+file = "config/leawind_third_person.json"
+hash = "56e347ad8134b9e70e7507fd715fc52cf95786469d34ca551a5d4a99bbbe1e36"
+
+[[files]]
+file = "config/lithium.properties"
+hash = "6cf6f83720071fd1657c8e79b357caf68d40f410ae123e5f922483eb1d1d25be"
+
+[[files]]
+file = "config/modernfix-mixins.properties"
+hash = "5d638483a8b6ce35fcba87578edc963515b6d9d4aa3fa53191e43b9dfd2eabe5"
+
+[[files]]
+file = "config/modmenu.json"
+hash = "16d20c40cc6c114faff5493b561873fe160a65047720bc19fb3a3dd64aa67f3b"
+
+[[files]]
+file = "config/notenoughanimations.json"
+hash = "e48edb85862cd3b5e9e333d3cf6f0b2e18519cc99898dd4a3b3561f6f500ec47"
+
+[[files]]
+file = "config/observable.json"
+hash = "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+
+[[files]]
+file = "config/realcamera.json"
+hash = "0468c8505e289b8320d00c1fbab3150546a11db316dba31180011a379ee9e8f4"
+
+[[files]]
+file = "config/sodium-mixins.properties"
+hash = "b627c4456e6fa0bc4b5f85e2f1cd949faedae3cb9afdaf2a5f52e6f3b6ae1f01"
+
+[[files]]
+file = "config/sodium-options.json"
+hash = "00c7dd465e12693baeb0f9844848eb087f627d98827df51111b080af462d7d73"
+
+[[files]]
+file = "config/spark/activity.json"
+hash = "3794b1fac625d1a72e104610690e61fc6719fd83edf596da9afba4517752cfc9"
+
+[[files]]
+file = "config/spark/config.json"
+hash = "992ba9f3a4a7ce3de112eb95575328956fdc3ce6781c455ebce7b23db7e7da42"
+
+[[files]]
+file = "config/walljump.json"
+hash = "82ed5ede25398d147648c923b4d9333924259796cc469dcca217bffb102b0f19"
+
+[[files]]
+file = "config/yacl.json5"
+hash = "121b93764159be6fb7dab523b29a844e2bb78400ce8c48f52135a097e9b0006e"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"

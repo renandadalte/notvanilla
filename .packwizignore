@@ -13,3 +13,10 @@ docs/
 
 # Repo readme; GitHub Pages often does not mirror this path like raw git — excluding avoids installer 404s
 README.md
+
+# Client-local Sodium fingerprint (regenerated per machine; do not ship)
+config/sodium-fingerprint.json
+
+# Spark profiler temp folders (runtime noise)
+config/spark/tmp/
+config/spark/tmp-client/
