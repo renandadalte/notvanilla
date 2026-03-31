@@ -5,6 +5,63 @@
 - [packwiz](https://packwiz.infra.link/) installed (`packwiz refresh`, `packwiz update`, etc.)
 - Minecraft version and Fabric loader pinned in `pack.toml` (see `[versions]`)
 
+## Prism Launcher — produção (`main`) vs desenvolvimento (`dev`)
+
+Sim: podes ter **duas instâncias** no Prism, ambas com o mesmo fluxo packwiz (bootstrap + `pack.toml` no GitHub), mas cada uma segue um **branch** diferente. Os jogadores em produção continuam só a puxar **`main`**; tu testas em **`dev`** sem alterar o URL que eles usam.
+
+### Ideia
+
+| Instância | Branch no URL | Uso |
+| --- | --- | --- |
+| **NotVanilla** (produção) | `main` | Alinhado ao que releases / README apontam; mesmo que a maioria dos clientes. |
+| **NotVanilla Dev** | `dev` | Mods experimentais, pins novos, quebras temporárias — `packwiz refresh` + push para `dev`. |
+
+O instalador packwiz resolve `index.toml` e o resto dos ficheiros relativamente ao URL do `pack.toml`. Com **raw GitHub** basta trocar o segmento do branch.
+
+**Produção (atual padrão do repo):**
+
+```text
+https://raw.githubusercontent.com/renandadalte/notvanilla/main/pack.toml
+```
+
+**Desenvolvimento:**
+
+```text
+https://raw.githubusercontent.com/renandadalte/notvanilla/dev/pack.toml
+```
+
+### Ficheiros de referência no repo
+
+| Ficheiro | Branch no URL packwiz |
+| --- | --- |
+| [`instance.cfg`](../instance.cfg) | `main` (produção / mesma linha que a maioria dos jogadores) |
+| [`instance.dev.cfg`](../instance.dev.cfg) | `dev` (testes no teu PC de jogo ou noutra máquina na rede) |
+
+No PC onde está o Prism (pode ser diferente do servidor de git): para a instância **Dev**, usa o conteúdo de **`instance.dev.cfg`** — ou copia o ficheiro para a pasta dessa instância **com o nome `instance.cfg`**, ou cola só a linha **`PreLaunchCommand`** nas definições da instância (**Edit instance → Custom commands**). O fluxo é o **mesmo** que com `main`: cada **Play** corre o bootstrap e sincroniza com o `pack.toml` desse branch no GitHub.
+
+**Raw (outro PC na rede, sem clonar o repo):**
+
+- `https://raw.githubusercontent.com/renandadalte/notvanilla/main/instance.cfg`
+- `https://raw.githubusercontent.com/renandadalte/notvanilla/dev/instance.dev.cfg` — requer o branch **`dev`** no GitHub; o mesmo ficheiro costuma existir em `main` também para referência.
+
+### Passos no Prism (resumo)
+
+1. **Produção:** mantém [`instance.cfg`](../instance.cfg) (URL `.../main/pack.toml`).
+2. **Dev:** duplica a instância (**Copy Instance**), abre **Edit instance → Custom commands** e define o **Pre-launch command** igual ao de [`instance.dev.cfg`](../instance.dev.cfg) (URL `.../dev/pack.toml`). Ajusta **nome** da instância para `NotVanilla Dev` (opcional, só organização).
+3. Garante que o branch **`dev`** existe no GitHub (`git push -u origin dev` a partir de `main` quando ainda não existir); sem isso o URL `.../dev/pack.toml` devolve **404**.
+4. Cada instância tem a **sua pasta** → mundos e configs **isolados**.
+
+### Fluxo de git sugerido
+
+- Trabalho arriscado ou WIP: commits em **`dev`**; abre só a instância Dev no Prism.
+- Quando estiver estável: **merge** `dev` → `main` (ou PR), atualiza **CHANGELOG** / versão em `pack.toml` se for release visível.
+- Quem usa só `main` (zip de release ou URL fixo) **nunca** vê o `dev` até merges.
+
+### Alternativas (quando faz sentido)
+
+- **Um só branch + instância local sem URL remota:** clona o repo, corre `packwiz` na pasta e aponta o Prism para essa instância manualmente — bom para quem edita o pack o dia todo, **mau** para “igual ao jogador” porque deixa de espelhar o download HTTP.
+- **`packwiz serve` em localhost:** útil para testar o índice antes de push; para jogar no dia a dia, as **duas instâncias + raw `main`/`dev`** costumam ser mais simples.
+
 ## `.packwizignore` vs `.gitignore`
 
 **`packwiz refresh`** adds every file under the pack root to **`index.toml`**, except paths matched by **`.packwizignore`**. The packwiz installer then downloads **each indexed file** from your hosted pack URL (e.g. GitHub Pages).

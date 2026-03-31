@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **MakeUp - Ultra Fast** v9.4c como shader **base** do pack (leve, boa qualidade visual, perfis ajustáveis para poupar FPS). Entregue via `shaderpacks/` no packwiz.
 ### Fixed
 - **`.packwizignore`:** `.agent/`, `logs/`, `docs/` e `README.md` deixam de entrar no `index.toml`. O instalador packwiz já não tenta baixar ficheiros que não existem no GitHub Pages (evita **404** em `.agent/*`, logs de benchmark, etc.). *`.gitignore` não afeta o índice — só o `.packwizignore`.*
+### Added
+- **`instance.dev.cfg`:** modelo Prism com **Pre-launch** para `https://raw.githubusercontent.com/renandadalte/notvanilla/dev/pack.toml` — mesma lógica que `instance.cfg`/`main`, para instância de testes noutro PC; documentado em `docs/DEVELOPMENT.md` e README.
 
 ## [0.0.3] - 2026-03-29
 ### Added

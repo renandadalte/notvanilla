@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "a3ace758565c0a069546afa19d654a81993fb41d7c2fdf69d8ae48f57432f686"
+hash = "fb130c5b76b8b2a388c879bbf8fecdd9fb72d3e5775a0003f8ca11090bf9bf01"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
@@ -35,6 +35,10 @@ hash = "1ac518a03c3e0874e15e278e6b92097f0b4abc46a4c0b1a8579500edbb858828"
 [[files]]
 file = "instance.cfg"
 hash = "a716d563fc5e795820af965877b61e426b9c3c38da240502314c9a513d2a65f0"
+
+[[files]]
+file = "instance.dev.cfg"
+hash = "5ae785eff5b9c4768424573af21a5c4f498a02e87bbae4c2ca412038d85e2c9c"
 
 [[files]]
 file = "mmc-pack.json"
