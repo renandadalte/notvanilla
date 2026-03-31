@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "fb130c5b76b8b2a388c879bbf8fecdd9fb72d3e5775a0003f8ca11090bf9bf01"
+hash = "de006cc9f043a9130a10421be96d05b1ce7591ccfa614f99cc0dd6ac34cbb6af"
 
 [[files]]
 file = "datapacks/benchmark/data/benchmark/function/init.mcfunction"
@@ -50,6 +50,21 @@ hash = "1102440dd2533ba3a154419bb95ff1f81b858201eb0c44d2a2eea486c74e565a"
 metafile = true
 
 [[files]]
+file = "mods/better-combat.pw.toml"
+hash = "33311798d6896aeba3f00fd1ffc57874263232ae0cdc656cd5f12057911bbbce"
+metafile = true
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "446c173c87b7908daee86b0dee89c6b628c77beb7a0bc091ff5252b7c0062080"
+metafile = true
+
+[[files]]
+file = "mods/countereds-smooth-f5.pw.toml"
+hash = "79a6ee8bdb74a38d8009be6b7e30bb3a16a3bfcb042cf8655aeadc321b363f41"
+metafile = true
+
+[[files]]
 file = "mods/entityculling.pw.toml"
 hash = "1fbcec6fae4237b80bf2becfc06fb52a49512821f402b5928b1e2533c73b3142"
 metafile = true
@@ -67,6 +82,11 @@ metafile = true
 [[files]]
 file = "mods/ferrite-core.pw.toml"
 hash = "1d5799cd3b6ea714602c18546b99ba894e7511835b77803304792468fb7ee187"
+metafile = true
+
+[[files]]
+file = "mods/first-person-model.pw.toml"
+hash = "965c332cacfa6d3f55d5e7eb1734623ac7c67d021a3798917e0dae44841ffbda"
 metafile = true
 
 [[files]]
@@ -90,6 +110,11 @@ hash = "c4e45594c8d1ab3dacc3b49142f16fb253178dd31d97cc917bf4a4d54f21e081"
 metafile = true
 
 [[files]]
+file = "mods/leawind-third-person.pw.toml"
+hash = "3201189536dfcdc12ff15ddc52fd9c63f015ec648b9a56fe31a6193dd8f36165"
+metafile = true
+
+[[files]]
 file = "mods/lithium.pw.toml"
 hash = "23de0cbbfd28d752eb662c00a907406bac3e3ad529dd2ac250b41b4b0ef734ce"
 metafile = true
@@ -100,8 +125,28 @@ hash = "b9651d06e56ad51c1cdcf4b03b6a34328b7dc941f263ff92b189ee26a47cc224"
 metafile = true
 
 [[files]]
+file = "mods/not-enough-animations.pw.toml"
+hash = "734d064d94f184b42c5c9fe8c9a4dc01a5a54ce9c9a7865d974aa0ac809d04b8"
+metafile = true
+
+[[files]]
 file = "mods/observable.pw.toml"
 hash = "44f1ed305b7a592bb399132cd9790ef0c78123d9ffd3306f2e08a7d1f1c11252"
+metafile = true
+
+[[files]]
+file = "mods/omnidirectional-movement.pw.toml"
+hash = "16375f409bea3e0a1a5fdfa1283b8b6fc0d9522daa336bc39a726e4969e67f74"
+metafile = true
+
+[[files]]
+file = "mods/playeranimator.pw.toml"
+hash = "da01464e170c06fec03e205d495a285c48f38cbcefbd35a43ee96730f9cad770"
+metafile = true
+
+[[files]]
+file = "mods/real-camera.pw.toml"
+hash = "584398a3eaa8bbc430764ccf96dd045858dc012aa3d1a69a825f9633633bcec7"
 metafile = true
 
 [[files]]
@@ -117,6 +162,16 @@ metafile = true
 [[files]]
 file = "packwiz-installer-bootstrap.jar"
 hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"
+
+[[files]]
+file = "resourcepacks/fa-player-extension.pw.toml"
+hash = "ac7bbfdc56a8e16d5c900db5b94f41497526cd7546f4d751dd17aa604c064578"
+metafile = true
+
+[[files]]
+file = "resourcepacks/fresh-animations.pw.toml"
+hash = "6a1556a0e4fcb411b33efafc3382b4abd9a6e671f140dc0d42e9aad2808e24f3"
+metafile = true
 
 [[files]]
 file = "shaderpacks/makeup-ultra-fast-shaders.pw.toml"

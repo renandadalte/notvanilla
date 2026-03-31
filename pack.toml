@@ -1,12 +1,12 @@
 name = "NotVanilla"
 author = "R4TWT"
-version = "0.0.4-alpha"
+version = "0.0.5-alpha"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "5593782709161608ab259926c6142945c55826b3602d0250f4915b1216963174"
+hash = "6b537dcd796ead91412fd5e484b18f59de15eed751056a64bc751d7ac8d186a2"
 
 [versions]
 fabric = "0.18.4"

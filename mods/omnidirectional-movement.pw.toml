@@ -1,0 +1,13 @@
+name = "Omnidirectional Movement"
+filename = "omni-1.1-OVERHAUL+1.21.1-fabric.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/FK8ma0OQ/versions/BS5qHzHN/omni-1.1-OVERHAUL%2B1.21.1-fabric.jar"
+hash-format = "sha512"
+hash = "78990c51c91659b8b6ffc4593ddad1d4ba6d0022c21c3c7db83c068958f307c34683d60e1ee74563f36693196b9079e223514ddb6bf8e41c0e37efc064f3ff18"
+
+[update]
+[update.modrinth]
+mod-id = "FK8ma0OQ"
+version = "BS5qHzHN"

@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.5-alpha] - 2026-03-31
+### Added
+- **Branch `dev` — experiência movimento/câmera/combate (Fabric 1.21.1):** Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, First Person Model, Player Animator, Cloth Config API, Better Combat (cliente + servidor para mods `both`).
+- **Resource packs** em `resourcepacks/`: [Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) (base v1.10.4) e [Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) — na lista do jogo, ativar **ambos** com a **extensão acima** da base (maior prioridade).
+### Notes
+- **ParCool!** não entrou: no Modrinth não há release **Fabric** para `1.21.1` (apenas NeoForge/Forge nas versões recentes). Permanece em **Listed** em `docs/MODS_INVENTORY.md` para reavaliação futura.
+
 ## [0.0.4] - 2026-03-31
 ### Added
 - **Iris Shaders** (cliente): carregador de shaders sobre **Sodium** para Minecraft 1.21.1.

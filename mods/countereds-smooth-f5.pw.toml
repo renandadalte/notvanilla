@@ -1,0 +1,13 @@
+name = "Countered's Smooth F5"
+filename = "smooth_f5-fabric-1.0.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/eSO2d8oJ/versions/VQ6Fh12V/smooth_f5-fabric-1.0.1.jar"
+hash-format = "sha512"
+hash = "dad8660e5922b0a983ae1d401e935bd0cd348fbe7232c6d72b464a5ec367abfe39a28b399c0bd3a24e7c88ecb58b890cce90677658f9ab4493c7fdd992f3d3b2"
+
+[update]
+[update.modrinth]
+mod-id = "eSO2d8oJ"
+version = "VQ6Fh12V"

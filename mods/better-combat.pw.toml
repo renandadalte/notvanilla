@@ -1,0 +1,13 @@
+name = "Better Combat"
+filename = "bettercombat-fabric-2.3.2+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/5sy6g3kz/versions/nsxmEb8y/bettercombat-fabric-2.3.2%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "ce397016bff5a69615d1eebab8d81b9c1458b7189d6855348df93f4960ca2509d8b672aec5ae64350e78c957055ffd7e442c890e0fee28c3965a7b7e3c7c4e6f"
+
+[update]
+[update.modrinth]
+mod-id = "5sy6g3kz"
+version = "nsxmEb8y"
