@@ -2,6 +2,8 @@
 
 **Canonical technical list** for the NotVanilla pack. **Truth for binaries and versions** lives in `pack.toml`, `index.toml`, `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`. The **Active mods** table is **reconciled** with those manifests whenever the mod or shader set changes.
 
+For a test-oriented grouping of the same pack into operational bundles, see [MOD_MODULES.md](./MOD_MODULES.md). This file stays alphabetical and canonical; the module map is for scoped testing and maintenance.
+
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
 | `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 78 (75 + 1 + 2) | 1 | 2 |

@@ -46,6 +46,7 @@ Se preferir, também dá para duplicar a instância principal no Prism e trocar 
 
 - [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md): manutenção do pack, fluxo `main`/`dev`, packwiz, publicação e deploy.
 - [docs/MODS_INVENTORY.md](docs/MODS_INVENTORY.md): inventário do que está no pack, backlog e mods descartados.
+- [docs/MOD_MODULES.md](docs/MOD_MODULES.md): agrupamento dos mods em módulos para testes e ajustes por feature.
 - [CHANGELOG.md](CHANGELOG.md): histórico voltado para mudanças visíveis para quem joga.
 
 ## Requisitos rápidos

@@ -99,6 +99,15 @@ python3 scripts/audit_repo_surface.py
 4. Atualize `docs/MODS_INVENTORY.md`.
 5. No fluxo rápido do `dev`, atualize docs técnicas e contexto quando necessário, mas deixe `CHANGELOG.md`, `README.md` e versão para as promoções de `main` ou para tarefas explicitamente voltadas à documentação pública.
 
+## Trabalho por módulos
+
+Use [MOD_MODULES.md](./MOD_MODULES.md) para decidir escopo de teste quando a mudança tocar apenas uma parte do pack.
+
+- Se a alteração ficar em um módulo, rode o smoke test desse módulo e, se necessário, o módulo-base do qual ele depende.
+- Se a mudança atingir uma biblioteca compartilhada, teste também os módulos consumidores.
+- Se a mudança tocar visual, câmera ou combate, revise o módulo vizinho que mais costuma romper junto.
+- Se a mudança for só em docs ou contexto, o mapa de módulos serve como referência, mas não exige um teste do client inteiro.
+
 ## Política de configs versionadas
 
 Nem toda config versionada deve se comportar como verdade central do pack.
