@@ -67,7 +67,7 @@ No PC onde está o Prism (pode ser diferente do servidor de git): para a instân
 **`packwiz refresh`** adds every file under the pack root to **`index.toml`**, except paths matched by **`.packwizignore`**. The packwiz installer then downloads **each indexed file** from your hosted pack URL (e.g. GitHub Pages).
 
 - **`.gitignore`** only affects git — it does **not** stop packwiz from indexing those paths.
-- Local folders like **`.agent/`** and **`logs/`** must appear in **`.packwizignore`** too, or clients will get **404** (those files are never pushed to GitHub).
+- Local folders like **`.agent/`**, **`.cursor/`** (Cursor IDE), and **`logs/`** must appear in **`.packwizignore`** too, or clients will get **404** (those files are never pushed to GitHub).
 - Dev-only trees such as **`docs/`** can be ignored in the pack index if you do not want them copied into every player instance; they remain in the repo for GitHub.
 
 ## Default mod configs (`config/`)

@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.0.11-alpha] - 2026-03-31
+### Fixed
+- **Packwiz installer 404:** `.cursor/` (IDE) was indexed but never on GitHub — added to **`.packwizignore`** and removed from **`index.toml`**.
 ### Added
 - Large **QoL / utilities** wave: **JEI**, **Jade**, HUD/UX (**Better Advancements**, **Better Statistics Screen** + **TCDCommons API**, **BetterF3**, **Better Ping Display**, **Clean Tooltips**, **Item Pickup Notifier**, **Hidden Recipe Book**), inventory (**Mouse Tweaks**, **Crafting Tweaks**, **Client Tweaks**, **Controlling** + **Searchables**, **Inventory Essentials**, **TrashSlot**, **InvMove** + **InvMoveCompats**, **AppleSkin**, **Screenshot to Clipboard**), **Combat Roll**, farming/world (**RightClickHarvest** + **JamLib**, **Leaves Be Gone**, **No Feather Trample**, **KleeSlabs**, **Easy Shulker / Anvils / Magic**, **Horse Expert**, **Call Your Horse**, **Simple Homing XP**, **WITS**, **Ready Player Fun**), Serilum-style mods on **Collective** (e.g. **Death Backup**, **Dismount Entity**, **Improved Sign Editing**, **Set World Spawn Point**, **Hand Over Your Items**), **AFK Camera**, **SimpleAFK**, **e4mc** (LAN exposure—trusted networks only), **Creative Fly**, **StartInv**, and libraries **Balm**, **Puzzles Lib**, **Forge Config API Port**, **Collective**, **Searchables**, **JamLib**.
 ### Notes

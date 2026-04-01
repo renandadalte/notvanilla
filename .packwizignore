@@ -6,6 +6,7 @@ packwiz
 
 # Local / dev-only — same idea as .gitignore: never ship these to clients via the packwiz index
 .agent/
+.cursor/
 logs/
 
 # Dev documentation in repo; not required to run the game (avoids extra downloads on install)
