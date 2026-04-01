@@ -59,7 +59,7 @@ Este método configura o modpack para se atualizar sozinho toda vez que você cl
 4. Clique em **OK** para criar a instância.
 5. **Pronto!** Ao iniciar o jogo, o `packwiz` fará o download de todos os mods na versão correta e manterá o pack sempre atualizado.
 
-**Instância de testes (branch `dev`):** duplica a instância no Prism e usa o modelo [`instance.dev.cfg`](https://raw.githubusercontent.com/renandadalte/notvanilla/dev/instance.dev.cfg) (Pre-launch apontando a `.../dev/pack.toml`) — mesmo mecanismo que o `main`, outro branch. Detalhes em [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
+**Instância de testes (branch `dev`):** duplica a instância no Prism e usa o modelo [`instance.dev.cfg`](https://raw.githubusercontent.com/renandadalte/notvanilla/dev/instance.dev.cfg) (Pre-launch via **jsDelivr** `@dev/pack.toml`, para evitar atraso do raw GitHub nesse branch) — mesmo mecanismo que o `main`, outro branch. Detalhes em [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
 
 ---
 *Base 0.0.1: Estrutura oficial, otimização e auto-atualização por GitHub Actions e packwiz.*

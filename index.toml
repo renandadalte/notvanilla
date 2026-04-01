@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "c5549ec750b63497995357b955a3fcc4f42fe574f2d7fa1f08b692c3d58cb31e"
+hash = "5f0b5207a706e39b3e7d818cca3f3a9ca999a53abe7f77923953368837243f08"
 
 [[files]]
 file = "config/bettercombat/client.json5"
@@ -130,7 +130,7 @@ hash = "a716d563fc5e795820af965877b61e426b9c3c38da240502314c9a513d2a65f0"
 
 [[files]]
 file = "instance.dev.cfg"
-hash = "5ae785eff5b9c4768424573af21a5c4f498a02e87bbae4c2ca412038d85e2c9c"
+hash = "4a91bb13133be896eb26c8b2885b3361e3fce9b07d8beaa4e5800c858ceefb90"
 
 [[files]]
 file = "mmc-pack.json"

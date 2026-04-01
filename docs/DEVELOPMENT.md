@@ -24,7 +24,13 @@ O instalador packwiz resolve `index.toml` e o resto dos ficheiros relativamente 
 https://raw.githubusercontent.com/renandadalte/notvanilla/main/pack.toml
 ```
 
-**Desenvolvimento:**
+**Desenvolvimento** (instância Dev no Prism — preferir **jsDelivr**: o `raw.githubusercontent.com` para o branch `dev` pode ficar vários minutos desfasado do tip real no GitHub, e o packwiz-installer acaba a ver `pack.toml` / `index.toml` incoerentes → 404 ou erro de hash):
+
+```text
+https://cdn.jsdelivr.net/gh/renandadalte/notvanilla@dev/pack.toml
+```
+
+Alternativa equivalente em raw (pode atrasar após push):
 
 ```text
 https://raw.githubusercontent.com/renandadalte/notvanilla/dev/pack.toml
