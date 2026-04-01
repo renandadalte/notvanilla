@@ -81,7 +81,7 @@ From **`0.0.9-alpha`** onward, the repo ships a **`config/`** tree so packwiz ca
 ## Changing the mod set
 
 1. Add, remove, or edit files under `mods/*.pw.toml` and `shaderpacks/*.pw.toml` (and optional `optional/` / disabled layouts if you adopt them later).
-2. Run **`packwiz refresh`** from the repository root so `index.toml` hashes match the tree.
+2. Run **`packwiz refresh`** from the repository root so `index.toml` hashes match the tree. **`pack.toml` updates the `[index] hash`** to match — **commit `pack.toml` together with `index.toml`** whenever the index changes, or the packwiz-installer on players’ machines may see a **hash mismatch** or keep stale `packwiz.json` behaviour.
 3. Update **`docs/MODS_INVENTORY.md`** in the same change set: **Active** rows ↔ `mods/*.pw.toml` and `shaderpacks/*.pw.toml`; adjust **Listed** / **Discarded** if the conversation moves entries between backlog and shipped.
 4. Update **`CHANGELOG.md`** when the change is user-visible (new mod, removal, fix).
 5. If a shipped mod writes defaults you want everyone to share, add or update the matching paths under **`config/`** and re-run **`packwiz refresh`**.
@@ -95,7 +95,7 @@ From **`0.0.9-alpha`** onward, the repo ships a **`config/`** tree so packwiz ca
 
 ## Quality checks before merge
 
-- [ ] `packwiz refresh` run; `index.toml` committed if it changed.
+- [ ] `packwiz refresh` run; **`index.toml` and `pack.toml`** committed together when the index changed (hash in `pack.toml` must match `index.toml`).
 - [ ] `docs/MODS_INVENTORY.md` — **Active** row count matches `mods/*.pw.toml` plus `shaderpacks/*.pw.toml`.
 - [ ] `CHANGELOG.md` updated if players care about the change.
 - [ ] If **`config/`** changed: only mods **in the pack**; no `sodium-fingerprint.json` or Spark `tmp*` trees in git; **`grep`** `index.toml` for stray paths (e.g. old mod names) after refresh.

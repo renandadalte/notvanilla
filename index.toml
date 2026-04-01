@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "CHANGELOG.md"
-hash = "b1f2c1c600e620e07b04a604bfc61d9d297384b386f592cd83b9525c26d7c4aa"
+hash = "c5549ec750b63497995357b955a3fcc4f42fe574f2d7fa1f08b692c3d58cb31e"
 
 [[files]]
 file = "config/bettercombat/client.json5"
