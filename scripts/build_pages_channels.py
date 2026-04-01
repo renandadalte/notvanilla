@@ -9,7 +9,12 @@ import pathlib
 import subprocess
 import tomllib
 
-from check_packwiz_state import classify_index_file, index_entries_from_text, pack_index_hash_from_text, sha256_hex
+from check_packwiz_state import (
+    classify_index_file,
+    index_file_entries_from_text,
+    pack_index_hash_from_text,
+    sha256_hex,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -76,7 +81,8 @@ def build_channel(
     write_file(channel_dir, "pack.toml", pack_bytes)
     write_file(channel_dir, "index.toml", index_bytes)
 
-    for relative_path in index_entries_from_text(index_text):
+    for entry in index_file_entries_from_text(index_text):
+        relative_path = str(entry["file"])
         if strict:
             allowed, message = classify_index_file(relative_path)
             if not allowed:
