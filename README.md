@@ -71,3 +71,12 @@ Se você duplicar a instância manualmente no Prism Launcher ou precisar corrigi
 ```text
 "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://renandadalte.github.io/notvanilla/dev/pack.toml
 ```
+
+## Política de configs locais
+
+O pack distribui alguns defaults em `config/`, mas as configs marcadas com `preserve = true` no índice funcionam só como ponto de partida. Se você mudar essas configs na sua instância, as próximas atualizações do pack não devem sobrescrever seus ajustes locais.
+
+Em geral:
+
+- configs de preferência do jogador, câmera, HUD, animação e vídeo ficam preservadas;
+- configs de compatibilidade, gameplay compartilhado e comportamento do servidor continuam sob controle do pack.

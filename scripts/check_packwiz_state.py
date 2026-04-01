@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import pathlib
 import sys
 import tomllib
@@ -36,6 +37,24 @@ FORBIDDEN_INDEX_PREFIXES = (
     "scripts/",
 )
 
+REQUIRED_PRESERVE_FILES = {
+    "config/bettercombat/client.json5",
+    "config/bettercombat/weapon_trails.json",
+    "config/entityculling.json",
+    "config/fabric/indigo-renderer.properties",
+    "config/immediatelyfast.json",
+    "config/iris-excluded.json",
+    "config/iris.properties",
+    "config/leawind_third_person.json",
+    "config/modmenu.json",
+    "config/notenoughanimations.json",
+    "config/observable.json",
+    "config/realcamera.json",
+    "config/sodium-options.json",
+    "config/spark/activity.json",
+    "config/yacl.json5",
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -55,9 +74,9 @@ def read_text(path: pathlib.Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def index_entries_from_text(index_text: str) -> list[str]:
+def index_file_entries_from_text(index_text: str) -> list[dict[str, object]]:
     data = tomllib.loads(index_text)
-    return [str(entry["file"]) for entry in data.get("files", [])]
+    return [dict(entry) for entry in data.get("files", [])]
 
 
 def pack_index_hash_from_text(pack_text: str) -> str:
@@ -93,7 +112,8 @@ def validate_repo(repo_root: pathlib.Path) -> tuple[list[str], list[str]]:
             f"(pack.toml={pack_hash}, actual={actual_index_hash})"
         )
 
-    entries = index_entries_from_text(index_text)
+    file_entries = index_file_entries_from_text(index_text)
+    entries = [str(entry["file"]) for entry in file_entries]
     duplicates = sorted({entry for entry in entries if entries.count(entry) > 1})
     if duplicates:
         errors.append(f"duplicate index entries: {', '.join(duplicates)}")
@@ -106,6 +126,30 @@ def validate_repo(repo_root: pathlib.Path) -> tuple[list[str], list[str]]:
         if not (repo_root / entry).exists():
             errors.append(f"index.toml references a missing file: {entry}")
 
+    preserve_count = 0
+    entry_by_path = {str(entry["file"]): entry for entry in file_entries}
+    for path in sorted(REQUIRED_PRESERVE_FILES):
+        entry = entry_by_path.get(path)
+        if entry is None:
+            errors.append(f"required preserved config is missing from index.toml: {path}")
+            continue
+        if entry.get("preserve") is not True:
+            errors.append(f"config must set preserve = true: {path}")
+            continue
+        preserve_count += 1
+
+    spark_activity_path = repo_root / "config/spark/activity.json"
+    try:
+        spark_activity = json.loads(read_text(spark_activity_path))
+    except json.JSONDecodeError as exc:
+        errors.append(f"config/spark/activity.json must contain valid JSON: {exc}")
+    else:
+        if spark_activity != []:
+            errors.append(
+                "config/spark/activity.json must stay sanitized in git "
+                "(expected an empty JSON array)"
+            )
+
     counts = {prefix.rstrip("/"): 0 for prefix in ALLOWED_INDEX_PREFIXES}
     for entry in entries:
         for prefix in ALLOWED_INDEX_PREFIXES:
@@ -116,6 +160,7 @@ def validate_repo(repo_root: pathlib.Path) -> tuple[list[str], list[str]]:
         "index entries by prefix: "
         + ", ".join(f"{name}={count}" for name, count in counts.items())
     )
+    notes.append(f"preserved user-local config files: {preserve_count}")
     notes.append(f"pack.toml/index.toml hash: {actual_index_hash}")
     return errors, notes
 

@@ -99,6 +99,16 @@ python3 scripts/audit_repo_surface.py
 4. Atualize `docs/MODS_INVENTORY.md`.
 5. No fluxo rápido do `dev`, atualize docs técnicas e contexto quando necessário, mas deixe `CHANGELOG.md`, `README.md` e versão para as promoções de `main` ou para tarefas explicitamente voltadas à documentação pública.
 
+## Política de configs versionadas
+
+Nem toda config versionada deve se comportar como verdade central do pack.
+
+- configs de preferência do jogador devem usar `preserve = true` no `index.toml`, para servir só como default inicial;
+- configs de compatibilidade, gameplay compartilhado, benchmark recorrente e comportamento do servidor continuam sem `preserve`, para que updates do pack cheguem de fato à instância;
+- `config/spark/activity.json` deve permanecer sanitizado no repo, sem histórico real de profiling.
+
+Regra prática: se uma mudança representa gosto pessoal do jogador, não trate isso como update obrigatório do pack.
+
 ## Publicação
 
 ### GitHub Pages
