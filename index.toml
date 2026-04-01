@@ -326,11 +326,6 @@ hash = "5284f6d141a990f4ea021c12b851e07102f5cb22743cf7b33be6ad2eb4c8d3f5"
 metafile = true
 
 [[files]]
-file = "mods/itempickupnotifier.pw.toml"
-hash = "72d376c28d72f93590b1ed408b2360672bbfd3c02d500af7b763c0e17f1277f9"
-metafile = true
-
-[[files]]
 file = "mods/jade.pw.toml"
 hash = "37a45ed98e4edc9c8224cb06f72be8914fae69687601d4e15009f1cb9f27563c"
 metafile = true
@@ -403,6 +398,11 @@ metafile = true
 [[files]]
 file = "mods/omnidirectional-movement.pw.toml"
 hash = "16375f409bea3e0a1a5fdfa1283b8b6fc0d9522daa336bc39a726e4969e67f74"
+metafile = true
+
+[[files]]
+file = "mods/pick-up-notifier.pw.toml"
+hash = "af6de4e48064926264441ace0dc8f3193deedd534e2963c25a7700d4dfa6f825"
 metafile = true
 
 [[files]]
