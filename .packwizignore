@@ -3,6 +3,7 @@
 packwiz
 *.zip
 *.mrpack
+scripts/
 
 # Local / dev-only — same idea as .gitignore: never ship these to clients via the packwiz index
 .agent/
@@ -14,6 +15,11 @@ docs/
 
 # Repo readme; GitHub Pages often does not mirror this path like raw git — excluding avoids installer 404s
 README.md
+CHANGELOG.md
+instance.cfg
+instance.dev.cfg
+mmc-pack.json
+packwiz-installer-bootstrap.jar
 
 # Client-local Sodium fingerprint (regenerated per machine; do not ship)
 config/sodium-fingerprint.json

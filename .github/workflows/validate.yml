@@ -1,0 +1,40 @@
+name: Validate Repository
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch branch refs for Pages build
+        run: git fetch origin main dev
+
+      - name: Validate packwiz state
+        run: python3 scripts/check_packwiz_state.py
+
+      - name: Audit repo surface
+        run: python3 scripts/audit_repo_surface.py
+
+      - name: Dry-run Pages artifact build
+        run: python3 scripts/build_pages_channels.py --output-dir /tmp/notvanilla-pages --strict-branches "${{ github.ref_name }}"

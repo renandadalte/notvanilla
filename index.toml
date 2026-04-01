@@ -1,10 +1,6 @@
 hash-format = "sha256"
 
 [[files]]
-file = "CHANGELOG.md"
-hash = "5f0b5207a706e39b3e7d818cca3f3a9ca999a53abe7f77923953368837243f08"
-
-[[files]]
 file = "config/bettercombat/client.json5"
 hash = "5be8014bed59c60a7f1b47c0570895008976c2005f8f5c54753f964aa83d21b1"
 
@@ -125,18 +121,6 @@ file = "datapacks/benchmark/pack.mcmeta"
 hash = "1ac518a03c3e0874e15e278e6b92097f0b4abc46a4c0b1a8579500edbb858828"
 
 [[files]]
-file = "instance.cfg"
-hash = "a716d563fc5e795820af965877b61e426b9c3c38da240502314c9a513d2a65f0"
-
-[[files]]
-file = "instance.dev.cfg"
-hash = "4a91bb13133be896eb26c8b2885b3361e3fce9b07d8beaa4e5800c858ceefb90"
-
-[[files]]
-file = "mmc-pack.json"
-hash = "c5df5603367c21c1c7fd9c3b8deedd2c783b50ffb454ff7247688cba5ebf144b"
-
-[[files]]
 file = "mods/afk-camera.pw.toml"
 hash = "8670fa0d9e3acf62a51f8871bab51d7dfd1aa6c2d606ac455fa2fc3adf0b985f"
 metafile = true
@@ -243,7 +227,7 @@ metafile = true
 
 [[files]]
 file = "mods/e4mc.pw.toml"
-hash = "b6be9ab228ce37dfd2f0f05364ca24ba143d86bac31e25b9f03ab7750f2fceb4"
+hash = "7ec19f705fc55d4172d98085fb22ead874ca366f3ac1cc0546204fce7f1d4807"
 metafile = true
 
 [[files]]
@@ -259,6 +243,11 @@ metafile = true
 [[files]]
 file = "mods/easy-shulker-boxes.pw.toml"
 hash = "3f79aadc20ee02e53d1810892f0cd9e037575b1a6cf26505a3a514c24f2a55c7"
+metafile = true
+
+[[files]]
+file = "mods/easyauth.pw.toml"
+hash = "004ecd14f5d0d2a7eee9bbfcd2ef744793bdf2f0b5193dbdc2193c3db60136d9"
 metafile = true
 
 [[files]]
@@ -510,10 +499,6 @@ metafile = true
 file = "mods/yacl.pw.toml"
 hash = "6965cb5548c69e8176ed497db1306112ec54446868e154f7604cb741cbc75537"
 metafile = true
-
-[[files]]
-file = "packwiz-installer-bootstrap.jar"
-hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"
 
 [[files]]
 file = "resourcepacks/fa-player-extension.pw.toml"

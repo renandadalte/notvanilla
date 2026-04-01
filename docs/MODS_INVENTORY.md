@@ -4,7 +4,7 @@
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 78 (75 + 1 + 2) | 1 | 1 |
+| `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 79 (76 + 1 + 2) | 1 | 1 |
 
 ## Three tables
 
@@ -57,7 +57,8 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Creative Fly | [modrinth.com/mod/creative-fly](https://modrinth.com/mod/creative-fly) | QoL, Creative | client | low | Fabric API, Cloth Config API | — | — | Creative flight tweaks; creative only. |
 | Death Backup | [modrinth.com/mod/death-backup](https://modrinth.com/mod/death-backup) | Gameplay, Utility | server | medium | Collective | — | — | Backup gear on death (server). |
 | Dismount Entity | [modrinth.com/mod/dismount-entity](https://modrinth.com/mod/dismount-entity) | Gameplay, Utility | server | low | Collective | — | — | Dismount riders (server). |
-| e4mc | [modrinth.com/mod/e4mc](https://modrinth.com/mod/e4mc) | Networking, Utility | both | medium | Fabric API | — | — | **LAN exposure**—trusted networks only. |
+| e4mc | [modrinth.com/mod/e4mc](https://modrinth.com/mod/e4mc) | Networking, Utility | client | medium | Fabric API | — | — | **Out of the dedicated public flow**—keep for client-hosted sessions only. |
+| EasyAuth | [modrinth.com/mod/easyauth](https://modrinth.com/mod/easyauth) | Security, Utility | server | high | Fabric API | — | — | Offline-mode auth gate for the dedicated server; invite secret for registration, then per-player `/login`. |
 | Easy Anvils | [modrinth.com/mod/easy-anvils](https://modrinth.com/mod/easy-anvils) | QoL, Gameplay | both | medium | Fabric API, Puzzles Lib, Forge Config API Port | — | — | Anvil UX tweaks. |
 | Easy Magic | [modrinth.com/mod/easy-magic](https://modrinth.com/mod/easy-magic) | QoL, Gameplay | both | medium | Fabric API, Puzzles Lib, Forge Config API Port | — | — | Enchanting table UX. |
 | Easy Shulker Boxes | [modrinth.com/mod/easy-shulker-boxes](https://modrinth.com/mod/easy-shulker-boxes) | QoL, Storage | both | medium | Fabric API, Puzzles Lib, Forge Config API Port | — | — | Shulker interaction QoL. |
@@ -154,5 +155,5 @@ Text Placeholder API ──► Mod Menu
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (75) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.11-alpha`; **Listed** 1 (ParCool!); **Discarded** 1 (**First Person Model**). **ItemPickupNotifier** pinned via Modrinth `version` ID (API lists **1.21.10** only—`packwiz update` skips it; validate on **1.21.1** client). **Manual smoke (host):** launch client with Sodium+Iris; open **JEI** while **InvMove** walking; try **Combat Roll** with **Better Combat**; review **Client Tweaks** vs **Smooth F5**; do not test **e4mc** on untrusted networks. Default `config/` unchanged in this batch unless you add per-mod defaults later.
+- **Last reconciled:** 2026-03-31 — **Active** rows vs `mods/*.pw.toml` (76) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.11-alpha`; **Listed** 1 (ParCool!); **Discarded** 1 (**First Person Model**). **EasyAuth** added as **server-only** for offline-mode auth on the dedicated server; **e4mc** reduced to **client-only** so the public dedicated flow does not depend on ad-hoc tunneling. **ItemPickupNotifier** pinned via Modrinth `version` ID (API lists **1.21.10** only—`packwiz update` skips it; validate on **1.21.1** client). **Manual smoke (host):** launch client with Sodium+Iris; open **JEI** while **InvMove** walking; try **Combat Roll** with **Better Combat**; review **Client Tweaks** vs **Smooth F5**; do not test **e4mc** on untrusted networks. Default `config/` unchanged in this batch unless you add per-mod defaults later.
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`.

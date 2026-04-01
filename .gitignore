@@ -8,6 +8,10 @@ logs/
 # Sodium writes this per machine when the game runs — do not commit
 config/sodium-fingerprint.json
 
+# Python helper script cache
+__pycache__/
+*.pyc
+
 # Ignore only mods themselves, not their metadata
 mods/*.jar
 !mods/*.pw.toml

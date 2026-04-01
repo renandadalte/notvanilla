@@ -1,88 +1,120 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Todas as mudanças relevantes do NotVanilla ficam registradas aqui.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+O formato segue a ideia do [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) e as versões continuam compatíveis com [Semantic Versioning](https://semver.org/spec/v2.0.0.html), adaptadas ao ritmo atual do pack.
+
+## [Não lançado]
+
+### Alterado
+- O fluxo de atualização automática dos clientes passa a usar **GitHub Pages** como origem dos canais `main` e `dev`, em vez de depender de `raw.githubusercontent.com` ou `jsDelivr` apontando para branch viva.
+- O `index.toml` deixa de publicar arquivos de bootstrap, documentação e automação que não fazem parte do runtime do pack.
+
+### Adicionado
+- Workflow para publicar os canais `main` e `dev` de forma atômica no GitHub Pages.
+- Workflow de validação do repositório para checar coerência de `pack.toml` e `index.toml`, além de uma auditoria básica de exposição do repositório.
+- ZIP rotativo de bootstrap para o canal `dev`, separado do ZIP estável de produção.
+- Scripts versionados para validar o estado do packwiz, auditar a superfície do repositório e montar o artefato do GitHub Pages.
+
+### Corrigido
+- O canal `dev` deixa de depender de alias de CDN em branch, que podia servir `pack.toml` e `index.toml` fora de sincronia e causar erro de hash no Prism.
 
 ## [0.0.11-alpha] - 2026-03-31
-### Fixed
-- **Packwiz installer 404:** `.cursor/` (IDE) was indexed but never on GitHub — added to **`.packwizignore`** and removed from **`index.toml`**.
-- **`pack.toml` `[index] hash` out of sync with `index.toml`** after the above fix caused inconsistent installer behaviour — **always commit `pack.toml` after `packwiz refresh`** when the index changes.
-- **Prism Dev + raw GitHub:** o branch `dev` em `raw.githubusercontent.com` pode atrasar face ao GitHub; **`instance.dev.cfg`** passa a usar **jsDelivr** (`cdn.jsdelivr.net/gh/.../notvanilla@dev/pack.toml`) no Pre-launch.
-### Added
-- Large **QoL / utilities** wave: **JEI**, **Jade**, HUD/UX (**Better Advancements**, **Better Statistics Screen** + **TCDCommons API**, **BetterF3**, **Better Ping Display**, **Clean Tooltips**, **Item Pickup Notifier**, **Hidden Recipe Book**), inventory (**Mouse Tweaks**, **Crafting Tweaks**, **Client Tweaks**, **Controlling** + **Searchables**, **Inventory Essentials**, **TrashSlot**, **InvMove** + **InvMoveCompats**, **AppleSkin**, **Screenshot to Clipboard**), **Combat Roll**, farming/world (**RightClickHarvest** + **JamLib**, **Leaves Be Gone**, **No Feather Trample**, **KleeSlabs**, **Easy Shulker / Anvils / Magic**, **Horse Expert**, **Call Your Horse**, **Simple Homing XP**, **WITS**, **Ready Player Fun**), Serilum-style mods on **Collective** (e.g. **Death Backup**, **Dismount Entity**, **Improved Sign Editing**, **Set World Spawn Point**, **Hand Over Your Items**), **AFK Camera**, **SimpleAFK**, **e4mc** (LAN exposure—trusted networks only), **Creative Fly**, **StartInv**, and libraries **Balm**, **Puzzles Lib**, **Forge Config API Port**, **Collective**, **Searchables**, **JamLib**.
-### Notes
-- **Item Pickup Notifier** uses a Modrinth version whose API `game_versions` list is **1.21.10**—confirm behaviour on **1.21.1** in-game. **Xaero** maps not in this release. **Adaptive Tooltips** omitted (no Fabric **1.21.x** build on Modrinth).
+
+### Adicionado
+- Grande leva de mods de qualidade de vida, utilidades, HUD, inventário, movimento e apoio ao combate.
+- **EasyAuth** como mod **server-only** para proteger o servidor dedicado em `online-mode=false`, com senha global de convite para o primeiro cadastro e senha individual depois disso.
+
+### Alterado
+- `instance.dev.cfg` passou a usar `jsDelivr` no lugar de `raw.githubusercontent.com` para reduzir o atraso de cache que estava afetando o branch `dev`.
+- **e4mc** virou mod **client-only**: continua útil para sessões improvisadas entre clientes, mas sai do fluxo do servidor público dedicado.
+
+### Corrigido
+- Ajustes no `.packwizignore` e na coerência entre `pack.toml` e `index.toml` para reduzir erros do instalador packwiz.
+
+### Notas
+- **ItemPickupNotifier** continua pedindo validação manual em `1.21.1`, porque o metadata exposto na API do Modrinth não está alinhado com a versão real usada no pack.
 
 ## [0.0.10-alpha] - 2026-03-31
-### Changed
-- **`config/`:** atualização dos defaults (ex.: **Iris**, **Fabric** indigo, **Wall-Jump**); nova limpeza para **só** ficheiros dos mods listados em `mods/*.pw.toml` (remove lixo de outras instâncias).
-### Notes
-- Fim da sprint do stack movimento/câmera/combate; **`dev`** alinhado com **`main`** após este release.
+
+### Alterado
+- Limpeza e atualização dos defaults em `config/`, mantendo no repositório apenas arquivos que pertencem aos mods realmente enviados no pack.
+
+### Notas
+- Esse release fechou a rodada de alinhamento entre câmera, movimento e combate antes da próxima leva de mudanças.
 
 ## [0.0.9-alpha] - 2026-03-31
-### Added
-- **Wall-Jump TXF** de volta ao **`main`**: faz parte do stack de **movimento + combate** com o resto do pack (o único mod removido do stack continua a ser **First Person Model**).
-- Pasta **`config/`** no repositório: defaults dos **mods ativos** apenas (limpeza de configs de outros modpacks); packwiz passa a sincronizar estes ficheiros com clientes/servidor. Ver `docs/DEVELOPMENT.md`.
-### Changed
-- **`.packwizignore` / `.gitignore`:** ignorar `config/sodium-fingerprint.json` e pastas temporárias do Spark sob `config/spark/`.
+
+### Adicionado
+- **Wall-Jump TXF** voltou ao `main`.
+- A pasta `config/` passou a fazer parte do repositório de forma controlada, para sincronizar defaults entre clientes e servidor.
+
+### Alterado
+- `.gitignore` e `.packwizignore` passaram a ignorar o `sodium-fingerprint` e diretórios temporários do Spark.
 
 ## [0.0.8-alpha] - 2026-03-31
-### Added
-- **`main` alinhado ao stack movimento/câmera/combate do `dev`** (exceto parkour): Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, Player Animator, Cloth Config API, Better Combat; resource packs **Fresh Animations** + **FA Player Extension** em `resourcepacks/`.
-### Removed
-- **First Person Model**: **Real Camera** cobre o corpo em primeira pessoa com menos conflitos com **Better Combat**; **Not Enough Animations** mantém-se para outras poses. Configs de servidor/cliente a incorporar no repo ficam pendentes (envio separado).
-- **Wall-Jump TXF** em **`main`**: nesta versão foi omitido em **`main`** em favor de produção mais leve; **revertido em `0.0.9-alpha`** (Wall-Jump volta ao stack completo em **`main`**).
+
+### Adicionado
+- Stack de movimento, câmera e combate no `main`: Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, Player Animator e Better Combat.
+- Resource packs **Fresh Animations** e **Fresh Animations: Player Extension**.
+
+### Removido
+- **First Person Model**, substituído por uma combinação mais estável com **Real Camera**.
+- **Wall-Jump TXF** saiu temporariamente do `main` nessa linha e voltou no release seguinte.
 
 ## [0.0.7-alpha] - 2026-03-31
-### Removed
-- **Wall-Jump TXF** do branch **`main`** (produção leve); no **`dev`** o mod **mantém-se** para testes de parkour e o servidor de testes segue alinhado ao `dev`.
+
+### Removido
+- **Wall-Jump TXF** do `main`, mantendo o mod apenas na linha de testes naquele momento.
 
 ## [0.0.6-alpha] - 2026-03-31
-### Added
-- **Cloth Config API** (cliente + servidor): biblioteca de ecrãs de configuração **Cloth**; alinha com **Mod Menu** e **YACL** para cobrir mods que usem qualquer uma das duas stacks de UI.
+
+### Adicionado
+- **Cloth Config API**, para ampliar a compatibilidade do pack com telas de configuração.
 
 ## [0.0.5-alpha] - 2026-03-31
-### Added
-- **Mod Menu** + **Text Placeholder API** (dependência): lista de mods no jogo e atalhos para ecrãs de configuração quando os mods os expõem.
-- **Yet Another Config Lib (YACL)**: biblioteca de UIs de configuração para mods que usam YACL (complementa **Cloth Config** no pack).
-- **Wall-Jump TXF** (**só `dev`**): salto em parede / double jump / salto em fences; **cliente e servidor**.
-- **Branch `dev` — movimento/câmera/combate:** Leawind's Third Person, Real Camera, Countered's Smooth F5, Omnidirectional Movement, Not Enough Animations, Player Animator, Cloth Config API, Better Combat (mods `both` no servidor). *First Person Model foi removido em `0.0.8-alpha`.*
-- **Resource packs** em `resourcepacks/`: [Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) (base v1.10.4) e [Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) — na lista do jogo, ativar **ambos** com a **extensão acima** da base (maior prioridade).
-### Notes
-- **ParCool!** não entrou: no Modrinth não há release **Fabric** para `1.21.1` (apenas NeoForge/Forge nas versões recentes). Permanece em **Listed** em `docs/MODS_INVENTORY.md` para reavaliação futura.
+
+### Adicionado
+- **Mod Menu**, **Text Placeholder API** e **YACL**.
+- **Wall-Jump TXF** no `dev`.
+- Primeira rodada mais forte do stack de movimento, câmera e combate no branch `dev`.
+- Resource packs **Fresh Animations** e **Fresh Animations: Player Extension** no fluxo do pack.
+
+### Notas
+- **ParCool!** ficou fora por falta de build Fabric adequada para `1.21.1`.
 
 ## [0.0.4] - 2026-03-31
-### Added
-- **Iris Shaders** (cliente): carregador de shaders sobre **Sodium** para Minecraft 1.21.1.
-- **MakeUp - Ultra Fast** v9.4c como shader **base** do pack (leve, boa qualidade visual, perfis ajustáveis para poupar FPS). Entregue via `shaderpacks/` no packwiz.
-### Fixed
-- **`.packwizignore`:** `.agent/`, `logs/`, `docs/` e `README.md` deixam de entrar no `index.toml`. O instalador packwiz já não tenta baixar ficheiros que não existem no GitHub Pages (evita **404** em `.agent/*`, logs de benchmark, etc.). *`.gitignore` não afeta o índice — só o `.packwizignore`.*
-### Added
-- **`instance.dev.cfg`:** modelo Prism com **Pre-launch** para `https://raw.githubusercontent.com/renandadalte/notvanilla/dev/pack.toml` — mesma lógica que `instance.cfg`/`main`, para instância de testes noutro PC; documentado em `docs/DEVELOPMENT.md` e README.
+
+### Adicionado
+- **Iris Shaders**.
+- **MakeUp - Ultra Fast** como shader base enviado pelo pack.
+- `instance.dev.cfg` como modelo de instância Prism para o branch `dev`.
+
+### Corrigido
+- Ajustes em `.packwizignore` para impedir que caminhos locais e documentação gerassem 404 no instalador.
 
 ## [0.0.3] - 2026-03-29
-### Added
-- Datapack **`benchmark`**: cenário spectator **1200 ticks** (~60s), percurso ida → spawn → ida (warm chunks); **`function benchmark:start`** na consola/RCON. Baseline principal com **HWiNFO** (CSV); Spark fica só para diagnóstico de lag quando precisares.
-### Changed
-- Removido fluxo `benchmark:sync_start` (Spark dentro do datapack); README alinhado ao benchmark **HWiNFO-first**.
-- `.gitignore`: `.cursor/` e `.agent/` permanecem só no ambiente local (repo = modpack + docs).
+
+### Adicionado
+- Datapack `benchmark` com cenário repetível de voo em spectator para medições comparáveis.
+
+### Alterado
+- O fluxo de benchmark passou a priorizar **HWiNFO** como baseline, deixando o Spark como ferramenta de diagnóstico mais pontual.
 
 ## [0.0.2] - 2026-03-22
-### Added
-- Adição de mods para otimização em ambientes com muitos mods: ImmediatelyFast (renderização 2D/UI) e Krypton (rede).
-- Adição de ferramentas profissionais para depuração e benchmark: Spark (profiling técnico) e Observable (profiling visual de entidades).
-- Adição de dependências obrigatórias: Architectury API e Fabric Language Kotlin.
+
+### Adicionado
+- **ImmediatelyFast** e **Krypton** para reforçar a linha de performance.
+- **Spark** e **Observable** como ferramentas de profiling.
+- Dependências obrigatórias como **Architectury API** e **Fabric Language Kotlin**.
 
 ## [0.0.1] - 2026-03-22
-### Added
-- Setup inicial da arquitetura do modpack via `packwiz` para a versão Minecraft 1.21.1.
-- Adição dos mods base de performance: Entity Culling, FerriteCore, Indium, Lithium, ModernFix e Sodium.
-- Integração da API do Fabric (v0.18.4).
-- Automação robusta via GitHub Actions para geração do `NotVanilla.zip` nos Releases sem erro de cache.
-- Regras estritas de `.gitignore` e `.packwizignore` para não poluir o repositório nem o cliente.
 
-### Changed
-- Configuração oficial do `instance.cfg` do Prism Launcher para auto-atualização sem flags descontinuadas (`-d`).
-- Arquitetura limpa: o repositório não rastreia mais os binários compilados (`.zip` ou `.mrpack`).
+### Adicionado
+- Estrutura inicial do modpack com `packwiz` para Minecraft `1.21.1`.
+- Base de performance com **Entity Culling**, **FerriteCore**, **Indium**, **Lithium**, **ModernFix** e **Sodium**.
+- Integração inicial com **Fabric API**.
+- Automação de release para gerar o ZIP de bootstrap do Prism.
+
+### Alterado
+- Ajustes iniciais de `.gitignore` e `.packwizignore` para manter o repositório e o pack mais limpos.

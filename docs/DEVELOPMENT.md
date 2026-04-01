@@ -1,107 +1,153 @@
-# Development — maintaining the pack
+# Desenvolvimento — manutenção do pack
 
-## Prerequisites
+## Pré-requisitos
 
-- [packwiz](https://packwiz.infra.link/) installed (`packwiz refresh`, `packwiz update`, etc.)
-- Minecraft version and Fabric loader pinned in `pack.toml` (see `[versions]`)
+- `packwiz` instalado e funcional
+- Python 3 para as checagens locais versionadas em `scripts/`
+- Minecraft `1.21.1` e Fabric Loader `0.18.4`, conforme `pack.toml`
 
-## Prism Launcher — produção (`main`) vs desenvolvimento (`dev`)
+## Canais do projeto
 
-Sim: podes ter **duas instâncias** no Prism, ambas com o mesmo fluxo packwiz (bootstrap + `pack.toml` no GitHub), mas cada uma segue um **branch** diferente. Os jogadores em produção continuam só a puxar **`main`**; tu testas em **`dev`** sem alterar o URL que eles usam.
+Hoje o projeto trabalha com dois canais de client e um único canal de servidor:
 
-### Ideia
-
-| Instância | Branch no URL | Uso |
+| Canal | Uso | URL do `pack.toml` |
 | --- | --- | --- |
-| **NotVanilla** (produção) | `main` | Alinhado ao que releases / README apontam; mesmo que a maioria dos clientes. |
-| **NotVanilla Dev** | `dev` | Mods experimentais, pins novos, quebras temporárias — `packwiz refresh` + push para `dev`. |
+| `main` | produção para jogadores | `https://renandadalte.github.io/notvanilla/main/pack.toml` |
+| `dev` | testes antes de merge | `https://renandadalte.github.io/notvanilla/dev/pack.toml` |
 
-O instalador packwiz resolve `index.toml` e o resto dos ficheiros relativamente ao URL do `pack.toml`. Com **raw GitHub** basta trocar o segmento do branch.
+O servidor dedicado acompanha apenas `dev` nesta fase. A separação entre servidor `main` e `dev` fica para depois.
 
-**Produção (atual padrão do repo):**
+## Prism Launcher
 
-```text
-https://raw.githubusercontent.com/renandadalte/notvanilla/main/pack.toml
-```
+### Instância `main`
 
-**Desenvolvimento** (instância Dev no Prism — preferir **jsDelivr**: o `raw.githubusercontent.com` para o branch `dev` pode ficar vários minutos desfasado do tip real no GitHub, e o packwiz-installer acaba a ver `pack.toml` / `index.toml` incoerentes → 404 ou erro de hash):
+- Importar pelo ZIP estável:
 
 ```text
-https://cdn.jsdelivr.net/gh/renandadalte/notvanilla@dev/pack.toml
+https://github.com/renandadalte/notvanilla/releases/latest/download/NotVanilla.zip
 ```
 
-Alternativa equivalente em raw (pode atrasar após push):
+- O `instance.cfg` desse ZIP aponta para:
 
 ```text
-https://raw.githubusercontent.com/renandadalte/notvanilla/dev/pack.toml
+https://renandadalte.github.io/notvanilla/main/pack.toml
 ```
 
-### Ficheiros de referência no repo
+### Instância `dev`
 
-| Ficheiro | Branch no URL packwiz |
-| --- | --- |
-| [`instance.cfg`](../instance.cfg) | `main` (produção / mesma linha que a maioria dos jogadores) |
-| [`instance.dev.cfg`](../instance.dev.cfg) | `dev` (testes no teu PC de jogo ou noutra máquina na rede) |
+- Importar pelo ZIP de testes:
 
-No PC onde está o Prism (pode ser diferente do servidor de git): para a instância **Dev**, usa o conteúdo de **`instance.dev.cfg`** — ou copia o ficheiro para a pasta dessa instância **com o nome `instance.cfg`**, ou cola só a linha **`PreLaunchCommand`** nas definições da instância (**Edit instance → Custom commands**). O fluxo é o **mesmo** que com `main`: cada **Play** corre o bootstrap e sincroniza com o `pack.toml` desse branch no GitHub.
+```text
+https://github.com/renandadalte/notvanilla/releases/download/dev-latest/NotVanilla-dev.zip
+```
 
-**Raw (outro PC na rede, sem clonar o repo):**
+- O bootstrap de `dev` aponta para:
 
-- `https://raw.githubusercontent.com/renandadalte/notvanilla/main/instance.cfg`
-- `https://raw.githubusercontent.com/renandadalte/notvanilla/dev/instance.dev.cfg` — requer o branch **`dev`** no GitHub; o mesmo ficheiro costuma existir em `main` também para referência.
+```text
+https://renandadalte.github.io/notvanilla/dev/pack.toml
+```
 
-### Passos no Prism (resumo)
+Também continua válido duplicar a instância principal no Prism e trocar apenas o `PreLaunchCommand`.
 
-1. **Produção:** mantém [`instance.cfg`](../instance.cfg) (URL `.../main/pack.toml`).
-2. **Dev:** duplica a instância (**Copy Instance**), abre **Edit instance → Custom commands** e define o **Pre-launch command** igual ao de [`instance.dev.cfg`](../instance.dev.cfg) (URL `.../dev/pack.toml`). Ajusta **nome** da instância para `NotVanilla Dev` (opcional, só organização).
-3. Garante que o branch **`dev`** existe no GitHub (`git push -u origin dev` a partir de `main` quando ainda não existir); sem isso o URL `.../dev/pack.toml` devolve **404**.
-4. Cada instância tem a **sua pasta** → mundos e configs **isolados**.
+## Limites do repositório
 
-### Fluxo de git sugerido
+Tudo o que está versionado deve cair em um destes grupos:
 
-- Trabalho arriscado ou WIP: commits em **`dev`**; abre só a instância Dev no Prism.
-- Quando estiver estável: **merge** `dev` → `main` (ou PR), atualiza **CHANGELOG** / versão em `pack.toml` se for release visível.
-- Quem usa só `main` (zip de release ou URL fixo) **nunca** vê o `dev` até merges.
+| Grupo | Exemplos | Vai para o `index.toml`? |
+| --- | --- | --- |
+| Runtime do pack | `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, `resourcepacks/*.pw.toml`, `config/`, `datapacks/` | Sim |
+| Bootstrap e automação | `instance.cfg`, `instance.dev.cfg`, `mmc-pack.json`, `packwiz-installer-bootstrap.jar`, `.github/`, `scripts/` | Não |
+| Documentação pública | `README.md`, `CHANGELOG.md`, `docs/` | Não |
+| Local / host-only | `.agent/`, `.cursor/`, `logs/`, `.env`, mundo do servidor, auth local | Nunca deve entrar no repo |
 
-### Alternativas (quando faz sentido)
+Regra prática:
 
-- **Um só branch + instância local sem URL remota:** clona o repo, corre `packwiz` na pasta e aponta o Prism para essa instância manualmente — bom para quem edita o pack o dia todo, **mau** para “igual ao jogador” porque deixa de espelhar o download HTTP.
-- **`packwiz serve` em localhost:** útil para testar o índice antes de push; para jogar no dia a dia, as **duas instâncias + raw `main`/`dev`** costumam ser mais simples.
+- o repo é a fonte da verdade do pack e da documentação pública;
+- o `index.toml` deve conter apenas o que cliente e servidor precisam para rodar;
+- segredos, auth, mundo, logs e automação de host ficam fora do repo.
 
 ## `.packwizignore` vs `.gitignore`
 
-**`packwiz refresh`** adds every file under the pack root to **`index.toml`**, except paths matched by **`.packwizignore`**. The packwiz installer then downloads **each indexed file** from your hosted pack URL (e.g. GitHub Pages).
+- `.gitignore` controla o que o Git rastreia.
+- `.packwizignore` controla o que o `packwiz refresh` pode colocar no `index.toml`.
+- Um arquivo pode continuar no repo e ainda assim **não** fazer parte do canal de atualização do packwiz.
 
-- **`.gitignore`** only affects git — it does **not** stop packwiz from indexing those paths.
-- Local folders like **`.agent/`**, **`.cursor/`** (Cursor IDE), and **`logs/`** must appear in **`.packwizignore`** too, or clients will get **404** (those files are never pushed to GitHub).
-- Dev-only trees such as **`docs/`** can be ignored in the pack index if you do not want them copied into every player instance; they remain in the repo for GitHub.
+No NotVanilla, o `index.toml` não deve publicar:
 
-## Default mod configs (`config/`)
+- `README.md`
+- `CHANGELOG.md`
+- `instance.cfg`
+- `instance.dev.cfg`
+- `mmc-pack.json`
+- `packwiz-installer-bootstrap.jar`
+- `docs/`
+- `scripts/`
+- `.agent/`, `.cursor/` e `logs/`
 
-From **`0.0.9-alpha`** onward, the repo ships a **`config/`** tree so packwiz can **sync the same defaults** to Prism instances and to the dedicated server (only files for **mods that are actually in the pack**).
+## Mudança no conjunto de mods
 
-- When you paste configs from another modpack or instance, **prune** anything that does not belong to a mod listed in `mods/*.pw.toml` before committing (avoids noise and wrong assumptions).
-- **`config/sodium-fingerprint.json`** is **per machine** — it is **gitignored** and listed in **`.packwizignore`** so it is not indexed for clients.
-- **`config/spark/tmp/`** and **`config/spark/tmp-client/`** are runtime profiler noise — keep them out of git (`.packwizignore` covers them if they appear locally).
+1. Altere `mods/*.pw.toml`, `shaderpacks/*.pw.toml` ou `resourcepacks/*.pw.toml`.
+2. Atualize `config/` se existir default compartilhado que realmente precisa ser distribuído.
+3. Rode:
 
-## Changing the mod set
+```bash
+packwiz refresh
+python3 scripts/check_packwiz_state.py
+python3 scripts/audit_repo_surface.py
+```
 
-1. Add, remove, or edit files under `mods/*.pw.toml` and `shaderpacks/*.pw.toml` (and optional `optional/` / disabled layouts if you adopt them later).
-2. Run **`packwiz refresh`** from the repository root so `index.toml` hashes match the tree. **`pack.toml` updates the `[index] hash`** to match — **commit `pack.toml` together with `index.toml`** whenever the index changes, or the packwiz-installer on players’ machines may see a **hash mismatch** or keep stale `packwiz.json` behaviour.
-3. Update **`docs/MODS_INVENTORY.md`** in the same change set: **Active** rows ↔ `mods/*.pw.toml` and `shaderpacks/*.pw.toml`; adjust **Listed** / **Discarded** if the conversation moves entries between backlog and shipped.
-4. Update **`CHANGELOG.md`** when the change is user-visible (new mod, removal, fix).
-5. If a shipped mod writes defaults you want everyone to share, add or update the matching paths under **`config/`** and re-run **`packwiz refresh`**.
-6. Follow deploy rules in `~/.agents/context/NOTVANILLA_MODPACK.md` for dedicated server alignment (never push without explicit confirmation in chat).
+4. Atualize `docs/MODS_INVENTORY.md`.
+5. Atualize `CHANGELOG.md` se a mudança for visível para quem joga.
 
-## Conventions
+## Publicação
 
-- **`side` in `.pw.toml`:** `client`, `server`, or `both` — authoritative for client-only installs vs server.
-- **Mod page URL:** Prefer stable project pages (e.g. Modrinth `https://modrinth.com/mod/<slug>`). The `.pw.toml` `[update.modrinth]` block holds the project id for tooling.
-- **Discarded mods:** When a mod leaves the pack, remove its `.pw.toml`, add a row under **Discarded mods** (date + reason in **Notes**), and remove it from **Active**. **Listed** is for candidates not yet in packwiz.
+### GitHub Pages
 
-## Quality checks before merge
+O workflow `pages.yml` publica os canais `main` e `dev` de forma atômica. Em vez de expor o branch inteiro, ele monta um artefato mínimo com:
 
-- [ ] `packwiz refresh` run; **`index.toml` and `pack.toml`** committed together when the index changed (hash in `pack.toml` must match `index.toml`).
-- [ ] `docs/MODS_INVENTORY.md` — **Active** row count matches `mods/*.pw.toml` plus `shaderpacks/*.pw.toml`.
-- [ ] `CHANGELOG.md` updated if players care about the change.
-- [ ] If **`config/`** changed: only mods **in the pack**; no `sodium-fingerprint.json` or Spark `tmp*` trees in git; **`grep`** `index.toml` for stray paths (e.g. old mod names) after refresh.
+- `pack.toml`
+- `index.toml`
+- todos os arquivos listados no `index.toml`
+
+Esse passo existe justamente para impedir inconsistência entre `pack.toml` e `index.toml`.
+
+### ZIPs de bootstrap
+
+O workflow `export.yml` publica:
+
+- `latest` com `NotVanilla.zip` para `main`
+- `dev-latest` com `NotVanilla-dev.zip` para `dev`
+
+Esses ZIPs não levam mods dentro deles. Eles só preparam o Prism para baixar o conteúdo do canal certo no launch.
+
+### Validação
+
+O workflow `validate.yml` roda as checagens do repositório e faz um dry-run da montagem do artefato do GitHub Pages.
+
+## Servidor `dev`
+
+O servidor dedicado local acompanha `origin/dev`.
+
+Fluxo esperado:
+
+1. um checkout separado busca `origin/dev`;
+2. o conteúdo é validado;
+3. o servidor usa o canal `dev` publicado no GitHub Pages para sincronizar o que pertence ao pack;
+4. depois da sincronização, o serviço do servidor reinicia.
+
+Esses passos devem preservar fora do deploy:
+
+- `.env`
+- mundo
+- `config/EasyAuth/`
+- `ops.json`
+- `whitelist.json`
+- logs e artefatos locais
+
+## Checagens antes de merge
+
+- [ ] `pack.toml` e `index.toml` estão coerentes.
+- [ ] O `index.toml` não publica arquivos de bootstrap, docs ou scripts.
+- [ ] `docs/MODS_INVENTORY.md` bate com `mods/*.pw.toml`, `shaderpacks/*.pw.toml` e `resourcepacks/*.pw.toml`.
+- [ ] `CHANGELOG.md` e `README.md` continuam coerentes com os canais atuais.
+- [ ] O que é local ou sensível continua fora do repositório e fora do `index.toml`.
