@@ -1,0 +1,13 @@
+name = "SimpleAFK"
+filename = "simpleafk-fabric-1.21.1-1.5.1.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/bI9lnAFH/versions/bwpqoQaz/simpleafk-fabric-1.21.1-1.5.1.jar"
+hash-format = "sha512"
+hash = "11b03581ccbf2891454c0336a9165c21a6d343373b60ae16e4fffb7dfd35b2a8868055e8074bf7ae71678e8da2a279ee29f65077b01a3309722f36db376c4c7f"
+
+[update]
+[update.modrinth]
+mod-id = "bI9lnAFH"
+version = "bwpqoQaz"

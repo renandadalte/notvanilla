@@ -1,0 +1,13 @@
+name = "StartInv"
+filename = "fabric_startinv-1.0.0-1.21.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/8jUIs1kd/versions/ypAjeC0T/fabric_startinv-1.0.0-1.21.jar"
+hash-format = "sha512"
+hash = "9c406b3244ddd71891898e0f1c9f5ec4568a8a544c2788e96e1fb0208ad8236c2124b7b065ba1544d6e0b06fdf2200fea81fa3426a10312da35efea2e015d4c8"
+
+[update]
+[update.modrinth]
+mod-id = "8jUIs1kd"
+version = "ypAjeC0T"

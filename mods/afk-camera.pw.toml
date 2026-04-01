@@ -1,0 +1,13 @@
+name = "AFK Camera"
+filename = "AFKcamera-1.4.2+1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/wrN31tc5/versions/OelKfkDV/AFKcamera-1.4.2%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "6f2d6d8787e18f4ea50ea3296cb934798f728a7571a6488edbf0231ab86fe207abcb6a29abbc384d5ddf5ae2444e2feaa58867a6c4ee5b14b7332ba1b7c83a7c"
+
+[update]
+[update.modrinth]
+mod-id = "wrN31tc5"
+version = "OelKfkDV"
