@@ -10,6 +10,9 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -40,11 +43,10 @@ jobs:
               echo "release_name=Latest Release" >> "$GITHUB_OUTPUT"
               echo "source_cfg=instance.cfg" >> "$GITHUB_OUTPUT"
               echo "include_dev_cfg=false" >> "$GITHUB_OUTPUT"
-              cat <<'EOF' >> "$GITHUB_OUTPUT"
-body<<BODY
-Bootstrap ZIP da linha de produção. A instância Prism aponta para o canal estável publicado em GitHub Pages.
-BODY
-EOF
+              printf '%s\n' \
+                'body<<BODY' \
+                'Bootstrap ZIP da linha de produção. A instância Prism aponta para o canal estável publicado em GitHub Pages.' \
+                'BODY' >> "$GITHUB_OUTPUT"
               ;;
             dev)
               echo "zip_name=NotVanilla-dev.zip" >> "$GITHUB_OUTPUT"
@@ -52,11 +54,10 @@ EOF
               echo "release_name=Dev Latest" >> "$GITHUB_OUTPUT"
               echo "source_cfg=instance.dev.cfg" >> "$GITHUB_OUTPUT"
               echo "include_dev_cfg=true" >> "$GITHUB_OUTPUT"
-              cat <<'EOF' >> "$GITHUB_OUTPUT"
-body<<BODY
-Bootstrap ZIP da linha de testes. O ZIP inclui `instance.cfg` compatível com Prism e mantém `instance.dev.cfg` para referência.
-BODY
-EOF
+              printf '%s\n' \
+                'body<<BODY' \
+                'Bootstrap ZIP da linha de testes. O ZIP inclui `instance.cfg` compatível com Prism e mantém `instance.dev.cfg` para referência.' \
+                'BODY' >> "$GITHUB_OUTPUT"
               ;;
             *)
               echo "Unsupported branch: ${GITHUB_REF_NAME}" >&2
@@ -78,7 +79,18 @@ EOF
           cp packwiz-installer-bootstrap.jar build/root/minecraft/
           (
             cd build/root
-            zip -r "../${{ steps.meta.outputs.zip_name }}" instance.cfg mmc-pack.json minecraft/packwiz-installer-bootstrap.jar $(if [[ "${{ steps.meta.outputs.include_dev_cfg }}" == "true" ]]; then printf 'instance.dev.cfg'; fi)
+            if [[ "${{ steps.meta.outputs.include_dev_cfg }}" == "true" ]]; then
+              zip -r "../${{ steps.meta.outputs.zip_name }}" \
+                instance.cfg \
+                instance.dev.cfg \
+                mmc-pack.json \
+                minecraft/packwiz-installer-bootstrap.jar
+            else
+              zip -r "../${{ steps.meta.outputs.zip_name }}" \
+                instance.cfg \
+                mmc-pack.json \
+                minecraft/packwiz-installer-bootstrap.jar
+            fi
           )
 
       - name: Upload release asset

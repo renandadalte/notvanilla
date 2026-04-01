@@ -97,7 +97,7 @@ python3 scripts/audit_repo_surface.py
 ```
 
 4. Atualize `docs/MODS_INVENTORY.md`.
-5. Atualize `CHANGELOG.md` se a mudança for visível para quem joga.
+5. No fluxo rápido do `dev`, atualize docs técnicas e contexto quando necessário, mas deixe `CHANGELOG.md`, `README.md` e versão para as promoções de `main` ou para tarefas explicitamente voltadas à documentação pública.
 
 ## Publicação
 
@@ -113,7 +113,7 @@ Esse passo existe justamente para impedir inconsistência entre `pack.toml` e `i
 
 ### ZIPs de bootstrap
 
-O workflow `export.yml` publica:
+O workflow `release-bootstrap.yml` publica:
 
 - `latest` com `NotVanilla.zip` para `main`
 - `dev-latest` com `NotVanilla-dev.zip` para `dev`
@@ -150,4 +150,5 @@ Esses passos devem preservar fora do deploy:
 - [ ] O `index.toml` não publica arquivos de bootstrap, docs ou scripts.
 - [ ] `docs/MODS_INVENTORY.md` bate com `mods/*.pw.toml`, `shaderpacks/*.pw.toml` e `resourcepacks/*.pw.toml`.
 - [ ] `CHANGELOG.md` e `README.md` continuam coerentes com os canais atuais.
+- [ ] Se o destino é `main`, `CHANGELOG.md` foi atualizado para as mudanças promovidas e `README.md` foi revisado quando o fluxo de instalação ou os canais mudaram.
 - [ ] O que é local ou sensível continua fora do repositório e fora do `index.toml`.
