@@ -1,7 +1,7 @@
 {
   "equatorial_distance": 64000.0,
   "looping_world": true,
-  "generation_mode": 6,
+  "generation_mode": 5,
   "equator_offset": 64000.0,
   "randomize_underground": false,
   "randomize_underground_below_y": 45.0,

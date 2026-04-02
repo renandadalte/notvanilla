@@ -75,7 +75,7 @@ hash = "25ac121c84747d94f648c06c3406558bddabb7200f31d44a7d7bfb2c453e5195"
 
 [[files]]
 file = "config/natural-temperature.json"
-hash = "25ac121c84747d94f648c06c3406558bddabb7200f31d44a7d7bfb2c453e5195"
+hash = "7752a31db31c934e64dcd484194117984ab082986c591591444b3a6c8a49d960"
 preserve = true
 
 [[files]]

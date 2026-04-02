@@ -31,10 +31,10 @@ Este documento consolida a decisão atual para o Overworld e os perfis de teste 
 
 ## Presets de temperatura
 
-- `mode 6` é o preset ativo do pack: ele usa a lógica banded mais direta e serve como baseline principal.
-- `mode 5` é o preset de comparação: ele usa os controles manuais de temperatura e umidade para testar uma distribuição mais customizada sem mudar o resto do stack.
+- `mode 5` é o preset ativo do pack para este ciclo de teste: ele usa os controles manuais de temperatura e umidade para testar uma distribuição mais customizada sem mudar o resto do stack.
+- `mode 6` segue como comparação rápida caso você queira voltar para a leitura banded mais direta.
 - Ambos compartilham o mesmo `equatorial_distance`, `equator_offset`, `looping_world`, `wave_magnification` e cobertura geral de bandas para que a comparação fique focada no modo.
-- Para alternar no client local, copie o preset desejado para `config/natural-temperature.json` dentro da instância do Prism e reinicie o jogo.
+- Para alternar no client local, copie o preset desejado para `config/natural-temperature.json` dentro da instância do Prism e reinicie o jogo. O mundo do servidor continua precisando ser criado com seed `0` no host para manter o teste repetível.
 
 ## Perfis de teste
 
