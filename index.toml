@@ -374,11 +374,6 @@ hash = "c4e45594c8d1ab3dacc3b49142f16fb253178dd31d97cc917bf4a4d54f21e081"
 metafile = true
 
 [[files]]
-file = "mods/latitude.pw.toml"
-hash = "149cda752a43012b5981c68696f1c41ad200a78f8a9d37d70a0e4ba42b3a3db0"
-metafile = true
-
-[[files]]
 file = "mods/leaves-be-gone.pw.toml"
 hash = "fe5dca9e3c5228303fb0777accac0b631597dd3ce1e60b27b6d46aa2b50b36ea"
 metafile = true
@@ -411,6 +406,11 @@ metafile = true
 [[files]]
 file = "mods/mouse-tweaks.pw.toml"
 hash = "7fc969e77edc3b0b9946b42070fd858349a74555f0cf9648907241af8a3a2d25"
+metafile = true
+
+[[files]]
+file = "mods/natural-temperature.pw.toml"
+hash = "571a38bc4431bf03f013003212b4e9ffce5dd713494eda80226da29baa65b0a2"
 metafile = true
 
 [[files]]
