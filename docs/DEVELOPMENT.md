@@ -108,6 +108,20 @@ Use [MOD_MODULES.md](./MOD_MODULES.md) para decidir escopo de teste quando a mud
 - Se a mudança tocar visual, câmera ou combate, revise o módulo vizinho que mais costuma romper junto.
 - Se a mudança for só em docs ou contexto, o mapa de módulos serve como referência, mas não exige um teste do client inteiro.
 
+## Integração com a Notion
+
+Quando a database `Mods` precisar de auditoria ou atualização em massa com mais
+precisão do que o MCP interativo oferece, use a API oficial descrita em
+[NOTION_API.md](./NOTION_API.md).
+
+Pontos práticos:
+
+- o caminho padrão é uma integração interna na workspace;
+- o token da integração vai em `NOTION_API_KEY`;
+- a database precisa ser compartilhada com a integração;
+- o helper local `scripts/notion_api_sync.py` faz query paginada e patch por
+  página, sem depender de busca semântica.
+
 ## Política de configs versionadas
 
 Nem toda config versionada deve se comportar como verdade central do pack.

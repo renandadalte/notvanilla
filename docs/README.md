@@ -8,6 +8,7 @@ Esta pasta segue a lógica do [Diátaxis](https://diataxis.fr/): cada documento 
 | --- | --- | --- |
 | [MODS_INVENTORY.md](./MODS_INVENTORY.md) | Referência | Inventário do que está ativo no pack, backlog e itens descartados |
 | [MOD_MODULES.md](./MOD_MODULES.md) | Referência | Agrupamento operacional dos mods em módulos de teste e ajuste |
+| [NOTION_API.md](./NOTION_API.md) | How-to | Integração oficial da database de mods via API da Notion |
 | [DEVELOPMENT.md](./DEVELOPMENT.md) | How-to | Manutenção do pack, packwiz, canais `main`/`dev`, publicação e deploy |
 | Este arquivo | Explicação | Limites do que fica documentado aqui |
 
