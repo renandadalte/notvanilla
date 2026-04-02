@@ -10,6 +10,7 @@ Este documento consolida a decisão atual para o Overworld e os perfis de teste 
 - `WWOO` como camada de biomas, transições e refinamento do mundo.
 - `World Preview` para inspecionar seed, biomas, terreno e estruturas antes de gerar um mundo de verdade.
 - Neste pack, `Natural Temperature` e `Set World Spawn Point` são distribuídos como `both` para que o client do singleplayer carregue o mesmo stack que o servidor integrado.
+- O preset ativo de `Natural Temperature` fica em `config/natural-temperature.json` e é tratado como preferência do jogador, então usa `preserve = true`. Os presets de comparação ficam em `config/natural-temperature-presets/mode5.json` e `config/natural-temperature-presets/mode6.json`.
 
 ### Por que essa ordem
 
@@ -27,6 +28,13 @@ Este documento consolida a decisão atual para o Overworld e os perfis de teste 
 - `Geophilic` continua como polimento leve do vanilla, mas não como pilar do pack.
 - `Biomes O' Plenty` e `Regions Unexplored` entram como alternativas de suíte de biomas quando a prioridade subir de coerência para variedade.
 - `Set World Spawn Point` continua sendo a camada de spawn; ele pode fixar o worldspawn em `0,0` sem depender do mod climático.
+
+## Presets de temperatura
+
+- `mode 6` é o preset ativo do pack: ele usa a lógica banded mais direta e serve como baseline principal.
+- `mode 5` é o preset de comparação: ele usa os controles manuais de temperatura e umidade para testar uma distribuição mais customizada sem mudar o resto do stack.
+- Ambos compartilham o mesmo `equatorial_distance`, `equator_offset`, `looping_world`, `wave_magnification` e cobertura geral de bandas para que a comparação fique focada no modo.
+- Para alternar no client local, copie o preset desejado para `config/natural-temperature.json` dentro da instância do Prism e reinicie o jogo.
 
 ## Perfis de teste
 

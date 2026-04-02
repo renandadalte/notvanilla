@@ -66,6 +66,19 @@ hash = "16d20c40cc6c114faff5493b561873fe160a65047720bc19fb3a3dd64aa67f3b"
 preserve = true
 
 [[files]]
+file = "config/natural-temperature-presets/mode5.json"
+hash = "7752a31db31c934e64dcd484194117984ab082986c591591444b3a6c8a49d960"
+
+[[files]]
+file = "config/natural-temperature-presets/mode6.json"
+hash = "25ac121c84747d94f648c06c3406558bddabb7200f31d44a7d7bfb2c453e5195"
+
+[[files]]
+file = "config/natural-temperature.json"
+hash = "25ac121c84747d94f648c06c3406558bddabb7200f31d44a7d7bfb2c453e5195"
+preserve = true
+
+[[files]]
 file = "config/notenoughanimations.json"
 hash = "e48edb85862cd3b5e9e333d3cf6f0b2e18519cc99898dd4a3b3561f6f500ec47"
 preserve = true

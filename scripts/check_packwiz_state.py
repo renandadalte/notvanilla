@@ -46,6 +46,7 @@ REQUIRED_PRESERVE_FILES = {
     "config/iris-excluded.json",
     "config/iris.properties",
     "config/leawind_third_person.json",
+    "config/natural-temperature.json",
     "config/modmenu.json",
     "config/notenoughanimations.json",
     "config/observable.json",
