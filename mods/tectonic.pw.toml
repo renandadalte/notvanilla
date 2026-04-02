@@ -1,0 +1,13 @@
+name = "Tectonic"
+filename = "tectonic-3.0.21-fabric-21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/lWDHr9jE/versions/pdLRCALs/tectonic-3.0.21-fabric-21.1.jar"
+hash-format = "sha512"
+hash = "ccf0338b2af22ecea7828e8261ae167f1eca5d43d9b39ca3353337e02b39aa1bf43be6fe382bc34ba8c4a6d64b82f1df02ea212fd766793d610c0145d03afd8e"
+
+[update]
+[update.modrinth]
+mod-id = "lWDHr9jE"
+version = "pdLRCALs"

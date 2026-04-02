@@ -6,7 +6,7 @@ For a test-oriented grouping of the same pack into operational bundles, see [MOD
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 82 (79 + 1 + 2) | 1 | 2 |
+| `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 85 (82 + 1 + 2) | 5 | 2 |
 
 ## Three tables
 
@@ -83,6 +83,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | JamLib | [modrinth.com/mod/jamlib](https://modrinth.com/mod/jamlib) | Library | both | high | Fabric API, Architectury API | RightClickHarvest | — | Jared library. |
 | Just Enough Items (JEI) | [modrinth.com/mod/jei](https://modrinth.com/mod/jei) | QoL, UI | both | very high | — | — | — | Recipe lookup. |
 | KleeSlabs | [modrinth.com/mod/kleeslabs](https://modrinth.com/mod/kleeslabs) | QoL, Building | both | medium | Fabric API, Balm | — | — | Break individual slab halves. |
+| Latitude | [modrinth.com/mod/latitude](https://modrinth.com/mod/latitude) | World Gen, Climate, Utility | both | high | Fabric API | — | Terralith | Climate bands for coherent biomes; optional WWOO integration via biome tags. |
 | Krypton | [modrinth.com/mod/krypton](https://modrinth.com/mod/krypton) | Optimization, Networking | both | medium | — | — | Rare proxy issues | Net micro-opts. |
 | Leaves Be Gone | [modrinth.com/mod/leaves-be-gone](https://modrinth.com/mod/leaves-be-gone) | Performance, World | server | medium | Fabric API, Puzzles Lib, Forge Config API Port | — | — | Faster leaf decay (server). |
 | Leawind's Third Person | [modrinth.com/mod/leawind-third-person](https://modrinth.com/mod/leawind-third-person) | Camera, Utility | client | medium | Fabric API, Architectury API | — | Overlaps camera mods | Third-person rig. |
@@ -110,9 +111,11 @@ Same columns in all three tables (no **Status** column — the section implies s
 | spark | [modrinth.com/mod/spark](https://modrinth.com/mod/spark) | Diagnostics | both | medium | — | — | — | Profiler. |
 | StartInv | [modrinth.com/mod/startinv](https://modrinth.com/mod/startinv) | Gameplay, Utility | both | low | Cloth Config API | — | — | Starting inventory. |
 | TCDCommons API | [modrinth.com/mod/tcdcommons](https://modrinth.com/mod/tcdcommons) | Library | both | high | Fabric API | Better Statistics Screen | — | TCD Commons. |
+| Tectonic | [modrinth.com/datapack/tectonic](https://modrinth.com/datapack/tectonic) | World Gen, Terrain | both | high | — | — | Continents | Macro-terrain layer: continents, deep oceans and rivers; shipped as `both` here so singleplayer and `World Preview` see the same terrain stack. |
 | Text Placeholder API | [modrinth.com/mod/placeholder-api](https://modrinth.com/mod/placeholder-api) | Library | both | high | — | Mod Menu | — | Placeholders. |
 | TrashSlot | [modrinth.com/mod/trashslot](https://modrinth.com/mod/trashslot) | QoL, UI | both | medium | Fabric API, Balm | — | — | Trash slot in inventory. |
 | Wall-Jump TXF | [modrinth.com/mod/wall-jump-txf](https://modrinth.com/mod/wall-jump-txf) | Movement, Gameplay | both | medium | — | — | — | Wall/double jump. |
+| William Wythers' Overhauled Overworld | [modrinth.com/mod/wwoo](https://modrinth.com/mod/wwoo) | World Gen, Biomes, Terrain | both | high | — | — | Terralith | Biome/transitions layer; includes Navigable Rivers, Cliffs and Coves and Towering Tepuis via config. |
 | WITS (What Is This Structure?) | [modrinth.com/mod/wits](https://modrinth.com/mod/wits) | Utility, World | server | medium | Fabric API | — | — | Structure identification (server). |
 | World Preview | [modrinth.com/mod/world-preview](https://modrinth.com/mod/world-preview) | World Gen, Utility | client | low | Fabric API | — | — | Adds a `Preview` tab to Singleplayer for seed, biome and terrain scouting before committing a world. |
 | Yet Another Config Lib | [modrinth.com/mod/yacl](https://modrinth.com/mod/yacl) | Library, UI | both | high | Fabric API | — | — | YACL configs. |
@@ -127,7 +130,11 @@ Candidates or planned additions **without** a `mods/*.pw.toml`, `shaderpacks/*.p
 
 | Mod | Page | Categories | Environment | Priority | Dependencies | Dependents | Incompatibilities | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Biomes O' Plenty | [modrinth.com/mod/biomes-o-plenty](https://modrinth.com/mod/biomes-o-plenty) | World Gen, Biomes, Content | both | medium | Fabric API, GlitchCore, TerraBlender | — | WWOO / Terralith as primary biome suite | Classic fantasy-biome branch with vanilla-esque flair; good if we trade coherence for more variety. |
+| Continents | [modrinth.com/datapack/continents](https://modrinth.com/datapack/continents) | World Gen, Terrain | server | medium | — | — | Tectonic baseline | Comparison branch for larger oceans and more separated landmasses. |
 | ParCool! | [modrinth.com/mod/parcool](https://modrinth.com/mod/parcool) | Movement | both | low | — | — | — | Planned for movement stack; **no Fabric 1.21.1** file on Modrinth as of 2026-03-31 (NeoForge/Forge only for recent 1.21.1 builds). Re-evaluate if Fabric returns. |
+| Regions Unexplored | [modrinth.com/mod/regions-unexplored](https://modrinth.com/mod/regions-unexplored) | World Gen, Biomes, Content | both | medium | Fabric API, Biolith, Lithostitched | — | WWOO as primary biome suite | 70+ biome branch for a more exotic overworld; use instead of WWOO if fantasy variety wins. |
+| Terralith | [modrinth.com/datapack/terralith](https://modrinth.com/datapack/terralith) | World Gen, Biomes, Terrain | server | medium | — | — | Latitude baseline | Realism + light fantasy branch with many biomes; do not keep it in the same baseline as Latitude. |
 
 ## Discarded mods
 
@@ -162,5 +169,5 @@ Text Placeholder API ──► Mod Menu
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-04-02 — **Active** rows vs `mods/*.pw.toml` (79) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.11-alpha`; **Listed** 1 (ParCool!); **Discarded** 2 (**e4mc**, **First Person Model**). **EasyAuth** remains **server-only** for offline-mode auth on the dedicated server. **Default Options** now covers the vanilla keybind/video baseline, and **Paxi** auto-loads the benchmark datapack from the base `datapacks/` directory plus the ordered global resource packs in `config/paxi/*`. **Pick Up Notifier** replaced the incompatible `ItemPickupNotifier` Modrinth build that declared `minecraft 1.21.10`; this line is aligned with `1.21.1`. **World Preview** is now available as a client-side seed/terrain preview for worldgen testing. **e4mc** was removed from the shipped pack because it conflicted with **Krypton** during integrated-server login and broke standard singleplayer/LAN startup. **Manual smoke (host):** create a fresh singleplayer world; check `Options`/`Controls` for default baseline behavior; verify `benchmark:*` is available without manual world injection; open **JEI** while **InvMove** walking; try **Combat Roll** with **Better Combat**; review **Client Tweaks** vs **Smooth F5**.
+- **Last reconciled:** 2026-04-02 — **Active** rows vs `mods/*.pw.toml` (82) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.11-alpha`; **Listed** 5 (**Biomes O' Plenty**, **Continents**, **ParCool!**, **Regions Unexplored**, **Terralith**); **Discarded** 2 (**e4mc**, **First Person Model**). **EasyAuth** remains **server-only** for offline-mode auth on the dedicated server. **Default Options** now covers the vanilla keybind/video baseline, and **Paxi** auto-loads the benchmark datapack from the base `datapacks/` directory plus the ordered global resource packs in `config/paxi/*`. **Pick Up Notifier** replaced the incompatible `ItemPickupNotifier` Modrinth build that declared `minecraft 1.21.10`; this line is aligned with `1.21.1`. **Latitude + Tectonic + WWOO** is now the recommended overworld baseline; `World Preview` is still the client-side entry point for comparing seeds and terrain before generation. **e4mc** was removed from the shipped pack because it conflicted with **Krypton** during integrated-server login and broke standard singleplayer/LAN startup. **Manual smoke (host):** create a fresh singleplayer world; check `Options`/`Controls` for default baseline behavior; verify `benchmark:*` is available without manual world injection; open **JEI** while **InvMove** walking; try **Combat Roll** with **Better Combat**; review **Client Tweaks** vs **Smooth F5**; for worldgen, open `Preview` and compare the baseline against `Tectonic`, `Latitude + Tectonic`, and the fantasy branches listed above.
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`.

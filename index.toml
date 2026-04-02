@@ -374,6 +374,11 @@ hash = "c4e45594c8d1ab3dacc3b49142f16fb253178dd31d97cc917bf4a4d54f21e081"
 metafile = true
 
 [[files]]
+file = "mods/latitude.pw.toml"
+hash = "149cda752a43012b5981c68696f1c41ad200a78f8a9d37d70a0e4ba42b3a3db0"
+metafile = true
+
+[[files]]
 file = "mods/leaves-be-gone.pw.toml"
 hash = "fe5dca9e3c5228303fb0777accac0b631597dd3ce1e60b27b6d46aa2b50b36ea"
 metafile = true
@@ -509,6 +514,11 @@ hash = "ffa71e1ce188b71291daa8bb67e8094ff7d0ef695add362200591c28e75cf457"
 metafile = true
 
 [[files]]
+file = "mods/tectonic.pw.toml"
+hash = "24ce7ed338b4d5bf402b644afaf07e8b01cf30393ce3e32f7d784afe4e33853f"
+metafile = true
+
+[[files]]
 file = "mods/trashslot.pw.toml"
 hash = "40c60c458184ab9d15fdcc4c610607eca60a1557bbf484fad2942a803d75e0ec"
 metafile = true
@@ -526,6 +536,11 @@ metafile = true
 [[files]]
 file = "mods/world-preview.pw.toml"
 hash = "f8bf41ac19c20de158a9b8da3032a4aa06122b77748b04ca289d397f0062ab0a"
+metafile = true
+
+[[files]]
+file = "mods/wwoo.pw.toml"
+hash = "1960c304ef7e5eb391934e0c102fd3346afe586cd5df5efb0cd7235e0a583634"
 metafile = true
 
 [[files]]
