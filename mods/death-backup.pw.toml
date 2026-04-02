@@ -1,6 +1,6 @@
 name = "Death Backup"
 filename = "deathbackup-1.21.1-3.5.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/Ot5JFxuv/versions/wYJBZoFd/deathbackup-1.21.1-3.5.jar"

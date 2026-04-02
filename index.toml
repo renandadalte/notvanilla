@@ -240,7 +240,7 @@ metafile = true
 
 [[files]]
 file = "mods/death-backup.pw.toml"
-hash = "8136c505639b50713160f2634bc7d12c44a47e167a852e9745aa716ba8e44cc4"
+hash = "b08ec09c3fa1fa641d585954008d2a1500bbf6091bc216d9d85ac05da4fd129a"
 metafile = true
 
 [[files]]
@@ -250,7 +250,7 @@ metafile = true
 
 [[files]]
 file = "mods/dismount-entity.pw.toml"
-hash = "3a191ec81bcc9d5e55193d4836abbd8d3b74ca2f391c9f6e73237ab01880e482"
+hash = "839fe18f0bca3f52ee0f7b8b303c314b5858ca1f86511244ed9449de8192928c"
 metafile = true
 
 [[files]]
@@ -375,7 +375,7 @@ metafile = true
 
 [[files]]
 file = "mods/leaves-be-gone.pw.toml"
-hash = "fe5dca9e3c5228303fb0777accac0b631597dd3ce1e60b27b6d46aa2b50b36ea"
+hash = "1a5695764e8cddb0e243b122ff536d36d60765ba744b631b9ffe098dd4303f26"
 metafile = true
 
 [[files]]
@@ -415,7 +415,7 @@ metafile = true
 
 [[files]]
 file = "mods/no-feather-trample.pw.toml"
-hash = "3822a5fb5fb1ba176870011765ce5cc2da90d3faccd2b938d1e5369a1acc5cdd"
+hash = "dce3f12b9534b04e84040c49030e7d775dd4a6091c4504dbb72468372e5787ef"
 metafile = true
 
 [[files]]
@@ -470,7 +470,7 @@ metafile = true
 
 [[files]]
 file = "mods/rightclickharvest.pw.toml"
-hash = "7115961dc4a355e257229fdfdcef5ce8bc1003b015cfaa18e8203fd79b34a860"
+hash = "e5b24f6c33dfb82d1a6b7f88d0340cd4295583447cf7e9dcb94c61745c7e7e2d"
 metafile = true
 
 [[files]]
@@ -535,7 +535,7 @@ metafile = true
 
 [[files]]
 file = "mods/wits.pw.toml"
-hash = "e7a630e261c40242ea52b16c9b120b8c9d4b0d0339bd6f097f63828e21dd082c"
+hash = "1c2a96d3f668d5bd716747eb307d7f8d898f5e14dd8f05435ca86d1373743397"
 metafile = true
 
 [[files]]
