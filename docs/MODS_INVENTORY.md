@@ -6,7 +6,7 @@ For a test-oriented grouping of the same pack into operational bundles, see [MOD
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 78 (75 + 1 + 2) | 1 | 2 |
+| `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 81 (78 + 1 + 2) | 1 | 2 |
 
 ## Three tables
 
@@ -58,6 +58,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Crafting Tweaks | [modrinth.com/mod/crafting-tweaks](https://modrinth.com/mod/crafting-tweaks) | QoL, UI | both | medium | Fabric API, Balm | — | — | Crafting grid shortcuts. |
 | Creative Fly | [modrinth.com/mod/creative-fly](https://modrinth.com/mod/creative-fly) | QoL, Creative | client | low | Fabric API, Cloth Config API | — | — | Creative flight tweaks; creative only. |
 | Death Backup | [modrinth.com/mod/death-backup](https://modrinth.com/mod/death-backup) | Gameplay, Utility | server | medium | Collective | — | — | Backup gear on death (server). |
+| Default Options | [modrinth.com/mod/default-options](https://modrinth.com/mod/default-options) | QoL, Configuration | client | high | Balm, Fabric API | — | — | Ships the vanilla keybind/video default layer; capture `config/defaultoptions/*` with `/defaultoptions saveAll`, `/defaultoptions saveOptions`, or `/defaultoptions saveKeys` when the baseline is decided. |
 | Dismount Entity | [modrinth.com/mod/dismount-entity](https://modrinth.com/mod/dismount-entity) | Gameplay, Utility | server | low | Collective | — | — | Dismount riders (server). |
 | EasyAuth | [modrinth.com/mod/easyauth](https://modrinth.com/mod/easyauth) | Security, Utility | server | high | Fabric API | — | — | Offline-mode auth gate for the dedicated server; invite secret for registration, then per-player `/login`. |
 | Easy Anvils | [modrinth.com/mod/easy-anvils](https://modrinth.com/mod/easy-anvils) | QoL, Gameplay | both | medium | Fabric API, Puzzles Lib, Forge Config API Port | — | — | Anvil UX tweaks. |
@@ -93,6 +94,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Not Enough Animations | [modrinth.com/mod/not-enough-animations](https://modrinth.com/mod/not-enough-animations) | Animation | client | medium | — | — | — | Extra animations. |
 | Observable | [modrinth.com/mod/observable](https://modrinth.com/mod/observable) | Diagnostics | both | medium | Architectury API, Fabric Language Kotlin | — | — | Profiling UI. |
 | Omnidirectional Movement | [modrinth.com/mod/omnidirectional-movement](https://modrinth.com/mod/omnidirectional-movement) | Movement | both | medium | — | — | — | Strafe movement; both sides MP. |
+| Paxi | [modrinth.com/mod/paxi](https://modrinth.com/mod/paxi) | Utility, Resource Loading | both | high | Fabric API, Cloth Config API, YUNG's API | — | — | Global datapack/resourcepack loader. Paxi uses the base `.minecraft/datapacks` directory plus `config/paxi/{datapacks,resourcepacks}` and the load-order JSON files. |
 | Pick Up Notifier | [modrinth.com/mod/pick-up-notifier](https://modrinth.com/mod/pick-up-notifier) | QoL, UI | both | medium | — | — | — | Replaces the incompatible `ItemPickupNotifier` build; compatible with `1.21.1`. |
 | Player Animator | [modrinth.com/mod/playeranimator](https://modrinth.com/mod/playeranimator) | Library, Animation | both | high | — | Better Combat, Combat Roll | — | Animation library. |
 | Puzzles Lib | [modrinth.com/mod/puzzles-lib](https://modrinth.com/mod/puzzles-lib) | Library | both | high | Fabric API, Forge Config API Port | Leaves Be Gone, Easy Anvils, Easy Magic, Horse Expert, Easy Shulker Boxes | — | Fuzs library. |
@@ -113,7 +115,8 @@ Same columns in all three tables (no **Status** column — the section implies s
 | Wall-Jump TXF | [modrinth.com/mod/wall-jump-txf](https://modrinth.com/mod/wall-jump-txf) | Movement, Gameplay | both | medium | — | — | — | Wall/double jump. |
 | WITS (What Is This Structure?) | [modrinth.com/mod/wits](https://modrinth.com/mod/wits) | Utility, World | server | medium | Fabric API | — | — | Structure identification (server). |
 | Yet Another Config Lib | [modrinth.com/mod/yacl](https://modrinth.com/mod/yacl) | Library, UI | both | high | Fabric API | — | — | YACL configs. |
-| Fresh Animations | [modrinth.com/resourcepack/fresh-animations](https://modrinth.com/resourcepack/fresh-animations) | Resource pack, Animation | client | medium | — | Fresh Animations: Player Extension | — | Ships as `resourcepacks/*.pw.toml`; place Player Extension above base. |
+| YUNG's API | [modrinth.com/mod/yungs-api](https://modrinth.com/mod/yungs-api) | Library | both | high | — | Paxi | — | Support library pulled in for Paxi. |
+| Fresh Animations | [modrinth.com/resourcepack/fresh-animations](https://modrinth.com/resourcepack/fresh-animations) | Resource pack, Animation | client | medium | — | Fresh Animations: Player Extension | — | Ships as `resourcepacks/*.pw.toml`; Paxi loads it globally, with Player Extension above the base pack. |
 | Fresh Animations: Player Extension | [modrinth.com/resourcepack/fa-player-extension](https://modrinth.com/resourcepack/fa-player-extension) | Resource pack, Animation | client | medium | Fresh Animations (in-pack) | — | — | FA player layer. |
 | MakeUp - Ultra Fast | [modrinth.com/shader/makeup-ultra-fast-shaders](https://modrinth.com/shader/makeup-ultra-fast-shaders) | Shaders | client | high | Iris Shaders | — | — | Ships as `shaderpacks/*.pw.toml`. |
 
@@ -145,17 +148,18 @@ Fabric Language Kotlin ──┴──► Observable
 Forge Config API Port ──► Puzzles Lib ──► Leaves Be Gone, Easy Anvils/Magic/Shulker, Horse Expert
 Forge Config API Port ──► SimpleAFK, Clean Tooltips
 Collective ──► Serilum-style mods (Death Backup, Dismount Entity, …)
-Balm ──► Crafting Tweaks, Client Tweaks, TrashSlot, KleeSlabs, Inventory Essentials
+Balm ──► Crafting Tweaks, Client Tweaks, TrashSlot, KleeSlabs, Inventory Essentials, Default Options
 JamLib + Architectury API ──► RightClickHarvest
 Searchables ──► Controlling
 TCDCommons API ──► Better Statistics Screen
 Cloth Config API ──┬──► Better Combat, Combat Roll, InvMove, BetterF3, Creative Fly, StartInv
 Player Animator ───┴──► Better Combat, Combat Roll
+YUNG's API ──► Paxi
 Fresh Animations ──► Fresh Animations: Player Extension
 Text Placeholder API ──► Mod Menu
 ```
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-04-01 — **Active** rows vs `mods/*.pw.toml` (75) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.11-alpha`; **Listed** 1 (ParCool!); **Discarded** 2 (**e4mc**, **First Person Model**). **EasyAuth** remains **server-only** for offline-mode auth on the dedicated server. **Pick Up Notifier** replaced the incompatible `ItemPickupNotifier` Modrinth build that declared `minecraft 1.21.10`; this line is aligned with `1.21.1`. **e4mc** was removed from the shipped pack because it conflicted with **Krypton** during integrated-server login and broke standard singleplayer/LAN startup. **Manual smoke (host):** create a fresh singleplayer world; open **JEI** while **InvMove** walking; try **Combat Roll** with **Better Combat**; review **Client Tweaks** vs **Smooth F5**. Default `config/` unchanged in this batch unless you add per-mod defaults later.
+- **Last reconciled:** 2026-04-02 — **Active** rows vs `mods/*.pw.toml` (78) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.11-alpha`; **Listed** 1 (ParCool!); **Discarded** 2 (**e4mc**, **First Person Model**). **EasyAuth** remains **server-only** for offline-mode auth on the dedicated server. **Default Options** now covers the vanilla keybind/video baseline, and **Paxi** auto-loads the benchmark datapack from the base `datapacks/` directory plus the ordered global resource packs in `config/paxi/*`. **Pick Up Notifier** replaced the incompatible `ItemPickupNotifier` Modrinth build that declared `minecraft 1.21.10`; this line is aligned with `1.21.1`. **e4mc** was removed from the shipped pack because it conflicted with **Krypton** during integrated-server login and broke standard singleplayer/LAN startup. **Manual smoke (host):** create a fresh singleplayer world; check `Options`/`Controls` for default baseline behavior; verify `benchmark:*` is available without manual world injection; open **JEI** while **InvMove** walking; try **Combat Roll** with **Better Combat**; review **Client Tweaks** vs **Smooth F5**.
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`.

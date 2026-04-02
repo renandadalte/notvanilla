@@ -24,6 +24,11 @@ packwiz-installer-bootstrap.jar
 # Client-local Sodium fingerprint (regenerated per machine; do not ship)
 config/sodium-fingerprint.json
 
+# Local environment files for launcher/server credentials; never ship them
+.env
+.env.example
+.env.local
+
 # Spark profiler temp folders (runtime noise)
 config/spark/tmp/
 config/spark/tmp-client/

@@ -10,6 +10,7 @@ config/sodium-fingerprint.json
 
 # Local Notion API credentials for the official integration
 .env
+.env.example
 .env.local
 
 # Python helper script cache

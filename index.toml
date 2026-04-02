@@ -76,6 +76,14 @@ hash = "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
 preserve = true
 
 [[files]]
+file = "config/paxi/datapack_load_order.json"
+hash = "f8d2aa900e6b86da80215a9656397f2fac04b2c1f7b5951194d760180ba9f79a"
+
+[[files]]
+file = "config/paxi/resourcepack_load_order.json"
+hash = "8552e93df9e982517db5465bdf591ffcbacb646fde39ffc3974e3790a53740d6"
+
+[[files]]
 file = "config/realcamera.json"
 hash = "0468c8505e289b8320d00c1fbab3150546a11db316dba31180011a379ee9e8f4"
 preserve = true
@@ -233,6 +241,11 @@ metafile = true
 [[files]]
 file = "mods/death-backup.pw.toml"
 hash = "8136c505639b50713160f2634bc7d12c44a47e167a852e9745aa716ba8e44cc4"
+metafile = true
+
+[[files]]
+file = "mods/default-options.pw.toml"
+hash = "6d1b30b228fc3cc57be30958b2ec40a2e11053fd209a4aff7be71c12fdca3efb"
 metafile = true
 
 [[files]]
@@ -411,6 +424,11 @@ hash = "16375f409bea3e0a1a5fdfa1283b8b6fc0d9522daa336bc39a726e4969e67f74"
 metafile = true
 
 [[files]]
+file = "mods/paxi.pw.toml"
+hash = "4d327db95d15a81aa38ca20bcdfd573a0537360c898622d13b263b2d9c06cd8d"
+metafile = true
+
+[[files]]
 file = "mods/pick-up-notifier.pw.toml"
 hash = "af6de4e48064926264441ace0dc8f3193deedd534e2963c25a7700d4dfa6f825"
 metafile = true
@@ -508,6 +526,11 @@ metafile = true
 [[files]]
 file = "mods/yacl.pw.toml"
 hash = "6965cb5548c69e8176ed497db1306112ec54446868e154f7604cb741cbc75537"
+metafile = true
+
+[[files]]
+file = "mods/yungs-api.pw.toml"
+hash = "4d98bdba90cdeae788a747bb6fe7d438ba49fdc4eb67c38d4573304eec4a2ef8"
 metafile = true
 
 [[files]]
