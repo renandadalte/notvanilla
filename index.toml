@@ -524,6 +524,11 @@ hash = "e7a630e261c40242ea52b16c9b120b8c9d4b0d0339bd6f097f63828e21dd082c"
 metafile = true
 
 [[files]]
+file = "mods/world-preview.pw.toml"
+hash = "f8bf41ac19c20de158a9b8da3032a4aa06122b77748b04ca289d397f0062ab0a"
+metafile = true
+
+[[files]]
 file = "mods/yacl.pw.toml"
 hash = "6965cb5548c69e8176ed497db1306112ec54446868e154f7604cb741cbc75537"
 metafile = true

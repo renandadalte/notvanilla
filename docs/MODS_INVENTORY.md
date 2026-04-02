@@ -6,7 +6,7 @@ For a test-oriented grouping of the same pack into operational bundles, see [MOD
 
 | Pack version | Minecraft | Fabric loader | Active rows (mods + shader packs + resource packs) | Listed | Discarded |
 | --- | --- | --- | --- | --- | --- |
-| `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 81 (78 + 1 + 2) | 1 | 2 |
+| `0.0.11-alpha` (see `pack.toml`) | `1.21.1` | `0.18.4` | 82 (79 + 1 + 2) | 1 | 2 |
 
 ## Three tables
 
@@ -114,6 +114,7 @@ Same columns in all three tables (no **Status** column — the section implies s
 | TrashSlot | [modrinth.com/mod/trashslot](https://modrinth.com/mod/trashslot) | QoL, UI | both | medium | Fabric API, Balm | — | — | Trash slot in inventory. |
 | Wall-Jump TXF | [modrinth.com/mod/wall-jump-txf](https://modrinth.com/mod/wall-jump-txf) | Movement, Gameplay | both | medium | — | — | — | Wall/double jump. |
 | WITS (What Is This Structure?) | [modrinth.com/mod/wits](https://modrinth.com/mod/wits) | Utility, World | server | medium | Fabric API | — | — | Structure identification (server). |
+| World Preview | [modrinth.com/mod/world-preview](https://modrinth.com/mod/world-preview) | World Gen, Utility | client | low | Fabric API | — | — | Adds a `Preview` tab to Singleplayer for seed, biome and terrain scouting before committing a world. |
 | Yet Another Config Lib | [modrinth.com/mod/yacl](https://modrinth.com/mod/yacl) | Library, UI | both | high | Fabric API | — | — | YACL configs. |
 | YUNG's API | [modrinth.com/mod/yungs-api](https://modrinth.com/mod/yungs-api) | Library | both | high | — | Paxi | — | Support library pulled in for Paxi. |
 | Fresh Animations | [modrinth.com/resourcepack/fresh-animations](https://modrinth.com/resourcepack/fresh-animations) | Resource pack, Animation | client | medium | — | Fresh Animations: Player Extension | — | Ships as `resourcepacks/*.pw.toml`; Paxi loads it globally, with Player Extension above the base pack. |
@@ -161,5 +162,5 @@ Text Placeholder API ──► Mod Menu
 
 ## Reconciliation
 
-- **Last reconciled:** 2026-04-02 — **Active** rows vs `mods/*.pw.toml` (78) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.11-alpha`; **Listed** 1 (ParCool!); **Discarded** 2 (**e4mc**, **First Person Model**). **EasyAuth** remains **server-only** for offline-mode auth on the dedicated server. **Default Options** now covers the vanilla keybind/video baseline, and **Paxi** auto-loads the benchmark datapack from the base `datapacks/` directory plus the ordered global resource packs in `config/paxi/*`. **Pick Up Notifier** replaced the incompatible `ItemPickupNotifier` Modrinth build that declared `minecraft 1.21.10`; this line is aligned with `1.21.1`. **e4mc** was removed from the shipped pack because it conflicted with **Krypton** during integrated-server login and broke standard singleplayer/LAN startup. **Manual smoke (host):** create a fresh singleplayer world; check `Options`/`Controls` for default baseline behavior; verify `benchmark:*` is available without manual world injection; open **JEI** while **InvMove** walking; try **Combat Roll** with **Better Combat**; review **Client Tweaks** vs **Smooth F5**.
+- **Last reconciled:** 2026-04-02 — **Active** rows vs `mods/*.pw.toml` (79) + `shaderpacks/*.pw.toml` (1) + `resourcepacks/*.pw.toml` (2), `pack.toml` `0.0.11-alpha`; **Listed** 1 (ParCool!); **Discarded** 2 (**e4mc**, **First Person Model**). **EasyAuth** remains **server-only** for offline-mode auth on the dedicated server. **Default Options** now covers the vanilla keybind/video baseline, and **Paxi** auto-loads the benchmark datapack from the base `datapacks/` directory plus the ordered global resource packs in `config/paxi/*`. **Pick Up Notifier** replaced the incompatible `ItemPickupNotifier` Modrinth build that declared `minecraft 1.21.10`; this line is aligned with `1.21.1`. **World Preview** is now available as a client-side seed/terrain preview for worldgen testing. **e4mc** was removed from the shipped pack because it conflicted with **Krypton** during integrated-server login and broke standard singleplayer/LAN startup. **Manual smoke (host):** create a fresh singleplayer world; check `Options`/`Controls` for default baseline behavior; verify `benchmark:*` is available without manual world injection; open **JEI** while **InvMove** walking; try **Combat Roll** with **Better Combat**; review **Client Tweaks** vs **Smooth F5**.
 - After every manifest change, bump **Last reconciled** and verify **Active** row count vs `mods/*.pw.toml`, `shaderpacks/*.pw.toml`, and `resourcepacks/*.pw.toml`.
