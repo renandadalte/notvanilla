@@ -9,6 +9,7 @@ Este documento consolida a decisão atual para o Overworld e os perfis de teste 
 - `Tectonic` como camada de macro-terreno: continentes, mares, ilhas e rios em escala maior.
 - `WWOO` como camada de biomas, transições e refinamento do mundo.
 - `World Preview` para inspecionar seed, biomas, terreno e estruturas antes de gerar um mundo de verdade.
+- Neste pack, `Natural Temperature` e `Set World Spawn Point` são distribuídos como `both` para que o client do singleplayer carregue o mesmo stack que o servidor integrado.
 
 ### Por que essa ordem
 

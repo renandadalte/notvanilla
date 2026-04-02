@@ -1,6 +1,6 @@
 name = "Set World Spawn Point"
 filename = "setworldspawnpoint-1.21.1-3.5.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/EL8fq1gi/versions/9jApRI0P/setworldspawnpoint-1.21.1-3.5.jar"

@@ -410,7 +410,7 @@ metafile = true
 
 [[files]]
 file = "mods/natural-temperature.pw.toml"
-hash = "571a38bc4431bf03f013003212b4e9ffce5dd713494eda80226da29baa65b0a2"
+hash = "4507c002ae48a65ff1746c610989a19bc15279f977012ae536f87ce1e3cf1553"
 metafile = true
 
 [[files]]
@@ -485,7 +485,7 @@ metafile = true
 
 [[files]]
 file = "mods/set-world-spawn-point.pw.toml"
-hash = "cab36e0d3af6bcd16f9dd5fdc4c4547ef7d18c24ab8da8753e937dfb49ba4fd1"
+hash = "c8becdc0a3baa302b4a61543bdc30572f7456049e3d792523e665e923f946559"
 metafile = true
 
 [[files]]
