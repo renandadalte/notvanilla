@@ -5,6 +5,7 @@ Este documento consolida a decisão atual para o Overworld e os perfis de teste 
 ## Baseline recomendado
 
 - `Latitude` como camada de clima e coerência geográfica.
+- `Lithostitched` como dependência de suporte obrigatória para `Tectonic`.
 - `Tectonic` como camada de macro-terreno: continentes, mares, ilhas e rios em escala maior.
 - `WWOO` como camada de biomas, transições e refinamento do mundo.
 - `World Preview` para inspecionar seed, biomas, terreno e estruturas antes de gerar um mundo de verdade.
@@ -12,6 +13,7 @@ Este documento consolida a decisão atual para o Overworld e os perfis de teste 
 ### Por que essa ordem
 
 - `Latitude` é o que mais diretamente empurra biomas para faixas climáticas que fazem sentido.
+- `Lithostitched` é suporte técnico; não é uma peça de design, mas precisa estar presente para o stack subir.
 - `Tectonic` já entrega a sensação de grandes massas continentais e oceanos largos, então `Continents` fica redundante no baseline.
 - `WWOO` mantém o overworld mais coerente e ainda abre espaço para variação sem exigir um pacote de fantasia pesado desde o início.
 - `World Preview` serve para validar o stack sem depender de exploração manual cega.
@@ -27,11 +29,11 @@ Este documento consolida a decisão atual para o Overworld e os perfis de teste 
 
 | Perfil | Composição | Objetivo |
 | --- | --- | --- |
-| Controle de terreno | `Tectonic` | Medir a escala de continentes, mares e rios sem interferência de outras suítes. |
-| Coerência climática | `Latitude + Tectonic` | Validar se as faixas latitudinais deixam biomas vizinhos mais lógicos. |
-| Baseline | `Latitude + Tectonic + WWOO` | Validar o stack recomendado para o pack principal. |
-| Branch de fantasia | `Tectonic + Terralith` | Comparar um branch mais lúdico e visualmente mais exuberante. |
-| Branch de biomas grandes | `Latitude + Tectonic + Biomes O' Plenty` ou `Latitude + Tectonic + Regions Unexplored` | Trocar a suíte de biomas por uma mais exótica sem perder o eixo de clima/terreno. |
+| Controle de terreno | `Lithostitched + Tectonic` | Medir a escala de continentes, mares e rios sem interferência de outras suítes. |
+| Coerência climática | `Latitude + Lithostitched + Tectonic` | Validar se as faixas latitudinais deixam biomas vizinhos mais lógicos. |
+| Baseline | `Latitude + Lithostitched + Tectonic + WWOO` | Validar o stack recomendado para o pack principal. |
+| Branch de fantasia | `Lithostitched + Tectonic + Terralith` | Comparar um branch mais lúdico e visualmente mais exuberante. |
+| Branch de biomas grandes | `Latitude + Lithostitched + Tectonic + Biomes O' Plenty` ou `Latitude + Lithostitched + Tectonic + Regions Unexplored` | Trocar a suíte de biomas por uma mais exótica sem perder o eixo de clima/terreno. |
 | Comparação marítima | `Continents` | Medir a sensação de ilhas maiores e mares mais vazios antes de qualquer sobreposição. |
 
 ## Protocolo de comparação
@@ -45,6 +47,7 @@ Este documento consolida a decisão atual para o Overworld e os perfis de teste 
 ## Fontes
 
 - [Latitude](https://modrinth.com/mod/latitude)
+- [Lithostitched](https://modrinth.com/mod/lithostitched)
 - [Tectonic](https://modrinth.com/datapack/tectonic)
 - [WWOO](https://modrinth.com/mod/wwoo)
 - [World Preview](https://modrinth.com/mod/world-preview)

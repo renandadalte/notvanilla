@@ -394,6 +394,11 @@ hash = "23de0cbbfd28d752eb662c00a907406bac3e3ad529dd2ac250b41b4b0ef734ce"
 metafile = true
 
 [[files]]
+file = "mods/lithostitched.pw.toml"
+hash = "c8e01773cfb41b0bfbc4f6755f28c92b06bff5de342c5e62876a47d3511265bd"
+metafile = true
+
+[[files]]
 file = "mods/modernfix.pw.toml"
 hash = "b9651d06e56ad51c1cdcf4b03b6a34328b7dc941f263ff92b189ee26a47cc224"
 metafile = true
