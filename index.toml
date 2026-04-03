@@ -267,6 +267,11 @@ hash = "839fe18f0bca3f52ee0f7b8b303c314b5858ca1f86511244ed9449de8192928c"
 metafile = true
 
 [[files]]
+file = "mods/distanthorizons.pw.toml"
+hash = "da1e63f3b580bc76bd5ad71740f59845620db43c4d4394d9bf2dbcad9098786c"
+metafile = true
+
+[[files]]
 file = "mods/easy-anvils.pw.toml"
 hash = "c03848ab316f8f8e07656e08c675541ce90f0ad729d5b31df336fe8f27a58b3f"
 metafile = true
@@ -299,6 +304,11 @@ metafile = true
 [[files]]
 file = "mods/fabric-language-kotlin.pw.toml"
 hash = "e49f549eecbe502a3da6d731d6e28783631b14b0bba7bba9780a1075e7926776"
+metafile = true
+
+[[files]]
+file = "mods/fabricquilt-chunk-pregenerator.pw.toml"
+hash = "53d70f6d410ab3ce6ca8da9c5d0804b72cacc1452f4d1a1f813e23ac4c1b24c3"
 metafile = true
 
 [[files]]

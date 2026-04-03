@@ -15,6 +15,7 @@ O formato segue a ideia do [Keep a Changelog](https://keepachangelog.com/en/1.0.
 - Workflow de validação do repositório para checar coerência de `pack.toml` e `index.toml`, além de uma auditoria básica de exposição do repositório.
 - ZIP rotativo de bootstrap para o canal `dev`, separado do ZIP estável de produção.
 - Scripts versionados para validar o estado do packwiz, auditar a superfície do repositório e montar o artefato do GitHub Pages.
+- Baseline multiplayer de longa distância com **Distant Horizons** em cliente e servidor, mais **Fabric/Quilt Chunk Pregenerator** no host para pregenerar o starter region antes de liberar o mundo.
 
 ### Corrigido
 - O canal `dev` deixa de depender de alias de CDN em branch, que podia servir `pack.toml` e `index.toml` fora de sincronia e causar erro de hash no Prism.
