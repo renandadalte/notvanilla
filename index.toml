@@ -67,7 +67,7 @@ preserve = true
 
 [[files]]
 file = "config/natural-temperature-presets/mode5.json"
-hash = "7752a31db31c934e64dcd484194117984ab082986c591591444b3a6c8a49d960"
+hash = "64d6b6190a644f1cd52fea5e57569e5c3df3e84a8ecf458e5dc59dd406ef7360"
 
 [[files]]
 file = "config/natural-temperature-presets/mode6.json"
@@ -75,7 +75,7 @@ hash = "25ac121c84747d94f648c06c3406558bddabb7200f31d44a7d7bfb2c453e5195"
 
 [[files]]
 file = "config/natural-temperature.json"
-hash = "7752a31db31c934e64dcd484194117984ab082986c591591444b3a6c8a49d960"
+hash = "64d6b6190a644f1cd52fea5e57569e5c3df3e84a8ecf458e5dc59dd406ef7360"
 preserve = true
 
 [[files]]
